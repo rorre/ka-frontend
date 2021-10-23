@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sora:wght@400;600;700&display=swap');
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Sora;
+	background-color: #1b1c21;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 56px;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 40px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 28px;
+	font-weight: 600;
+}
