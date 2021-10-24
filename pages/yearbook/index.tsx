@@ -22,7 +22,7 @@ const CharactersPage = () => {
 				</p>
 				<YearbookSearchBar />
 			</YearbookContainer>
-			<div className='flex flex-wrap justify-center md:justify-start container md:px-0 px-4 mx-auto mt-16 w-full'>
+			<div className='flex flex-wrap justify-center mx-auto container md:px-0 px-4 mt-16 w-full'>
 				{students.map((student: Student) => (
 					<div
 						key={student.id}
