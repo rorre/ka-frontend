@@ -31,7 +31,7 @@ export const students = [
 		npm: '2106651234',
 		name: 'John Doe',
 		house: 'Musical',
-		major: 'Information System',
+		major: 'Computer Science',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
