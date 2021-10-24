@@ -1,7 +1,15 @@
 import React from 'react'
 
-const Historical = () => (
-	<object data='assets/images/House of Historical.svg'></object>
+const Historical = ({
+	width = '',
+	height = '',
+}: {
+	width: string
+	height: string
+}) => (
+	<object
+		className={`${width} ${height} bg-dark-4`}
+		data='assets/images/House of Historical.svg'></object>
 )
 
 export default Historical
