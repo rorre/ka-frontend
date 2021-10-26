@@ -12,7 +12,7 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 				<div className='flex bg-dark-4 divide-x-2 divide-dashed divide-dark-2 border-dark-2'>
 					<ProfilePictureContainer image={image} />
 					<div className='flex-col w-7/12 ml-4 pl-3 bg-dark-4 relative'>
-						<div className='order-1 text-white text-sm md:ml-0 md:mt-6 ml-2 mt-5 bg-dark-4 mr-1 mb-1'>
+						<div className='order-1 text-white text-sm md:ml-0 md:mt-6 ml-2 mt-8 bg-dark-4 mr-1 mb-1'>
 							{utils.shortenName(name)}
 						</div>
 						<div className='order-2 text-white md:ml-0 ml-2 font-extralight text-xs bg-dark-4 mr-1'>
@@ -21,7 +21,7 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 						<div className='order-3 flex justify-start mt-1 bg-dark-4 md:mr-3 mr-1'>
 							{utils.getHouseIcon(house)}
 						</div>
-						<div className='order-4 flex justify-end bg-dark-4 md:mt-0 mt-9 mr-1'>
+						<div className='order-4 flex justify-end bg-dark-4 md:mt-0 mt-6 mr-1'>
 							<Social.LineIcon width='md:w-7 w-10' height='md:h-7 h-10' />
 							<Social.InstagramIcon width='md:h-7 w-10' height='md:h-7 h-10' />
 						</div>
@@ -36,11 +36,11 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 const UpperNotch = styled.div`
 	position: absolute;
 	top: -4px;
-	right: 43%;
+	right: 42.8%;
 	height: 2rem;
 	width: 2.65rem;
-	z-index: 2;
-	background-color: #13111a;
+	z-index: 1;
+	background: #13111a;
 	border-color: #302c3f;
 	border-width: 0 4px 4px 4px;
 	border-bottom-right-radius: 50%;
@@ -56,7 +56,7 @@ const UpperNotch = styled.div`
 const LowerNotch = styled.div`
 	position: absolute;
 	bottom: -4px;
-	right: 43%;
+	right: 42.8%;
 	height: 2rem;
 	width: 2.65rem;
 	z-index: 0;

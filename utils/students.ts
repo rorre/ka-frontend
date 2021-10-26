@@ -107,4 +107,76 @@ export const students = [
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
+	{
+		id: 13,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 14,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 15,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 16,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 17,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 18,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 19,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
+	{
+		id: 20,
+		npm: '2106651234',
+		name: 'Mohammed Jonathan Gus',
+		house: 'Fantasy',
+		major: 'Information System',
+		image:
+			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
+	},
 ]
