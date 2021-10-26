@@ -9,8 +9,9 @@ const SearchBar = () => {
 	}
 
 	return (
-		<div className='bg-dark-2 mx-12 pr-4 rounded-xl'>
+		<div className='bg-dark-2 mx-12 pr-4 rounded-xl bg-transparent'>
 			<SearchInput
+				name='query'
 				className='focus:outline-none inline-block bg-dark-2 p-6 rounded-l-xl lg:w-6/12 md:w-5/12 sm:w-3/12 text-gray-400 border-r-2 border-black'
 				type='text'
 				placeholder='Search by name'
@@ -35,17 +36,17 @@ const SearchBarDropdown = () => {
 	const [major, setMajor] = useState('')
 
 	return (
-		<Dropdown className='relative inline-block bg-dark-2 px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
-			<div className='bg-dark-2'>
+		<Dropdown className='relative inline-block bg-transparent px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
+			<div className='bg-transparent'>
 				<button
 					onClick={() => setIsDropdown(!isDropdown)}
 					type='button'
 					className='inline-flex w-full text-gray-400'>
-					<span className='w-11/12 text-left bg-dark-2'>
+					<span className='w-11/12 text-left bg-transparent'>
 						{major === '' ? 'Major' : major}
 					</span>
 					<svg
-						className={`w-1/12 bg-dark-2 ${
+						className={`w-1/12 bg-transparent ${
 							isDropdown && 'transform rotate-180'
 						}`}
 						xmlns='http://www.w3.org/2000/svg'
@@ -67,8 +68,9 @@ const SearchBarDropdown = () => {
 							type='button'
 							onClick={() => {
 								setMajor('Computer Science')
-								setIsDropdown(!isDropdown)
 							}}
+							value={major}
+							name='major'
 							className='text-left bg-dark-3 text-gray-400 w-full border-b-2 px-6 py-2 rounded-t-lg border-dark-2'>
 							Computer Science
 						</button>
@@ -76,8 +78,9 @@ const SearchBarDropdown = () => {
 							type='button'
 							onClick={() => {
 								setMajor('Information System')
-								setIsDropdown(!isDropdown)
 							}}
+							name='major'
+							value={major}
 							className='text-left bg-dark-3 text-gray-400 w-full border-t-2 px-6 py-2 rounded-b-lg border-dark-2'>
 							Information System
 						</button>
