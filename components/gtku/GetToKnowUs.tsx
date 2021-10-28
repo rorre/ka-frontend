@@ -12,7 +12,8 @@ const Card = styled.div`
 	);
 	backdrop-filter: blur(4px);
 	border-radius: 20px;
-	padding: 35px;
+	padding: 54px 35px;
+	height: 400px;
 	max-width: 300px;
 	text-align: center;
 	display: flex;
@@ -42,7 +43,7 @@ const GetToKnowUs = () => {
 							className={style.img}
 						/>
 					</Link>
-					<h3 className='mb-7'>Yearbook</h3>
+					<h3 className='mb-7 text-2xl'>Yearbook</h3>
 					<p className={style.p}>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 				<Card>
@@ -53,7 +54,7 @@ const GetToKnowUs = () => {
 							className={style.img}
 						/>
 					</Link>
-					<h3 className='mb-7'>Quiz</h3>
+					<h3 className='mb-7 text-2xl'>Quiz</h3>
 					<p className={style.p}>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 				<Card>
@@ -64,7 +65,7 @@ const GetToKnowUs = () => {
 							className={style.img}
 						/>
 					</Link>
-					<h3 className='mb-7'>Our Thoughts</h3>
+					<h3 className='mb-7 text-2xl'>Our Thoughts</h3>
 					<p className={style.p}>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 				<Card>
@@ -75,7 +76,7 @@ const GetToKnowUs = () => {
 							className={style.img}
 						/>
 					</Link>
-					<h3 className='mb-7'>Our Passions</h3>
+					<h3 className='mb-7 text-2xl'>Our Passions</h3>
 					<p className={style.p}>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 				<Card>
@@ -86,7 +87,7 @@ const GetToKnowUs = () => {
 							className={style.img}
 						/>
 					</Link>
-					<h3 className='mb-7'>Tutor Angkatan</h3>
+					<h3 className='mb-7 text-2xl'>Tutor Angkatan</h3>
 					<p className={style.p}>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 			</div>

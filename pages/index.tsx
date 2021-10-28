@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// import styles from '../styles/Home.module.css'
 import GetToKnowUs from '../components/gtku/GetToKnowUs'
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
 					CSUI<br></br>2021
 				</h1>
 			</div>
-			<div className={styles.main}>
+			<div className='text-white'>
 				<GetToKnowUs />
 			</div>
 
