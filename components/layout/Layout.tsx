@@ -1,5 +1,4 @@
 import React from 'react'
-import style from './Layout.module.css'
 import MainNavigation from './MainNavigation'
 
 type Props = {
@@ -10,7 +9,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<div>
 			<MainNavigation />
-			<main className={style.main}>{children}</main>
+			<main className='my-0 mx-auto w-11/12'>{children}</main>
 		</div>
 	)
 }
