@@ -20,6 +20,10 @@ a {
 	box-sizing: border-box;
 }
 
+p {
+	font-family: Montserrat;
+}
+
 h1 {
 	font-size: 56px;
 	font-weight: 700;

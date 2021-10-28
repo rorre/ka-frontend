@@ -29,11 +29,9 @@ const Card = styled.div`
 const GetToKnowUs = () => {
 	return (
 		<div>
-			<div className={style.h2}>
-				<h2>
-					Get to<br></br>Know Us
-				</h2>
-			</div>
+			<h2 className='my-24'>
+				Get to<br></br>Know Us
+			</h2>
 			<div className='flex xl:flex-nowrap flex-wrap space-x-5 justify-center'>
 				<Card>
 					<Link href='/yearbook'>
