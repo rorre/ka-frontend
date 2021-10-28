@@ -28,7 +28,7 @@ const Card = styled.div`
 
 const GetToKnowUs = () => {
 	return (
-		<div>
+		<div className='h-screen'>
 			<h2 className='my-24'>
 				Get to<br></br>Know Us
 			</h2>

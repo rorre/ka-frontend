@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import GetToKnowUs from '../components/gtku/GetToKnowUs'
+import OurStories from '../components/ourstories/OurStories'
 
 const Home = () => {
 	return (
@@ -59,6 +60,9 @@ const Home = () => {
 						platea dictumst vestibulum. Porttitor eget dolor morbi non.
 					</p>
 				</div>
+			</div>
+			<div className='text-white'>
+				<OurStories />
 			</div>
 			<div className='text-white'>
 				<GetToKnowUs />
