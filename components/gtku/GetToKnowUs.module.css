@@ -1,0 +1,18 @@
+.p {
+	font-family: Montserrat;
+	font-weight: 400;
+	size: 16px;
+}
+
+.h2 {
+	max-width: 200px;
+	margin: 100px 0;
+}
+
+.img {
+	background: linear-gradient(316.49deg, #04091c -17.19%, #164f85 103.21%);
+	border-radius: 500px;
+	max-width: 121.22px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
