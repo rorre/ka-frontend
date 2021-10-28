@@ -5,13 +5,18 @@ import GetToKnowUs from '../components/gtku/GetToKnowUs'
 
 const Home = () => {
 	return (
-		<div className={styles.container}>
+		<div>
 			<Head>
 				<title>CSUI 2021</title>
 				<meta name='description' content='Karya Angkatan CSUI 2021' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-
+			<div className='flex flex-col h-screen text-white text-center items-center justify-center'>
+				<h2>INTRODUCING</h2>
+				<h1 className='text-9xl'>
+					CSUI<br></br>2021
+				</h1>
+			</div>
 			<div className={styles.main}>
 				<GetToKnowUs />
 			</div>
