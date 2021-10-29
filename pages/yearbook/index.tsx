@@ -6,6 +6,7 @@ import {
 	YearbookProfileCard,
 	YearbookFilterDropdown,
 	YearbookSortDropdown,
+	YearbookPagination,
 } from '../../components/yearbook'
 import { students } from '../../utils/students'
 import { Student } from '../../components/yearbook/ts/interfaces'
@@ -76,6 +77,11 @@ const CharactersPage = () => {
 					</div>
 				))}
 			</div>
+			<YearbookContainer>
+				<YearbookPagination />
+			</YearbookContainer>
+			<hr className='my-10 border-t-2 border-dark-2' />
+			<div className='my-48 bg-dark-2'></div>
 		</div>
 	)
 }
