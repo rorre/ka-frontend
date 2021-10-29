@@ -1,43 +1,108 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
 	filter: hue-rotate(135deg) brightness(0.8);
 `
 
+const StyledDropdown = styled.div`
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	&::-webkit-scrollbar-track {
+		border-radius: 100vh;
+		background-color: #13111a;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #5e5b71;
+		border-radius: 100vh;
+		border: 3px solid #edf2;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #5e5b71;
+	}
+`
+
+const DropdownOption = ({
+	house,
+	checked,
+	filters,
+	className = '',
+	filterHandler,
+	setCondition,
+}: {
+	house: string
+	checked: boolean
+	filters: string[]
+	className?: string
+	filterHandler: Function
+	setCondition: React.Dispatch<React.SetStateAction<boolean>>
+}) => (
+	<button
+		type='button'
+		onClick={() => filterHandler(checked, setCondition)}
+		className={`relative text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full px-5 py-2 border-dark-2 ${className}`}>
+		{house}
+		<StyledCheckbox
+			onChange={() => filterHandler(checked, setCondition)}
+			type='checkbox'
+			className='absolute right-4 top-3.5'
+			checked={checked}
+			name='filters'
+			value={house}
+		/>
+	</button>
+)
+
 const FilterDropdown = () => {
 	const [isDropdown, setIsDropdown] = useState(false)
-	const [isCSChecked, setIsCSChecked] = useState(false)
-	const [isSIChecked, setIsSIChecked] = useState(false)
+
+	const [isActionChecked, setIsActionChecked] = useState(false)
+	const [isAnimationChecked, setIsAnimationChecked] = useState(false)
+	const [isApocalypseChecked, setIsApocalypseChecked] = useState(false)
+	const [isComedyChecked, setIsComedyChecked] = useState(false)
+	const [isFantasyChecked, setIsFantasyChecked] = useState(false)
+	const [isHistoricalChecked, setIsHistoricalChecked] = useState(false)
+	const [isHorrorChecked, setIsHorrorChecked] = useState(false)
+	const [isMusicalChecked, setIsMusicalChecked] = useState(false)
+	const [isMysteryChecked, setIsMysteryChecked] = useState(false)
+	const [isRomanceChecked, setIsRomanceChecked] = useState(false)
+	const [isSpaceChecked, setIsSpaceChecked] = useState(false)
+	const [isSuperheroChecked, setIsSuperheroChecked] = useState(false)
+
 	const [filters, setFilters] = useState([] as string[])
 
-	const filterHandler = (filter: string) => {
-		if (filter === 'CS') {
-			setIsCSChecked(!isCSChecked)
-			if (isCSChecked) {
-				const newFilters = filters
-				newFilters.push('Computer Science')
-				setFilters(newFilters)
-			} else {
-				const newFilters = filters.filter(
-					filter => filter !== 'Computer Science'
-				)
-				setFilters(newFilters)
-			}
-		} else if (filter === 'SI') {
-			setIsSIChecked(!isSIChecked)
-			if (isSIChecked) {
-				const newFilters = filters
-				newFilters.push('Information System')
-				setFilters(newFilters)
-			} else {
-				const newFilters = filters.filter(
-					filter => filter !== 'Information System'
-				)
-				setFilters(newFilters)
-			}
+	const filterHandler = async (
+		condition: boolean,
+		setCondition: React.Dispatch<React.SetStateAction<boolean>>
+	) => {
+		await setCondition(!condition)
+
+		const checkedArray = document.querySelectorAll(
+			'input[type=checkbox]:checked'
+		)
+
+		const newFilters = []
+
+		for (let index = 0; index < checkedArray.length; index++) {
+			newFilters.push(checkedArray[index].getAttribute('value') as string)
 		}
+		setFilters(newFilters)
 	}
+
+	const hasMounted = useRef(false)
+
+	useEffect(() => {
+		if (!hasMounted.current) {
+			hasMounted.current = true
+		} else {
+			console.log(filters)
+		}
+	}, [filters])
 
 	return (
 		<div className='relative inline-block bg-dark-2 px-5 py-2.5 border-black rounded-xl lg:w-3/12 md:w-4/12 sm:w-full text-gray-400'>
@@ -65,36 +130,92 @@ const FilterDropdown = () => {
 			</div>
 			<div>
 				{isDropdown && (
-					<div className='z-10 absolute w-full right-0 mt-4 text-gray-400 bg-dark-2 rounded-xl'>
-						<button
-							type='button'
-							onClick={() => filterHandler('CS')}
-							className='relative text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full px-5 py-2 rounded-t-lg border-dark-2'>
-							Computer Science
-							<StyledCheckbox
-								onChange={() => filterHandler('CS')}
-								type='checkbox'
-								className='absolute right-4 top-3.5'
-								checked={isCSChecked}
-								name='filters'
-								value={filters}
-							/>
-						</button>
-						<button
-							type='button'
-							onClick={() => filterHandler('SI')}
-							className='relative text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full px-5 py-2 rounded-b-lg border-dark-2'>
-							Information System
-							<StyledCheckbox
-								type='checkbox'
-								onChange={() => filterHandler('SI')}
-								className='absolute right-4 top-3.5'
-								checked={isSIChecked}
-								name='filters'
-								value={filters}
-							/>
-						</button>
-					</div>
+					<StyledDropdown className='z-10 max-h-40 overflow-y-auto absolute w-full right-0 mt-4 text-gray-400 bg-dark-2 rounded-xl'>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Action'
+							checked={isActionChecked}
+							setCondition={setIsActionChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Animation'
+							checked={isAnimationChecked}
+							setCondition={setIsAnimationChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Apocalypse'
+							checked={isApocalypseChecked}
+							setCondition={setIsApocalypseChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Comedy'
+							checked={isComedyChecked}
+							setCondition={setIsComedyChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Fantasy'
+							checked={isFantasyChecked}
+							setCondition={setIsFantasyChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Historical'
+							checked={isHistoricalChecked}
+							setCondition={setIsHistoricalChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Horror'
+							checked={isHorrorChecked}
+							setCondition={setIsHorrorChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Musical'
+							checked={isMusicalChecked}
+							setCondition={setIsMusicalChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Mystery'
+							checked={isMysteryChecked}
+							setCondition={setIsMysteryChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Romance'
+							checked={isRomanceChecked}
+							setCondition={setIsRomanceChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Space'
+							checked={isSpaceChecked}
+							setCondition={setIsSpaceChecked}
+						/>
+						<DropdownOption
+							filters={filters}
+							filterHandler={filterHandler}
+							house='Superhero'
+							checked={isSuperheroChecked}
+							setCondition={setIsSuperheroChecked}
+						/>
+					</StyledDropdown>
 				)}
 			</div>
 		</div>
