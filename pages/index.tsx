@@ -12,7 +12,7 @@ const Home = () => {
 				<meta name='description' content='Karya Angkatan CSUI 2021' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<div className='flex flex-col h-screen text-white text-center items-center justify-center'>
+			<div className='flex flex-col h-screen text-white text-center items-center justify-center cursor-default'>
 				<h2>INTRODUCING</h2>
 				<h1 className='text-9xl'>
 					CSUI<br></br>2021

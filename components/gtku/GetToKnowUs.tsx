@@ -39,7 +39,7 @@ const GetToKnowUs = () => {
 				Get to<br></br>Know Us
 			</h2>
 			<div className='flex xl:flex-nowrap flex-wrap space-x-5 justify-center'>
-				<Card>
+				<Card className='ml-5'>
 					<Link href='/yearbook'>
 						<Image src='/asset/image/yearbook-icon.svg' alt='Yearbook' />
 					</Link>
