@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import style from './MeetTheDevTeam.module.css'
 
 const DevCard = styled.div`
 	position: absolute;
@@ -13,20 +14,24 @@ const DevCard = styled.div`
 	cursor: pointer;
 	background: #1d1a27;
 	border-radius: 20px;
-	box-shadow: -30px 0 100px #164f85, 30px 0 100px #ab1818;
+	@media (max-width: 1000px) {
+		width: 70%;
+	}
 `
 
 const MeetTheDevTeam = () => {
 	return (
 		<div className='h-screen flex items-center justify-center'>
 			<Link href='/devteam'>
-				<DevCard>
+				<DevCard className={style.glow}>
 					<img
 						src='/asset/image/mtdt-icon.svg'
 						alt='Meet the Dev Team'
 						className='mb-10'
 					/>
-					<h2>Meet the Dev Team</h2>
+					<h2 className='3md:text-3xl 3sm:text-xl 3sm:max-w-3/4 text-center'>
+						Meet the Dev Team
+					</h2>
 				</DevCard>
 			</Link>
 		</div>

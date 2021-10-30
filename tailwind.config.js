@@ -4,7 +4,9 @@ module.exports = {
 	theme: {
 		screens: {
 			sm: '640px',
+			'2xs': '150px',
 			'2sm': '430px',
+			'3sm': { max: '430px' },
 
 			// => @media (min-width: 640px) { ... }
 
@@ -21,6 +23,11 @@ module.exports = {
 
 			'2xl': '1536px',
 			// => @media (min-width: 1536px) { ... }
+		},
+		maxWidth: {
+			'1/4': '25%',
+			'1/2': '50%',
+			'3/4': '75%',
 		},
 	},
 	variants: {
