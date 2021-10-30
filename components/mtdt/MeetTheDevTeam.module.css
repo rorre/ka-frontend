@@ -1,3 +1,7 @@
+.glow {
+	transition: box-shadow 0.5s ease-in-out;
+}
+
 .glow::after,
 .glow::before {
 	content: '';
@@ -9,10 +13,17 @@
 	border-radius: 20px;
 	z-index: -1;
 	animation: animate 10s linear infinite;
+	transition: box-shadow 1s ease-in-out;
 }
+
 .glow::after {
 	filter: blur(70px);
 }
+
+.glow:hover {
+	box-shadow: -10px 0 100px #164f85, 10px 0 100px #ab1818;
+}
+
 @keyframes animate {
 	0% {
 		background-position: 0% 0%;
