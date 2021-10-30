@@ -3,6 +3,7 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import GetToKnowUs from '../components/gtku/GetToKnowUs'
 import OurStories from '../components/ourstories/OurStories'
+import MeetTheDevTeam from '../components/mtdt/MeetTheDevTeam'
 
 const Home = () => {
 	return (
@@ -66,6 +67,9 @@ const Home = () => {
 			</div>
 			<div className='text-white'>
 				<GetToKnowUs />
+			</div>
+			<div className='text-white'>
+				<MeetTheDevTeam />
 			</div>
 
 			{/* <footer className={styles.footer}>

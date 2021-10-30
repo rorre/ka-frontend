@@ -31,7 +31,7 @@ const Story = styled.div`
 
 const OurStories = () => {
 	return (
-		<div className='h-screen'>
+		<div className='h-full'>
 			<h2 className='my-24 text-center 2sm:text-left'>Our Stories</h2>
 			<div className='2md:grid grid-cols-8'>
 				<div className='col-span-3 flex flex-col items-center 3md:mb-10'>
