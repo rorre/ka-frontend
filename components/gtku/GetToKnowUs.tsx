@@ -35,7 +35,7 @@ const Card = styled.div`
 const GetToKnowUs = () => {
 	return (
 		<div className='h-screen'>
-			<h2 className='my-24'>
+			<h2 className='my-24 text-center 2sm:text-left'>
 				Get to<br></br>Know Us
 			</h2>
 			<div className='flex xl:flex-nowrap flex-wrap space-x-5 justify-center'>

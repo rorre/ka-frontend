@@ -18,12 +18,12 @@ const Home = () => {
 					CSUI<br></br>2021
 				</h1>
 			</div>
-			<div className='text-white h-screen'>
-				<h2 className='my-24'>
-					Message from our<br></br>coordinator
+			<div className='text-white h-full'>
+				<h2 className='my-24 2sm:max-w-md text-center 2sm:text-left'>
+					Message from our coordinator
 				</h2>
 				<div className='flex justify-center'>
-					<p className='max-w-4xl'>
+					<p className='2sm:max-w-4xl max-w-xs text-center 2sm:text-left'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
 						nulla facilisi nullam vehicula ipsum a arcu. Enim neque volutpat ac
