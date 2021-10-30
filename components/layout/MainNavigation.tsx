@@ -16,10 +16,7 @@ const MainNavigation = () => {
 	const closeButtonClass: string = 'fixed text-gray-800 top-6 right-5 z-40'
 
 	const burgerHandler = () => {
-		const css: string = 'test'
-		console.log(css)
 		setIsOpen(!isOpen)
-		console.log(isOpen)
 	}
 
 	return (
@@ -44,19 +41,19 @@ const MainNavigation = () => {
 				/>
 			</svg>
 			<ul className={isOpen === false ? ulClassClose : ulClassOpen}>
-				<li>
+				<li className='hover:text-red-600 active:text-red-600 transform hover:scale-110 transition-transform'>
 					<Link href='/'>Home</Link>
 				</li>
-				<li>
+				<li className='hover:text-blue-600 transform hover:scale-110 transition-transform'>
 					<Link href='/yearbook'>Yearbook</Link>
 				</li>
-				<li>
+				<li className='hover:text-red-600 transform hover:scale-110 transition-transform'>
 					<Link href='/quiz'>Quiz</Link>
 				</li>
-				<li className='min-w-max'>
+				<li className='min-w-max hover:text-blue-600 transform hover:scale-110 transition-transform'>
 					<Link href='/ourthoughts'>Our Thoughts</Link>
 				</li>
-				<li className='min-w-max'>
+				<li className='min-w-max hover:text-red-600 transform hover:scale-110 transition-transform'>
 					<Link href='/ourpassions'>Our Passions</Link>
 				</li>
 			</ul>

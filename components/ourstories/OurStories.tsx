@@ -3,11 +3,18 @@ import styled from 'styled-components'
 import Link from 'next/link'
 
 const SeeMore = styled.h6`
-	background: linear-gradient(112.71deg, #ab1818 17.21%, #520000 91.53%);
+	background-image: linear-gradient(112.71deg, #ab1818 17.21%, #520000 91.53%);
 	border-radius: 31.7143px;
 	padding: 10px 90px;
 	bottom: 0px;
 	cursor: pointer;
+	&:hover {
+		background-image: linear-gradient(
+			316.49deg,
+			#04091c -17.19%,
+			#164f85 103.21%
+		);
+	}
 `
 
 const Story = styled.div`
@@ -41,7 +48,7 @@ const OurStories = () => {
 						nulla facilisi nullam vehicula ipsum a arcu.{' '}
 					</p>
 					<Link href='/ourstories'>
-						<SeeMore>See More</SeeMore>
+						<SeeMore className='animate-bounce'>See More</SeeMore>
 					</Link>
 				</div>
 				<div className='col-start-4 col-end-9 gap-5 flex 3md:overflow-x-scroll'>
