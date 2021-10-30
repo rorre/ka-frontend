@@ -6,9 +6,9 @@ const MainNavigation = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const ulClassOpen: string =
-		'fixed right-0 bg-gray-500 h-full top-0 w-1/3 p-10 pt-16 text-white text-2xl space-y-3 z-30 min-w-max transition ease-in duration-300'
+		'fixed right-0 bg-gray-500 h-full top-0 p-10 pt-16 text-white text-2xl space-y-3 z-30 min-w-max transition ease-in duration-300'
 	const ulClassClose: string =
-		'ml-20 2md:space-x-16 text-gray-800 2md:flex transition ease-in duration-300 3md:fixed 3md:right-0 3md:bg-gray-500 3md:h-full 3md:top-0 3md:w-1/3 3md:p-10 3md:pt-16 3md:text-white 3md:text-2xl 3md:space-y-3 3md:z-30 3md:min-w-max transform 3md:translate-x-full'
+		'ml-20 2md:space-x-16 text-gray-800 2md:flex transition ease-in duration-300 3md:fixed 3md:right-0 3md:bg-gray-500 3md:h-full 3md:top-0 3md:p-10 3md:pt-16 3md:text-white 3md:text-2xl 3md:space-y-3 3md:z-30 3md:min-w-max transform 3md:translate-x-full'
 	const closeButton: string =
 		'M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
 	const burgerButton: string =

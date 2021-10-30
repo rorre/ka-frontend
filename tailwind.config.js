@@ -24,11 +24,6 @@ module.exports = {
 			'2xl': '1536px',
 			// => @media (min-width: 1536px) { ... }
 		},
-		maxWidth: {
-			'1/4': '25%',
-			'1/2': '50%',
-			'3/4': '75%',
-		},
 	},
 	variants: {
 		extend: {},
