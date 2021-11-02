@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
-import GetToKnowUs from '../components/gtku/GetToKnowUs'
-import OurStories from '../components/ourstories/OurStories'
-import MeetTheDevTeam from '../components/mtdt/MeetTheDevTeam'
+import GetToKnowUs from '../app/components/gtku/GetToKnowUs'
+import OurStories from '../app/components/ourstories/OurStories'
+import MeetTheDevTeam from '../app/components/mtdt/MeetTheDevTeam'
 
 const Home = () => {
 	return (
@@ -13,18 +13,18 @@ const Home = () => {
 				<meta name='description' content='Karya Angkatan CSUI 2021' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<div className='flex flex-col h-screen text-white text-center items-center justify-center cursor-default'>
+			<div className='flex flex-col items-center justify-center h-screen text-center text-white cursor-default'>
 				<h2>INTRODUCING</h2>
 				<h1 className='text-9xl'>
 					CSUI<br></br>2021
 				</h1>
 			</div>
-			<div className='text-white h-full'>
-				<h2 className='my-24 2sm:max-w-md text-center 2sm:text-left'>
+			<div className='h-full text-white'>
+				<h2 className='my-24 text-center 2sm:max-w-md 2sm:text-left'>
 					Message from our coordinator
 				</h2>
 				<div className='flex justify-center'>
-					<p className='2sm:max-w-4xl max-w-xs text-center 2sm:text-left'>
+					<p className='max-w-xs text-center 2sm:max-w-4xl 2sm:text-left'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
 						nulla facilisi nullam vehicula ipsum a arcu. Enim neque volutpat ac

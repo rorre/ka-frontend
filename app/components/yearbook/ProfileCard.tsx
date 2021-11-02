@@ -9,19 +9,19 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 		<div className='bg-dark-4 py-2 pl-2 m-1.5 border-4 relative rounded-xl border-dark-2'>
 			<UpperNotch />
 			<article>
-				<div className='flex bg-dark-4 divide-x-2 divide-dashed divide-dark-2 border-dark-2'>
+				<div className='flex divide-x-2 bg-dark-4 divide-dashed divide-dark-2 border-dark-2'>
 					<ProfilePictureContainer image={image} />
-					<div className='flex-col w-7/12 ml-4 pl-3 bg-dark-4 relative'>
-						<div className='order-1 text-white text-sm md:ml-0 md:mt-6 ml-2 mt-8 bg-dark-4 mr-1 mb-1'>
+					<div className='relative flex-col w-7/12 pl-3 ml-4 bg-dark-4'>
+						<div className='order-1 mt-8 mb-1 ml-2 mr-1 text-sm text-white md:ml-0 md:mt-6 bg-dark-4'>
 							{utils.shortenName(name)}
 						</div>
-						<div className='order-2 text-white md:ml-0 ml-2 font-extralight text-xs bg-dark-4 mr-1'>
+						<div className='order-2 ml-2 mr-1 text-xs text-white md:ml-0 font-extralight bg-dark-4'>
 							{major}
 						</div>
-						<div className='order-3 flex justify-start mt-1 bg-dark-4 md:mr-3 mr-1'>
+						<div className='flex justify-start order-3 mt-1 mr-1 bg-dark-4 md:mr-3'>
 							{utils.getHouseIcon(house)}
 						</div>
-						<div className='order-4 flex justify-end bg-dark-4 md:mt-0 mt-6 mr-1'>
+						<div className='flex justify-end order-4 mt-6 mr-1 bg-dark-4 md:mt-0'>
 							<Social.LineIcon width='md:w-7 w-10' height='md:h-7 h-10' />
 							<Social.InstagramIcon width='md:h-7 w-10' height='md:h-7 h-10' />
 						</div>
