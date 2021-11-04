@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
 import NavLink from './NavLink'
@@ -6,33 +6,56 @@ import Logo from './styles/Logo.styled'
 import menus from './utils/menus'
 import LoginButton from './LoginButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CollapsibleMenu from './CollapsibleMenu'
 
 const Navbar = () => {
+	const [isCollapse, setCollapse] = useState(false)
+	const [isScroll, setScroll] = useState(false)
+
+	const icon = !isCollapse ? 'bars' : 'times'
+
+	useEffect(() => {
+		window.addEventListener('scroll', () =>
+			!window.scrollY ? setScroll(false) : setScroll(true)
+		)
+	}, [])
+
 	return (
-		<nav className='grid items-center w-full grid-cols-2 px-8 py-4 bg-transparent md:px-12 md:py-8 md:grid-cols-6'>
-			<div className='col-span-1 bg-transparent'>
-				<Link href='/' passHref>
-					<a>
-						<Logo className='text-3xl font-bold md:text-4xl '>CSUI2021</Logo>
-					</a>
-				</Link>
+		<nav
+			className={` w-full fixed min-w-max z-10 transition-all duration-300 ease-in-out ${
+				!isCollapse && !isScroll ? 'bg-transparent' : 'bg-dark-2'
+			}`}>
+			<div className='grid items-center w-full grid-cols-2 px-6 py-4 lg:px-12 lg:py-4 lg:grid-cols-6'>
+				<div className='col-span-1 bg-transparent'>
+					<Link href='/' passHref>
+						<a>
+							<Logo className='text-3xl font-bold lg:text-4xl '>CSUI2021</Logo>
+						</a>
+					</Link>
+				</div>
+				<div className='flex justify-end col-span-1 lg:hidden'>
+					<button
+						className='w-10 h-10 p-3 text-white rounded-full bg-dark-2 filter drop-shadow-2xl'
+						onClick={() => setCollapse(!isCollapse)}>
+						<FontAwesomeIcon icon={['fas', icon]} size='lg' />
+					</button>
+				</div>
+				<div
+					className={`hidden text-white lg:col-span-4 lg:grid lg:grid-cols-${
+						Object.keys(menus).length
+					}`}>
+					{Object.keys(menus).map(menu => (
+						<div key={uuid()} className='flex justify-center col-span-1'>
+							<NavLink label={menu} url={menus[menu]} />
+						</div>
+					))}
+				</div>
+				<div className='hidden lg:flex lg:justify-end'>
+					<LoginButton />
+				</div>
 			</div>
-			<div className='flex justify-end col-span-1 md:hidden'>
-				<button className='w-10 h-10 p-3 text-white rounded-full bg-dark-2'>
-					<FontAwesomeIcon icon={['fas', 'bars']} size='lg' />
-				</button>
-			</div>
-			<div
-				className={`hidden text-white md:col-span-4 md:grid md:grid-cols-${
-					Object.keys(menus).length
-				}`}>
-				{Object.keys(menus).map(menu => (
-					<NavLink key={uuid()} label={menu} url={menus[menu]} />
-				))}
-			</div>
-			<div className='hidden md:flex md:justify-end'>
-				<LoginButton />
-			</div>
+
+			<CollapsibleMenu collapse={isCollapse} />
 		</nav>
 	)
 }
