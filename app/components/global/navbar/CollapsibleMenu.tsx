@@ -8,7 +8,7 @@ import menus from './utils/menus'
 const CollapsibleMenu = ({ collapse }: CollapsibleMenuInterface) => {
 	return (
 		<div
-			className={` flex-col col-span-2 gap-10 p-6 text-white lg:hidden bg-dark-2 ${
+			className={`flex-col col-span-2 gap-10 p-6 text-white lg:hidden bg-dark-2 ${
 				!collapse ? 'hidden' : 'flex'
 			}`}>
 			{Object.keys(menus).map(menu => (
