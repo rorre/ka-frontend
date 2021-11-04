@@ -23,29 +23,27 @@ module.exports = {
 
 			'2xl': '1536px',
 			// => @media (min-width: 1536px) { ... }
-
-			container: {
-				screens: {
-					sm: '640px',
-					md: '768px',
-					lg: '1024px',
-					xl: '1080px',
-				},
+		},
+		extend: {
+			fontFamily: { sans: ['Poppins'] },
+			colors: {
+				'dark-1': '#13111A',
+				'dark-2': '#302C3F',
+				'dark-3': '#5E5B71',
+				'dark-4': '#1D1A27',
+				'blue-dark': '#164F85',
+				'red-dark': '#AB1818',
 			},
-			extend: {
-				fontFamily: { sans: ['Poppins'] },
-				colors: {
-					'dark-1': '#13111A',
-					'dark-2': '#302C3F',
-					'dark-3': '#5E5B71',
-					'dark-4': '#1D1A27',
-					'blue-dark': '#164F85',
-				},
+			dropShadow: {
+				'blue-dark': '0 25px 25px rgba(255, 255, 255, 1)',
 			},
 		},
-		variants: {
-			extend: {},
-		},
-		plugins: [],
 	},
+	variants: {
+		extend: {
+			dropShadow: ['hover'],
+			backgroundImage: ['group-hover', 'hover'],
+		},
+	},
+	plugins: [],
 }
