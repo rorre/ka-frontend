@@ -1,5 +1,5 @@
 import React from 'react'
-import MainNavigation from './MainNavigation'
+import Navbar from '../components/global/navbar'
 import Footer from './Footer'
 
 type Props = {
@@ -8,11 +8,11 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<div>
-			<MainNavigation />
-			<main className='my-0 mx-auto w-11/12'>{children}</main>
+		<>
+			<Navbar />
+			<main className='w-11/12 mx-auto my-0'>{children}</main>
 			<Footer />
-		</div>
+		</>
 	)
 }
 
