@@ -22,8 +22,16 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 							{utils.getHouseIcon(house)}
 						</div>
 						<div className='flex justify-end order-4 mt-6 mr-1 bg-dark-4 md:mt-0'>
-							<Social.LineIcon width='md:w-7 w-10' height='md:h-7 h-10' />
-							<Social.InstagramIcon width='md:h-7 w-10' height='md:h-7 h-10' />
+							<Social.LineIcon
+								width='md:w-7 w-10'
+								height='md:h-7 h-10'
+								backgroundColor={'bg-dark-4'}
+							/>
+							<Social.InstagramIcon
+								width='md:h-7 w-10'
+								height='md:h-7 h-10'
+								backgroundColor={'bg-dark-4'}
+							/>
 						</div>
 					</div>
 				</div>
@@ -77,7 +85,7 @@ const LowerNotch = styled.div`
 export default ProfileCard
 
 const ProfilePictureContainer = ({ image }: { image: string }) => (
-	<div className='rounded-xl w-5/12 border-4 rounded-xl border-dark-2 mr-1.5'>
+	<div className='rounded-xl w-5/12 border-4 border-dark-2 mr-1.5'>
 		<ProfilePicture className='h-full' src={image} alt='Profile-Image' />
 	</div>
 )

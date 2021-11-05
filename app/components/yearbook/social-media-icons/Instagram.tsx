@@ -3,12 +3,14 @@ import React from 'react'
 const Instagram = ({
 	width = '',
 	height = '',
+	backgroundColor = 'bg-dark-4',
 }: {
 	width: string
 	height: string
+	backgroundColor: string
 }) => (
 	<object
-		className={`${width} ${height} bg-dark-4 md:ml-0 ml-1`}
+		className={`${width} ${height} ${backgroundColor}`}
 		data='assets/images/Instagram.svg'></object>
 )
 
