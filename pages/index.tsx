@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
 import GetToKnowUs from '../app/components/gtku/GetToKnowUs'
 import OurStories from '../app/components/ourstories/OurStories'
 import MeetTheDevTeam from '../app/components/mtdt/MeetTheDevTeam'

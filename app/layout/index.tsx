@@ -8,11 +8,11 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<>
+		<main className='bg-no-repeat bg-contain bg-shade-pattern'>
 			<Navbar />
-			<main className='w-11/12 mx-auto my-0'>{children}</main>
+			<div className='mx-auto'>{children}</div>
 			<Footer />
-		</>
+		</main>
 	)
 }
 

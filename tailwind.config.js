@@ -37,6 +37,9 @@ module.exports = {
 			dropShadow: {
 				'blue-dark': '0 25px 25px rgba(255, 255, 255, 1)',
 			},
+			backgroundImage: {
+				'shade-pattern': "url('/assets/images/bg_shade.svg')",
+			},
 		},
 	},
 	variants: {
