@@ -2,7 +2,6 @@ import React from 'react'
 import {
 	YearbookSearchBar,
 	YearbookContainer,
-	YearbookNavbar,
 	YearbookProfileCard,
 	YearbookFilterDropdown,
 	YearbookSortDropdown,
@@ -41,7 +40,6 @@ const CharactersPage = () => {
 		<div>
 			<GradientBackgroundBlue />
 			<GradientBackgroundRed />
-			<YearbookNavbar />
 			<YearbookContainer>
 				<h1 className='flex justify-center mt-16 text-4xl font-bold text-center text-white bg-transparent md:text-6xl'>
 					Our Characters

@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/global/navbar'
-import Footer from './Footer'
+import Footer from '../components/global/footer'
 
 type Props = {
 	children?: React.ReactChild | React.ReactChild[]
