@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import Link from 'next/link'
 import NavLink from './NavLink'
-import Logo from './styles/Logo.styled'
 import menus from './utils/menus'
 import LoginButton from './LoginButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CollapsibleMenu from './CollapsibleMenu'
+import Logo from '../logo'
 
 const Navbar = () => {
 	const [isCollapse, setCollapse] = useState(false)
@@ -27,11 +26,7 @@ const Navbar = () => {
 			}`}>
 			<div className='grid items-center w-full grid-cols-2 px-6 py-4 lg:px-12 lg:py-4 lg:grid-cols-6'>
 				<div className='col-span-1 bg-transparent'>
-					<Link href='/' passHref>
-						<a>
-							<Logo className='text-3xl font-bold lg:text-4xl '>CSUI2021</Logo>
-						</a>
-					</Link>
+					<Logo />
 				</div>
 				<div className='flex justify-end col-span-1 lg:hidden'>
 					<button
