@@ -1,3 +1,5 @@
 export { default as DevCard } from './DevCard.styled'
 export { default as Card } from './Card.styled'
 export { default as Image } from './Image.styled'
+export { default as SeeMore } from './SeeMore.styled'
+export { default as Story } from './Story.styled'
