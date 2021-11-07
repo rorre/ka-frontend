@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-const Story = styled.div`
-	background: white;
+const Story = styled.img`
+	object-fit: cover;
 	width: 320px;
 	height: 450px;
-	display: flex;
-	color: black;
 	text-align: center;
 	align-items: center;
 	transition: all 0.5s ease-in-out;
