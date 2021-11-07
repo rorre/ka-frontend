@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<main className='bg-no-repeat bg-contain bg-shade-pattern'>
 			<Navbar />
-			<div className='mx-auto'>{children}</div>
+			<div className='mx-auto max-w-9/10'>{children}</div>
 			<Footer />
 		</main>
 	)

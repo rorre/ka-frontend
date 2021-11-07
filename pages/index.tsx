@@ -1,13 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
-import GetToKnowUs from '../app/components/gtku/GetToKnowUs'
-import OurStories from '../app/components/ourstories/OurStories'
-import MeetTheDevTeam from '../app/components/mtdt/MeetTheDevTeam'
+import GetToKnowUs from '../app/components/landing-page/GetToKnowUs'
+import OurStories from '../app/components/landing-page/OurStories'
+import MeetTheDevTeam from '../app/components/landing-page/MeetTheDevTeam'
 
 const Home = () => {
 	return (
 		<div>
 			<Head>
+				{/* nnti dijadiin global component */}
 				<title>CSUI 2021</title>
 				<meta name='description' content='Karya Angkatan CSUI 2021' />
 				<link rel='icon' href='/favicon.ico' />
@@ -24,6 +25,7 @@ const Home = () => {
 				</h2>
 				<div className='flex justify-center'>
 					<p className='max-w-xs text-center 2sm:max-w-4xl 2sm:text-left'>
+						{/* nnti dijdiin mapping */}
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
 						nulla facilisi nullam vehicula ipsum a arcu. Enim neque volutpat ac
