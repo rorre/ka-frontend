@@ -6,7 +6,7 @@ export const contents = [
 		],
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 1,
+		id: 'story1',
 	},
 	{
 		image: [
@@ -15,7 +15,7 @@ export const contents = [
 		],
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 2,
+		id: 'story2',
 	},
 	{
 		image: [
@@ -24,6 +24,6 @@ export const contents = [
 		],
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 3,
+		id: 'story3',
 	},
 ]

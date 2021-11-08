@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 
 export const useHorizontalScroll = () => {
-	const elRef = useRef<HTMLInputElement>(null)
+	const elRef = useRef<HTMLDivElement | any>(null)
 	function preventDefault(e: any) {
 		e.preventDefault()
 	}
