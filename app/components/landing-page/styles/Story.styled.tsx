@@ -12,7 +12,6 @@ const Story = styled.img`
 		min-width: 320px;
 	}
 	&:hover {
-		transform: scale(1.1);
 		margin: 0 20px;
 	}
 `

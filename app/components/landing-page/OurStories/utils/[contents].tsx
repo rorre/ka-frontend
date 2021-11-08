@@ -1,29 +1,24 @@
 export const contents = [
 	{
-		image: [
+		foto: [
 			'http://dikti.kemdikbud.go.id/wp-content/uploads/2021/06/gedung-baru-fasilkom-1200x800.jpg',
 			'https://media-exp1.licdn.com/dms/image/C511BAQG1QwHZfNdsWA/company-background_10000/0/1581648575310?e=2159024400&v=beta&t=xTVBdzLcIa4FaG9X_n5cAlNvB17vKGbCGn6qQ6ERsME',
+			'https://cdn.antaranews.com/cache/730x487/2021/06/18/uilomba.jpg',
 		],
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 'story1',
+		detail: 'test',
 	},
 	{
-		image: [
+		foto: [
 			'http://dikti.kemdikbud.go.id/wp-content/uploads/2021/06/gedung-baru-fasilkom-1200x800.jpg',
 			'https://media-exp1.licdn.com/dms/image/C511BAQG1QwHZfNdsWA/company-background_10000/0/1581648575310?e=2159024400&v=beta&t=xTVBdzLcIa4FaG9X_n5cAlNvB17vKGbCGn6qQ6ERsME',
 		],
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 'story2',
+		detail: 'tes2',
 	},
 	{
-		image: [
+		foto: [
 			'http://dikti.kemdikbud.go.id/wp-content/uploads/2021/06/gedung-baru-fasilkom-1200x800.jpg',
 			'https://media-exp1.licdn.com/dms/image/C511BAQG1QwHZfNdsWA/company-background_10000/0/1581648575310?e=2159024400&v=beta&t=xTVBdzLcIa4FaG9X_n5cAlNvB17vKGbCGn6qQ6ERsME',
 		],
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.',
-		id: 'story3',
+		detail: 'tes3',
 	},
 ]

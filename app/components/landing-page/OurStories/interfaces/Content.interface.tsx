@@ -1,5 +1,5 @@
 export interface Content {
-	image: Array<string>
-	description: string
-	id: string
+	foto: Array<string>
+	detail: string
+	id?: number
 }
