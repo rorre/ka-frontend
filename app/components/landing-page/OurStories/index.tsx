@@ -8,7 +8,7 @@ import { useHorizontalScroll } from './hooks/useHorizontalScroll.hook'
 const OurStories = () => {
 	const scrollRef = useHorizontalScroll()
 	return (
-		<div className='h-full'>
+		<section className='h-full text-white'>
 			<h2 className='my-24 text-center 2sm:text-left'>Our Stories</h2>
 			<div className='2md:grid grid-cols-8'>
 				<div className='col-span-3 flex flex-col items-center 3md:mb-10'>
@@ -44,7 +44,7 @@ const OurStories = () => {
 					</Link> */}
 				</StoryContainer>
 			</div>
-		</div>
+		</section>
 	)
 }
 

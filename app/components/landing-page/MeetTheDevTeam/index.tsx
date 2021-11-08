@@ -5,7 +5,7 @@ import { DevCard } from '../styles'
 
 const MeetTheDevTeam = () => {
 	return (
-		<div className='h-screen flex items-center justify-center'>
+		<section className='h-screen flex items-center justify-center text-white'>
 			<Link href='/devteam'>
 				<DevCard className={style.glow}>
 					<img
@@ -18,7 +18,7 @@ const MeetTheDevTeam = () => {
 					</h2>
 				</DevCard>
 			</Link>
-		</div>
+		</section>
 	)
 }
 

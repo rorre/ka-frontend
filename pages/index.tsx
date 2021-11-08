@@ -1,25 +1,20 @@
 import React from 'react'
-import Head from 'next/head'
 import GetToKnowUs from '../app/components/landing-page/GetToKnowUs'
 import OurStories from '../app/components/landing-page/OurStories'
 import MeetTheDevTeam from '../app/components/landing-page/MeetTheDevTeam'
+import Header from '../app/components/global/header'
 
 const Home = () => {
 	return (
-		<div>
-			<Head>
-				{/* nnti dijadiin global component */}
-				<title>CSUI 2021</title>
-				<meta name='description' content='Karya Angkatan CSUI 2021' />
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
+		<>
+			<Header />
 			<div className='flex flex-col items-center justify-center h-screen text-center text-white cursor-default'>
 				<h2>INTRODUCING</h2>
 				<h1 className='text-9xl'>
 					CSUI<br></br>2021
 				</h1>
 			</div>
-			<div className='h-full text-white'>
+			<section className='h-full text-white'>
 				<h2 className='my-24 text-center 2sm:max-w-md 2sm:text-left'>
 					Message from our coordinator
 				</h2>
@@ -62,17 +57,11 @@ const Home = () => {
 						platea dictumst vestibulum. Porttitor eget dolor morbi non.
 					</p>
 				</div>
-			</div>
-			<div className='text-white'>
-				<OurStories />
-			</div>
-			<div className='text-white'>
-				<GetToKnowUs />
-			</div>
-			<div className='text-white'>
-				<MeetTheDevTeam />
-			</div>
-		</div>
+			</section>
+			<OurStories />
+			<GetToKnowUs />
+			<MeetTheDevTeam />
+		</>
 	)
 }
 

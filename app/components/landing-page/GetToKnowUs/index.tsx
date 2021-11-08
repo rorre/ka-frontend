@@ -4,7 +4,7 @@ import { Card, Image } from '../styles'
 
 const GetToKnowUs = () => {
 	return (
-		<div className='h-full'>
+		<section className='h-full text-white'>
 			<h2 className='my-24 text-center 2sm:text-left'>
 				Get to<br></br>Know Us
 			</h2>
@@ -45,7 +45,7 @@ const GetToKnowUs = () => {
 					<p className='text-md'>Lorem ipsum dolor sit amet, consectetur </p>
 				</Card>
 			</div>
-		</div>
+		</section>
 	)
 }
 
