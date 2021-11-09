@@ -8,7 +8,7 @@ const Historical = ({
 	height: string
 }) => (
 	<object
-		className={`${width} ${height} bg-dark-4`}
+		className={`${width} ${height} `}
 		data='assets/images/House of Historical.svg'></object>
 )
 

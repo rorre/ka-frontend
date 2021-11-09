@@ -8,7 +8,7 @@ const Fantasy = ({
 	height: string
 }) => (
 	<object
-		className={`${width} ${height} bg-dark-4`}
+		className={`${width} ${height}`}
 		data='assets/images/House of Fantasy.svg'></object>
 )
 
