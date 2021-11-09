@@ -11,7 +11,7 @@ const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const Pagination = () => {
 	return (
-		<div className='bg-dark-2 rounded-xl h-16 space-x-2.5 px-4 mx-auto my-16 flex flex-row justify-center w-max'>
+		<div className='bg-dark-2 rounded-xl h-16 space-x-2.5 px-4 my-16 flex flex-row justify-center max-w-min mx-auto'>
 			<NextPageButton className='rotate-90 mr-4' />
 			{pages.map((page, index) => (
 				<PaginationItem
@@ -55,12 +55,12 @@ const PaginationItem = ({
 }) => {
 	if (currentPage)
 		return (
-			<StyledPaginationItem className='cursor-pointer bg-dark-3 w-12 h-12 text-center rounded-xl my-auto py-3'>
+			<StyledPaginationItem className='cursor-pointer bg-dark-3 lg:w-12 lg:h-12 w-9 h-9 text-center rounded-xl my-auto lg:py-3 py-1'>
 				{pageNumber}
 			</StyledPaginationItem>
 		)
 	return (
-		<button className='cursor-pointer bg-dark-3 w-12 h-12 text-center rounded-xl my-auto py-3'>
+		<button className='cursor-pointer bg-dark-3 lg:w-12 lg:h-12 w-9 h-9 text-center rounded-xl my-auto lg:py-3 py-1'>
 			{pageNumber}
 		</button>
 	)

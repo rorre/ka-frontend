@@ -1,42 +1,12 @@
 import React, { useState } from 'react'
-import { Dropdown, SearchButton, SearchInput } from './SearchBar.styles'
+import { SearchDropdown } from './styles'
 
-const SearchBar = () => {
-	const [searchQuery, setSearchQuery] = useState('')
-
-	const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setSearchQuery(event.target.value)
-	}
-
-	return (
-		<div className='bg-dark-2 mx-12 pr-4 rounded-xl bg-transparent'>
-			<SearchInput
-				name='query'
-				className='focus:outline-none inline-block bg-dark-2 p-6 rounded-l-xl lg:w-6/12 md:w-5/12 sm:w-3/12 text-gray-400 border-r-2 border-black'
-				type='text'
-				placeholder='Search by name'
-				value={searchQuery}
-				onChange={searchHandler}
-			/>
-			<SearchBarDropdown />
-			<SearchBarButton />
-		</div>
-	)
-}
-
-const SearchBarButton = () => (
-	<SearchButton
-		className={`text-white lg:w-2/12 md:w-2/12 sm:w-3/12 inline-block py-4 text-center rounded-lg`}>
-		Search
-	</SearchButton>
-)
-
-const SearchBarDropdown = () => {
+export const SearchBarDropdown = () => {
 	const [isDropdown, setIsDropdown] = useState(false)
 	const [major, setMajor] = useState('')
 
 	return (
-		<Dropdown className='relative inline-block bg-transparent px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
+		<SearchDropdown className='relative inline-block bg-transparent px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
 			<div className='bg-transparent'>
 				<button
 					onClick={() => setIsDropdown(!isDropdown)}
@@ -87,8 +57,6 @@ const SearchBarDropdown = () => {
 					</div>
 				)}
 			</div>
-		</Dropdown>
+		</SearchDropdown>
 	)
 }
-
-export default SearchBar
