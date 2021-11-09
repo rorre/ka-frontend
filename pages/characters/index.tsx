@@ -6,9 +6,9 @@ import {
 	YearbookSortDropdown,
 	YearbookPagination,
 	YearbookContainer,
-} from '../../app/components/yearbook'
-import { students } from '../../app/components/yearbook/utils/students'
-import { Student } from '../../app/components/yearbook/ts/interfaces'
+} from '../../app/components/characters'
+import { students } from '../../app/components/characters/utils/students'
+import { Student } from '../../app/components/characters/ts/interfaces'
 
 const CharactersPage = () => {
 	return (
