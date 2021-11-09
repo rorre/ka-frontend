@@ -21,7 +21,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={` w-full fixed min-w-max z-10 ${
+			className={` w-full top-0 fixed min-w-max z-10 ${
 				!isCollapse && !isScroll ? 'bg-transparent' : 'bg-dark-2'
 			}`}>
 			<div className='grid items-center w-full grid-cols-2 px-6 py-4 lg:px-12 lg:py-4 lg:grid-cols-6'>
