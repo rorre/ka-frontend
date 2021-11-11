@@ -13,8 +13,8 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 
 			<div className='flex divide-x-2 divide-dashed divide-red-800'>
 				<ProfilePictureContainer image={image} />
-				<div className='relative flex-col lg:w-8/12 w-10/12 pl-3 ml-4'>
-					<div className='order-1 mt-8 mb-1 ml-2 mr-1 text-1.5xs lg:text-sm text-white md:ml-0 md:mt-3 lg:mt-4'>
+				<div className='relative flex-col lg:w-8/12 sm:9/12 md:w-10/12 pl-3 ml-4'>
+					<div className='order-1 mt-8 mb-1 ml-2 mr-1 text-1.5xs lg:text-sm text-white md:ml-0 md:mt-3 lg:mt-8'>
 						{utils.shortenName(name)}
 					</div>
 					<div className='order-2 ml-2 mr-1 text-2xs lg:text-xs text-white md:ml-0 font-extralight'>
