@@ -13,10 +13,10 @@ import { Student } from '../../app/components/characters/ts/interfaces'
 const CharactersPage = () => {
 	return (
 		<YearbookContainer>
-			<h1 className='flex justify-center mt-24 md:mt-20 text-4xl font-bold text-center text-white md:text-6xl'>
+			<h1 className='flex justify-center mt-24 md:mt-20 text-3xl font-bold text-center text-white md:text-6xl'>
 				Our Characters
 			</h1>
-			<p className='flex justify-center mt-8 mb-20 text-center text-white bg-transparent'>
+			<p className='flex justify-center md:mt-8 mt-4 mb-20 text-center text-white bg-transparent md:text-base text-xs'>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc,
 				leo eros, tellus sit eget auctor.
 			</p>
@@ -26,7 +26,7 @@ const CharactersPage = () => {
 				method='POST'
 				onSubmit={event => event.preventDefault()}>
 				<YearbookSearchBar />
-				<div className='z-10 flex flex-col justify-center mb-8 space-y-5 bg-transparent md:flex-row md:space-x-5 md:space-y-0 mt-14'>
+				<div className='z-10 flex justify-center mb-8 space-x-2.5 bg-transparent md:flex-row md:space-x-5 md:space-y-0 mt-14'>
 					<YearbookSortDropdown />
 					<YearbookFilterDropdown />
 				</div>
