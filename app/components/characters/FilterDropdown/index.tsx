@@ -1,62 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
-
-const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
-	filter: hue-rotate(135deg) brightness(0.8);
-`
-
-const StyledDropdown = styled.div`
-	&::-webkit-scrollbar {
-		width: 4px;
-		height: 4px;
-	}
-
-	&::-webkit-scrollbar-track {
-		border-radius: 100vh;
-		background-color: #13111a;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: #5e5b71;
-		border-radius: 100vh;
-		border: 3px solid #edf2;
-	}
-
-	&::-webkit-scrollbar-thumb:hover {
-		background-color: #5e5b71;
-	}
-`
-
-const DropdownOption = ({
-	house,
-	checked,
-	filters,
-	className = '',
-	filterHandler,
-	setCondition,
-}: {
-	house: string
-	checked: boolean
-	filters: string[]
-	className?: string
-	filterHandler: Function
-	setCondition: React.Dispatch<React.SetStateAction<boolean>>
-}) => (
-	<button
-		type='button'
-		onClick={() => filterHandler(checked, setCondition)}
-		className={`relative text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full px-5 py-2 border-dark-2 ${className}`}>
-		{house}
-		<StyledCheckbox
-			onChange={() => filterHandler(checked, setCondition)}
-			type='checkbox'
-			className='absolute right-4 top-3.5'
-			checked={checked}
-			name='filters'
-			value={house}
-		/>
-	</button>
-)
+import React, { useState } from 'react'
+import { StyledDropdown } from './styles'
+import { DropdownOption } from './DropdownOption'
 
 const FilterDropdown = () => {
 	const [isDropdown, setIsDropdown] = useState(false)
@@ -93,16 +37,6 @@ const FilterDropdown = () => {
 		}
 		setFilters(newFilters)
 	}
-
-	const hasMounted = useRef(false)
-
-	useEffect(() => {
-		if (!hasMounted.current) {
-			hasMounted.current = true
-		} else {
-			console.log(filters)
-		}
-	}, [filters])
 
 	return (
 		<div className='relative inline-block bg-dark-2 px-5 py-2.5 border-black rounded-xl lg:w-3/12 md:w-4/12 sm:w-full text-gray-400'>

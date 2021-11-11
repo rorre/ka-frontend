@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 
-const StyledRadio = styled.input.attrs({ type: 'radio' })`
-	filter: hue-rotate(140deg) brightness(0.8);
-`
+import { StyledRadio } from './styles'
 
 const SortDropdown = () => {
 	const [isDropdown, setIsDropdown] = useState(false)
