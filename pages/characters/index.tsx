@@ -35,7 +35,7 @@ const CharactersPage = () => {
 				{students.map((student: Student) => (
 					<div
 						key={student.id}
-						className='w-full bg-transparent lg:w-3/12 md:w-4/12 sm:w-6/12'>
+						className='bg-transparent lg:w-3/12 w-4/12 md:my-0 my-2'>
 						<YearbookProfileCard
 							key={student.id}
 							name={student.name}

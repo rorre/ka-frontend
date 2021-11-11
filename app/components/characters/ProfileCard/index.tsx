@@ -1,12 +1,32 @@
 import React from 'react'
+
 import Student from '../ts/interfaces/Student'
 import * as Social from '../social-media-icons'
 import * as utils from '../utils/helpers'
 
-import { LowerNotch, UpperNotch } from './styles'
+import { LowerNotch, UpperNotch, GradientImageDiv } from './styles'
+import { useResponsive } from './hooks'
 import { ProfilePictureContainer } from './ProfilePictureContainer'
 
 const ProfileCard = ({ name, major, image, house }: Student) => {
+	const { isMobile } = useResponsive()
+
+	if (isMobile) {
+		return (
+			<div className='relative'>
+				<ProfilePictureContainer image={image} />
+				<div className='absolute top-1.5 right-1.5'>
+					{utils.getHouseIcon(house)}
+				</div>
+				<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-3 px-2'>
+					<p className='text-1.5xs text-white font-bold'>
+						{utils.shortenName(name)}
+					</p>
+					<p className='text-2xs text-white font-extralight'>{major}</p>
+				</GradientImageDiv>
+			</div>
+		)
+	}
 	return (
 		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500'>
 			<UpperNotch className='border-2 border-blue-500' />
@@ -23,7 +43,7 @@ const ProfileCard = ({ name, major, image, house }: Student) => {
 					<div className='flex justify-start items-center text-2xs lg:text-xs text-white order-3 mt-1 mr-1 md:mr-3'>
 						{utils.getHouseIcon(house)} {house}
 					</div>
-					<div className='flex justify-end order-4 mt-6 mr-1 md:mt-2 lg:mt-3'>
+					<div className='flex justify-end order-4 mt-6 mr-1.5 md:mt-2 lg:mt-6'>
 						<Social.LineIcon
 							width='w-6 lg:w-8 md:mr-1 lg:mr-1'
 							height='h-6 lg:h-8'
