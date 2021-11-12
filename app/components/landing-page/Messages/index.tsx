@@ -12,7 +12,6 @@ const Messages = () => {
 			</div>
 			<div className='2md:grid grid-rows-2 grid-cols-2 gap-7 text-gray-900 xl:max-w-3/4 mx-auto 2md:-mt-36 items-center'>
 				<MessagesCard className='row-span-2'>
-					{/* <p className='max-w-xs text-center 2sm:max-w-4xl 2sm:text-left'> */}
 					<div className='flex items-center space-x-7'>
 						<img
 							className='w-28 h-28 rounded-full mx-auto'
@@ -43,7 +42,6 @@ const Messages = () => {
 					</p>
 				</MessagesCard>
 				<MessagesCard className=''>
-					{/* <p className='max-w-xs text-center 2sm:max-w-4xl 2sm:text-left'> */}
 					<div className='flex items-center space-x-7'>
 						<img
 							className='w-28 h-28 rounded-full mx-auto'
@@ -74,7 +72,6 @@ const Messages = () => {
 					</p>
 				</MessagesCard>
 				<MessagesCard className=''>
-					{/* <p className='max-w-xs text-center 2sm:max-w-4xl 2sm:text-left'> */}
 					<div className='flex items-center space-x-7'>
 						<img
 							className='w-28 h-28 rounded-full mx-auto'
