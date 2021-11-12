@@ -8,21 +8,15 @@ module.exports = {
 			'2sm': '430px',
 			'3sm': { max: '430px' },
 
-			// => @media (min-width: 640px) { ... }
-
 			md: '768px',
 			'2md': '880px',
 			'3md': { max: '880px' },
-			// => @media (min-width: 768px) { ... }
 
 			lg: '1024px',
-			// => @media (min-width: 1024px) { ... }
 
 			xl: '1280px',
-			// => @media (min-width: 1280px) { ... }
 
 			'2xl': '1536px',
-			// => @media (min-width: 1536px) { ... }
 		},
 		extend: {
 			fontFamily: { sans: ['Poppins'] },
@@ -39,9 +33,19 @@ module.exports = {
 				'blue-dark': '0 25px 25px rgba(255, 255, 255, 1)',
 			},
 			backgroundImage: {
-				'shade-pattern': "url('/assets/images/bg_shade.svg')",
+				'shade-pattern': "url('/assets/bg_shade.svg')",
 				ocean:
 					'linear-gradient(319.03deg, #04091C -21.71%, #164F85 64.3%, #1C64A7 110.55%);',
+			},
+			maxWidth: {
+				'1/4': '25%',
+				'1/2': '50%',
+				'3/4': '75%',
+				'9/10': '90%',
+			},
+			zIndex: {
+				'-1': '-1',
+				'-10': '-10',
 			},
 		},
 	},
