@@ -9,7 +9,7 @@ const Apocalypse = ({
 }) => (
 	<object
 		className={`${width} ${height}`}
-		data='assets/images/House of Apocalypse.svg'></object>
+		data='assets/House of Apocalypse.svg'></object>
 )
 
 export default Apocalypse

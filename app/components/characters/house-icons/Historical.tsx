@@ -9,7 +9,7 @@ const Historical = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Historical.svg'></object>
+		data='assets/House of Historical.svg'></object>
 )
 
 export default Historical
