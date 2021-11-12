@@ -1,5 +1,6 @@
 export interface Content {
-	foto: Array<string>
+	id: number
+	title: string
 	detail: string
-	id?: number
+	foto: Array<string>
 }

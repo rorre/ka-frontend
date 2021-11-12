@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { v4 as uuid } from 'uuid'
 import { SeeMore, StoryContainer } from '../styles'
-import { contents } from './utils/[contents]'
+import { contents } from './utils/contents'
 import { Content } from './interfaces/Content.interface'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll.hook'
 import StoryItem from './StoryItem'
@@ -11,6 +10,7 @@ const OurStories = () => {
 	const [details, setDetails] = useState(
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.'
 	)
+	const [isClickedGlobal, setIsClickedGlobal] = useState(false)
 	const scrollRef = useHorizontalScroll()
 
 	return (
@@ -20,9 +20,6 @@ const OurStories = () => {
 				<div className='col-span-3 flex flex-col items-center 3md:mb-10'>
 					<p className='max-w-xs h-full flex items-center 3md:mb-10'>
 						{details}
-						{/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo
-						nulla facilisi nullam vehicula ipsum a arcu. */}
 					</p>
 					<Link href='/ourstories'>
 						<SeeMore className='animate-bounce'>See More</SeeMore>
@@ -34,11 +31,12 @@ const OurStories = () => {
 					{contents.map((content: Content) => (
 						<StoryItem
 							foto={content.foto}
-							id={uuid()}
-							key={uuid()}
-							setDetails={() => {
-								setDetails(content.detail)
-							}}
+							id={content.id}
+							key={content.id}
+							detail={content.detail}
+							setDetails={setDetails}
+							setIsClickedGlobal={setIsClickedGlobal}
+							isClickedGlobal={isClickedGlobal}
 						/>
 					))}
 					{/* <Link href='/ourstories1'>
