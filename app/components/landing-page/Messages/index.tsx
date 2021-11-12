@@ -14,8 +14,8 @@ const Messages = () => {
 				<MessagesCard className='row-span-2'>
 					<div className='flex items-center space-x-7'>
 						<img
-							className='w-28 h-28 rounded-full mx-auto'
-							src='https://statics.indozone.id/content/2021/03/13/AqsbmP1/mv-debut-solo-rose-blackpink-on-the-ground-jadi-trending-no-162_700.jpg'
+							className='w-28 h-28 object-cover rounded-full mx-auto'
+							src='https://thumb.zigi.id/frontend/thumbnail/2021/07/19/zigi-60f57af76becc-rose-blackpink_910_512.jpeg'
 							alt='name'
 						/>
 						<div className='text-left'>
@@ -44,7 +44,7 @@ const Messages = () => {
 				<MessagesCard className=''>
 					<div className='flex items-center space-x-7'>
 						<img
-							className='w-28 h-28 rounded-full mx-auto'
+							className='w-28 h-28 object-cover rounded-full mx-auto'
 							src='https://statics.indozone.id/content/2021/03/13/AqsbmP1/mv-debut-solo-rose-blackpink-on-the-ground-jadi-trending-no-162_700.jpg'
 							alt='name'
 						/>
@@ -74,7 +74,7 @@ const Messages = () => {
 				<MessagesCard className=''>
 					<div className='flex items-center space-x-7'>
 						<img
-							className='w-28 h-28 rounded-full mx-auto'
+							className='w-28 h-28 object-cover rounded-full mx-auto'
 							src='https://statics.indozone.id/content/2021/03/13/AqsbmP1/mv-debut-solo-rose-blackpink-on-the-ground-jadi-trending-no-162_700.jpg'
 							alt='name'
 						/>
