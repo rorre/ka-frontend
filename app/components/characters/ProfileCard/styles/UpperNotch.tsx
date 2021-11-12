@@ -22,6 +22,6 @@ export const UpperNotch = styled.div`
 	@media screen and (min-width: 1024px) {
 		height: 2.8rem;
 		width: 3rem;
-		right: 42.8%;
+		right: 41.5%;
 	}
 `
