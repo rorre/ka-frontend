@@ -8,7 +8,7 @@ import {
 	YearbookContainer,
 } from '../../app/components/characters'
 import { students } from '../../app/components/characters/utils/students'
-import { Student } from '../../app/components/characters/ts/interfaces'
+import { Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
 	return (

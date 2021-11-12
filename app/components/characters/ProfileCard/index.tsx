@@ -1,30 +1,25 @@
 import React from 'react'
 
-import Student from '../ts/interfaces/Student'
+import Student from '../interfaces/Student'
 import * as Social from '../social-media-icons'
 import * as utils from '../utils/helpers'
 
-import { LowerNotch, UpperNotch, GradientImageDiv } from './styles'
+import { LowerNotch, UpperNotch } from './styles'
 import { useResponsive } from './hooks'
 import { ProfilePictureContainer } from './ProfilePictureContainer'
+import { MobileProfileCard } from './MobileProfileCard'
 
 const ProfileCard = ({ name, major, image, house }: Student) => {
 	const { isMobile } = useResponsive()
 
 	if (isMobile) {
 		return (
-			<div className='relative'>
-				<ProfilePictureContainer image={image} />
-				<div className='absolute top-1.5 right-1.5'>
-					{utils.getHouseIcon(house)}
-				</div>
-				<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-3 px-2'>
-					<p className='text-1.5xs text-white font-bold'>
-						{utils.shortenName(name)}
-					</p>
-					<p className='text-2xs text-white font-extralight'>{major}</p>
-				</GradientImageDiv>
-			</div>
+			<MobileProfileCard
+				name={name}
+				major={major}
+				image={image}
+				house={house}
+			/>
 		)
 	}
 	return (

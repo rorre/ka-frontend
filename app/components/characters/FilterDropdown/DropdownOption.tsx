@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyledCheckbox } from './styles'
+import { DropdownOptionInterface } from './interfaces/DropdownOption.interface'
 
 export const DropdownOption = ({
 	house,
@@ -8,14 +9,7 @@ export const DropdownOption = ({
 	className = '',
 	filterHandler,
 	setCondition,
-}: {
-	house: string
-	checked: boolean
-	filters?: string[]
-	className?: string
-	filterHandler: Function
-	setCondition: React.Dispatch<React.SetStateAction<boolean>>
-}) => (
+}: DropdownOptionInterface) => (
 	<button
 		type='button'
 		onClick={() => filterHandler(checked, setCondition)}

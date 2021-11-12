@@ -1,10 +1,9 @@
 import React from 'react'
+import { ChangePageButtonInterface } from './interfaces/ChangePageButton.interface'
 
 export const ChangePageButton = ({
 	className = 'rotate-90',
-}: {
-	className: string
-}) => (
+}: ChangePageButtonInterface) => (
 	<button type='button' className='w-12 text-gray-400'>
 		<svg
 			className={`transform ${className} bg-transparent`}
