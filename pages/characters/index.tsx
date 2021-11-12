@@ -2,15 +2,18 @@ import React from 'react'
 import {
 	YearbookSearchBar,
 	YearbookProfileCard,
+	YearbookMobileProfileCard,
 	YearbookFilterDropdown,
 	YearbookSortDropdown,
 	YearbookPagination,
 	YearbookContainer,
 } from '../../app/components/characters'
+import { useResponsive } from '../../app/hooks'
 import { students } from '../../app/components/characters/utils/students'
 import { Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
+	const { isMobile } = useResponsive()
 	return (
 		<YearbookContainer>
 			<h1 className='flex justify-center mt-24 md:mt-20 text-3xl font-bold text-center text-white md:text-6xl'>
@@ -36,13 +39,23 @@ const CharactersPage = () => {
 					<div
 						key={student.id}
 						className='bg-transparent lg:w-3/12 w-4/12 md:my-0 my-2'>
-						<YearbookProfileCard
-							key={student.id}
-							name={student.name}
-							image={student.image}
-							major={student.major}
-							house={student.house}
-						/>
+						{isMobile ? (
+							<YearbookMobileProfileCard
+								key={student.id}
+								name={student.name}
+								image={student.image}
+								major={student.major}
+								house={student.house}
+							/>
+						) : (
+							<YearbookProfileCard
+								key={student.id}
+								name={student.name}
+								image={student.image}
+								major={student.major}
+								house={student.house}
+							/>
+						)}
 					</div>
 				))}
 			</div>

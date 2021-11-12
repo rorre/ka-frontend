@@ -5,23 +5,10 @@ import * as Social from '../social-media-icons'
 import * as utils from '../utils/helpers'
 
 import { LowerNotch, UpperNotch } from './styles'
-import { useResponsive } from './hooks'
+
 import { ProfilePictureContainer } from './ProfilePictureContainer'
-import { MobileProfileCard } from './MobileProfileCard'
 
 const ProfileCard = ({ name, major, image, house }: Student) => {
-	const { isMobile } = useResponsive()
-
-	if (isMobile) {
-		return (
-			<MobileProfileCard
-				name={name}
-				major={major}
-				image={image}
-				house={house}
-			/>
-		)
-	}
 	return (
 		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500'>
 			<UpperNotch className='border-2 border-blue-500' />

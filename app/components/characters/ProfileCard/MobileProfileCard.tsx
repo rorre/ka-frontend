@@ -18,3 +18,5 @@ export const MobileProfileCard = ({ name, major, image, house }: Student) => (
 		</GradientImageDiv>
 	</div>
 )
+
+export default MobileProfileCard
