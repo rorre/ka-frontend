@@ -1,31 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
 import Link from 'next/link'
 import style from './MeetTheDevTeam.module.css'
-
-const DevCard = styled.div`
-	position: absolute;
-	width: 927px;
-	height: 374px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	background: #1d1a27;
-	border-radius: 20px;
-	@media (max-width: 1000px) {
-		width: 70%;
-	}
-`
+import { DevCard } from '../styles'
 
 const MeetTheDevTeam = () => {
 	return (
-		<div className='h-screen flex items-center justify-center'>
+		<section className='h-screen flex items-center justify-center text-white'>
 			<Link href='/devteam'>
 				<DevCard className={style.glow}>
 					<img
-						src='/asset/image/mtdt-icon.svg'
+						src='/assets/mtdt-icon.svg'
 						alt='Meet the Dev Team'
 						className='mb-10'
 					/>
@@ -34,7 +18,7 @@ const MeetTheDevTeam = () => {
 					</h2>
 				</DevCard>
 			</Link>
-		</div>
+		</section>
 	)
 }
 

@@ -11,7 +11,7 @@ const Line = ({
 }) => (
 	<object
 		className={`${width} ${height} ${backgroundColor}`}
-		data='assets/images/Line.svg'></object>
+		data='assets/Line.svg'></object>
 )
 
 export default Line
