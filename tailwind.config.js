@@ -38,7 +38,17 @@ module.exports = {
 				'blue-dark': '0 25px 25px rgba(255, 255, 255, 1)',
 			},
 			backgroundImage: {
-				'shade-pattern': "url('/assets/images/bg_shade.svg')",
+				'shade-pattern': "url('/assets/bg_shade.svg')",
+			},
+			maxWidth: {
+				'1/4': '25%',
+				'1/2': '50%',
+				'3/4': '75%',
+				'9/10': '90%',
+			},
+			zIndex: {
+				'-1': '-1',
+				'-10': '-10',
 			},
 		},
 	},
