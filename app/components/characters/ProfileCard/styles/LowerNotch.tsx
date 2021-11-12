@@ -18,4 +18,10 @@ export const LowerNotch = styled.div`
 		width: 2.2rem;
 		right: 44.5%;
 	}
+
+	@media screen and (min-width: 1024px) {
+		height: 2.8rem;
+		width: 3rem;
+		right: 42.8%;
+	}
 `

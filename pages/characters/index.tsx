@@ -36,9 +36,7 @@ const CharactersPage = () => {
 			</form>
 			<div className='flex flex-wrap justify-center w-full px-4 bg-transparent md:px-0 md:mt-20'>
 				{students.map((student: Student) => (
-					<div
-						key={student.id}
-						className='bg-transparent lg:w-3/12 w-4/12 md:my-0 my-2'>
+					<div key={student.id} className='bg-transparent w-4/12 md:my-0 my-2'>
 						{isMobile ? (
 							<YearbookMobileProfileCard
 								key={student.id}
