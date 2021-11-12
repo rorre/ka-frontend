@@ -26,6 +26,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: { sans: ['Poppins'] },
+			fontSize: { '2xs': '.5rem', '1.5xs': '.65rem' },
 			colors: {
 				'dark-1': '#13111A',
 				'dark-2': '#302C3F',
@@ -39,6 +40,8 @@ module.exports = {
 			},
 			backgroundImage: {
 				'shade-pattern': "url('/assets/images/bg_shade.svg')",
+				ocean:
+					'linear-gradient(319.03deg, #04091C -21.71%, #164F85 64.3%, #1C64A7 110.55%);',
 			},
 		},
 	},
