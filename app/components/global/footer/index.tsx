@@ -1,5 +1,5 @@
 import React from 'react'
-import { InstagramIcon, LineIcon } from '../../yearbook/social-media-icons'
+import { InstagramIcon, LineIcon } from '../../characters/social-media-icons'
 import Logo from '../logo'
 import socialMedia from './utils/socialMedia'
 
