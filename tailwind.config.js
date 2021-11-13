@@ -22,7 +22,10 @@ module.exports = {
 		},
 	},
 	variants: {
-		extend: {},
+		extend: {
+			dropShadow: ['hover'],
+			backgroundImage: ['group-hover', 'hover'],
+		},
 	},
 	plugins: [],
 }

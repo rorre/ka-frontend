@@ -1,16 +1,19 @@
 import React from 'react'
-import 'tailwindcss/tailwind.css'
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import '../app/styles/globals.css'
+import Layout from '../app/layout'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-/**
- * 描述
- * @date 2021-09-26
- * @param {any} {Component
- * @param {any} pageProps}:AppProps
- * @return {any}
- */
+library.add(fab, fas, far)
+
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	)
 }
 export default MyApp
