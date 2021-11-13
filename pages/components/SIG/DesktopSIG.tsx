@@ -1,7 +1,7 @@
 import React from 'react'
-import RequestSIGButton from '../../../public/assets/images/Request SIG Button.svg'
+import RequestSIGButton from '../../../public/assets/Request SIG Button.svg'
 import Link from 'next/dist/client/link'
-import DesktopTicketBackground from '../../../public/assets/images/Dekstop Ticket.svg'
+import DesktopTicketBackground from '../../../public/assets/Dekstop Ticket.svg'
 import Image from 'next/image'
 
 const DesktopSIG = () => {
