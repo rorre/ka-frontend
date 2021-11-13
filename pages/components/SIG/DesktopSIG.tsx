@@ -4,7 +4,6 @@ import Link from 'next/dist/client/link'
 import DesktopTicketBackground from '../../../public/assets/Dekstop Ticket.svg'
 import JoinSIG from '../../../public/assets/Join SIG.svg'
 import Image from 'next/image'
-import { Scrollbar } from 'react-scrollbars-custom'
 
 const DesktopSIG = () => {
 	return (
