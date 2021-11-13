@@ -28,11 +28,8 @@ const OurStories = () => {
 					ref={scrollRef}>
 					{contents.map((content: Content) => (
 						<StoryItem
-							foto={content.foto}
-							id={content.id}
+							{...content}
 							key={content.id}
-							title={content.title}
-							detail={content.detail}
 							setDetails={setDetails}
 							setTitles={setTitles}
 							setIsClickedGlobal={setIsClickedGlobal}

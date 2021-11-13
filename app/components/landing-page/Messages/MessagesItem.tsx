@@ -10,7 +10,6 @@ const MessagesItem = ({
 	pesan,
 	index,
 }: MessagesItemInterface) => {
-	console.log(index)
 	return (
 		<MessagesCard className={index === 0 ? 'row-span-2' : ''}>
 			<div className='flex items-center space-x-7'>
