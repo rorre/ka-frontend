@@ -29,11 +29,13 @@ const GradientBackgroundBlue = styled.div`
 
 const PassionsPage = () => {
 	return (
-		<div className='main container h-screen w-screen flex justify-center bg-gray-800 min-h-screen min-w-full'>
+		<div className='w-full h-full'>
 			<GradientBackgroundBlue />
 			<GradientBackgroundRed />
-			<MobileSIG />
-			<DesktopSIG />
+			<div className='main container h-screen w-screen flex justify-center bg-gray-800 min-h-screen min-w-full mt-20'>
+				<MobileSIG />
+				<DesktopSIG />
+			</div>
 		</div>
 	)
 }
