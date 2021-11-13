@@ -4,7 +4,7 @@ import { ChangePageButtonInterface } from './interfaces/ChangePageButton.interfa
 export const ChangePageButton = ({
 	className = 'rotate-90',
 }: ChangePageButtonInterface) => (
-	<button type='button' className='w-12 text-gray-400'>
+	<button type='button' className='md:w-12 w-6 text-gray-400'>
 		<svg
 			className={`transform ${className} bg-transparent`}
 			xmlns='http://www.w3.org/2000/svg'

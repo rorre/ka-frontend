@@ -9,7 +9,7 @@ const Romance = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Romance.svg'></object>
+		data='assets/House of Romance.svg'></object>
 )
 
 export default Romance
