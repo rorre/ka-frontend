@@ -6,13 +6,13 @@ export const SearchBarDropdown = () => {
 	const [major, setMajor] = useState('')
 
 	return (
-		<SearchDropdown className='relative inline-block bg-transparent px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
+		<SearchDropdown className='relative inline-block bg-transparent lg:text-base md:text-sm text-2xs md:px-4 lg:px-6 px-2 border-black lg:w-4/12 md:w-5/12 w-4/12 text-gray-400'>
 			<div className='bg-transparent'>
 				<button
 					onClick={() => setIsDropdown(!isDropdown)}
 					type='button'
 					className='inline-flex w-full text-gray-400'>
-					<span className='w-11/12 text-left bg-transparent'>
+					<span className='w-11/12 text-left'>
 						{major === '' ? 'Major' : major}
 					</span>
 					<svg
@@ -33,7 +33,7 @@ export const SearchBarDropdown = () => {
 			</div>
 			<div>
 				{isDropdown && (
-					<div className='z-10 absolute mr-4 w-10/12 mt-4 text-gray-400 bg-dark-2 rounded-xl'>
+					<div className='z-10 absolute left-0 mr-4 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
 						<button
 							type='button'
 							onClick={() => {
@@ -41,7 +41,7 @@ export const SearchBarDropdown = () => {
 							}}
 							value={major}
 							name='major'
-							className='text-left bg-dark-3 text-gray-400 w-full border-b-2 px-6 py-2 rounded-t-lg border-dark-2'>
+							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
 							Computer Science
 						</button>
 						<button
@@ -51,7 +51,7 @@ export const SearchBarDropdown = () => {
 							}}
 							name='major'
 							value={major}
-							className='text-left bg-dark-3 text-gray-400 w-full border-t-2 px-6 py-2 rounded-b-lg border-dark-2'>
+							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
 							Information System
 						</button>
 					</div>

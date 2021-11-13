@@ -11,10 +11,10 @@ const SearchBar = () => {
 	}
 
 	return (
-		<div className='bg-dark-2 mx-12 pr-4 rounded-xl bg-transparent'>
+		<div className='bg-dark-2 lg:mx-10 md:-mx-4 mx-4 lg:pr-4 pr-2 md:rounded-xl rounded bg-transparent'>
 			<SearchInput
 				name='query'
-				className='focus:outline-none inline-block bg-dark-2 p-6 rounded-l-xl lg:w-6/12 md:w-5/12 sm:w-3/12 text-gray-400 border-r-2 border-black'
+				className='lg:text-base md:text-sm text-2xs focus:outline-none inline-block bg-dark-2 md:p-6 p-3 rounded-l-xl lg:w-6/12 md:w-5/12 w-5/12 text-gray-400 border-r-2 border-black'
 				type='text'
 				placeholder='Search by name'
 				value={searchQuery}
