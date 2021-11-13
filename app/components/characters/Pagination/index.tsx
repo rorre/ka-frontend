@@ -6,8 +6,8 @@ import { pages } from './utils/pageNumbers'
 
 const Pagination = () => {
 	return (
-		<div className='bg-dark-2 rounded-xl h-16 space-x-2.5 px-4 my-16 flex flex-row justify-center max-w-min mx-auto'>
-			<ChangePageButton className='rotate-90 mr-4' />
+		<div className='bg-dark-2 md:rounded-xl rounded md:h-16 h-10 md:space-x-2.5 space-x-1.5 md:px-4 lg:mt-16 md:mt-12 lg:mb-0 md:mb-4 mt-8 mb-4 flex flex-row justify-center max-w-min mx-auto'>
+			<ChangePageButton className='rotate-90 md:mr-4' />
 			{pages.map((page, index) => (
 				<PaginationItem
 					key={index}
@@ -19,7 +19,7 @@ const Pagination = () => {
 					currentPage={pages[index] === 2 && true}
 				/>
 			))}
-			<ChangePageButton className='-rotate-90 ml-4' />
+			<ChangePageButton className='-rotate-90 md:ml-4' />
 		</div>
 	)
 }
