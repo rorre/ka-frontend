@@ -23,6 +23,7 @@ module.exports = {
 	},
 	variants: {
 		extend: {
+			backgroundColor: ['active'],
 			dropShadow: ['hover'],
 			backgroundImage: ['group-hover', 'hover'],
 		},

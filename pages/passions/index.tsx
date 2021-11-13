@@ -32,7 +32,7 @@ const PassionsPage = () => {
 		<div className='w-full h-full'>
 			<GradientBackgroundBlue />
 			<GradientBackgroundRed />
-			<div className='w-screen h-auto border-red-600 border flex items-center justify-center mt-24'>
+			<div className='w-screen h-auto flex items-center justify-center mt-24'>
 				<DesktopSIG />
 				<MobileSIG />
 			</div>
