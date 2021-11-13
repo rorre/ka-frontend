@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { InstagramIcon, LineIcon } from '../../characters/social-media-icons'
 import Logo from '../logo'
 import socialMedia from './utils/socialMedia'
@@ -33,6 +34,18 @@ const Footer = () => {
 				</div>
 				<div className='flex flex-col col-span-4 gap-4'>
 					<span className='text-2xl text-white'>Meet the Team</span>
+					<div className='flex space-x-5 items-center'>
+						<img
+							src='/assets/meettheteam-footer.svg'
+							alt=''
+							className='w-11 h-11'
+						/>
+						<Link href='/devteam'>
+							<p className='text-base cursor-pointer text-purple-300'>
+								Karya Angkatan Team
+							</p>
+						</Link>
+					</div>
 				</div>
 			</div>
 			<div className='flex flex-col w-full gap-3 pt-4 text-white lg:items-center lg:flex-row bg-dark'>
