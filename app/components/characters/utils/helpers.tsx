@@ -44,6 +44,13 @@ export const getHouseIcon = (house: string) => {
 	}
 }
 
+const formatName = (name: string) => {
+	const letters = name.split('')
+	const firstLetter = letters[0].toUpperCase()
+	const restOfName = letters.slice(1).join('').toLowerCase()
+	return `${firstLetter}${restOfName}`
+}
+
 export const shortenName = (name: string) => {
 	const variationsofMuhammad = [
 		'muhammad',
@@ -72,15 +79,27 @@ export const shortenName = (name: string) => {
 		}
 	}
 
+	const firstName = studentSplittedName[0]
+
+	if (studentSplittedName.length === 2) {
+		const secondName = studentSplittedName[1]
+
+		return `${formatName(firstName)} ${formatName(secondName)}`
+	}
+
 	if (studentSplittedName.length >= 3) {
-		const firstName = studentSplittedName[0]
 		const secondName = studentSplittedName[1]
 		const firstLetterOfThirdName = `${studentSplittedName[2][0]}`
 
 		if (firstLetterOfThirdName.endsWith('.'))
-			return `${firstName} ${secondName} ${firstLetterOfThirdName}`
-		else return `${firstName} ${secondName} ${firstLetterOfThirdName}.`
+			return `${formatName(firstName)} ${formatName(
+				secondName
+			)} ${firstLetterOfThirdName}`
+		else
+			return `${formatName(firstName)} ${formatName(
+				secondName
+			)} ${firstLetterOfThirdName}.`
 	} else {
-		return studentSplittedName.join(' ')
+		return formatName(firstName)
 	}
 }
