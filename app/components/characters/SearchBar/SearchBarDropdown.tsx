@@ -13,7 +13,11 @@ export const SearchBarDropdown = () => {
 					type='button'
 					className='inline-flex w-full text-gray-400'>
 					<span className='w-11/12 text-left'>
-						{major === '' ? 'Major' : major}
+						{major === ''
+							? 'Major'
+							: major === 'ilmu_komputer'
+							? 'Computer Science'
+							: 'Information Systems'}
 					</span>
 					<svg
 						className={`w-1/12 bg-transparent ${
@@ -37,22 +41,40 @@ export const SearchBarDropdown = () => {
 						<button
 							type='button'
 							onClick={() => {
-								setMajor('Computer Science')
+								setMajor('ilmu_komputer')
 							}}
-							value={major}
-							name='major'
 							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
 							Computer Science
+							<label htmlFor='ilmu_komputer'></label>
+							<input
+								className='opacity-0'
+								type='radio'
+								name='major'
+								id='ilmu_komputer'
+								value={major}
+								checked={major === 'ilmu_komputer' ? true : false}
+								onChange={() => {
+									setMajor('ilmu_komputer')
+								}}></input>
 						</button>
 						<button
 							type='button'
 							onClick={() => {
-								setMajor('Information System')
+								setMajor('sistem_informasi')
 							}}
-							name='major'
-							value={major}
 							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
-							Information System
+							Information Systems
+							<label htmlFor='sistem_informasi'></label>
+							<input
+								className='opacity-0'
+								type='radio'
+								id='sistem_informasi'
+								name='major'
+								value={major}
+								checked={major === 'sistem_informasi' ? true : false}
+								onChange={() => {
+									setMajor('sistem_informasi')
+								}}></input>
 						</button>
 					</div>
 				)}

@@ -20,7 +20,7 @@ export const DropdownOption = ({
 			type='checkbox'
 			className='absolute md:right-4 right-2 md:top-3.5 top-2.5'
 			checked={checked}
-			name='filters'
+			name='house'
 			value={house}
 		/>
 	</button>

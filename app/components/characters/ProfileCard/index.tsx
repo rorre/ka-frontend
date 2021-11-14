@@ -8,22 +8,25 @@ import { LowerNotch, UpperNotch } from './styles'
 
 import { ProfilePictureContainer } from './ProfilePictureContainer'
 
-const ProfileCard = ({ name, major, image, house }: Student) => {
+const ProfileCard = ({ nama, jurusan, foto_diri, house_name }: Student) => {
 	return (
 		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500'>
 			<UpperNotch className='border-2 border-blue-500' />
 
 			<div className='flex divide-x-2 divide-dashed divide-red-800'>
-				<ProfilePictureContainer image={image} />
+				<ProfilePictureContainer image={foto_diri} />
 				<div className='relative flex-col lg:w-7/12 sm:9/12 md:w-10/12 pl-3 ml-4'>
 					<div className='order-1 mt-6 mb-1 ml-2 mr-1 text-1.5xs lg:text-sm text-white md:ml-0 md:mt-3 lg:mt-12'>
-						{utils.shortenName(name)}
+						{utils.shortenName(nama)}
 					</div>
 					<div className='order-2 ml-2 mr-1 text-2xs lg:text-xs text-white md:ml-0 font-extralight'>
-						{major}
+						{jurusan === 'ilmu_komputer'
+							? 'Computer Science'
+							: 'Information Systems'}
 					</div>
 					<div className='flex justify-start items-center text-2xs lg:text-xs text-white order-3 mt-1 lg:mt-4 mr-1 md:mr-3'>
-						{utils.getHouseIcon(house)} {house}
+						{utils.getHouseIcon(house_name.split(' ').at(2)!)}
+						{house_name.split(' ').at(2)}
 					</div>
 					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-2 lg:mt-8'>
 						<Social.LineIcon

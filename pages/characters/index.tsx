@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import axios from 'axios'
 import {
 	YearbookSearchBar,
 	YearbookProfileCard,
@@ -9,11 +11,50 @@ import {
 	YearbookContainer,
 } from '../../app/components/characters'
 import { useResponsive } from '../../app/hooks'
-import { students } from '../../app/components/characters/utils/students'
 import { Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
+	const [students, setStudents] = useState([] as Student[])
+	const [query, setQuery] = useState('')
 	const { isMobile } = useResponsive()
+	const url = process.env.NEXT_PUBLIC_BASE_URL + '/student/list?'
+	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
+
+	const getStudents = async () => {
+		try {
+			const { data } = await axios.get(`${url}${query}`)
+			setStudents(data as Student[])
+		} catch (error) {
+			console.log(error)
+			return []
+		}
+	}
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		const formData = new FormData(event.currentTarget)
+		const data = Array.from(formData.entries())
+		console.log(data)
+
+		const params = data
+			.map(
+				param =>
+					`${encodeURIComponent(param[0])}=${encodeURIComponent(
+						param[1] as string
+					)}`
+			)
+			.join('&')
+
+		const queryParams = new URLSearchParams(params).toString()
+
+		setQuery(queryParams)
+
+		event.preventDefault()
+	}
+
+	useEffect(() => {
+		getStudents()
+	}, [query])
+
 	return (
 		<YearbookContainer>
 			<h1 className='flex justify-center mt-24 md:mt-20 text-3xl font-bold text-center text-white md:text-6xl'>
@@ -24,10 +65,11 @@ const CharactersPage = () => {
 				leo eros, tellus sit eget auctor.
 			</p>
 			<form
+				id='characters'
+				name='yearbookForm'
 				className='z-10 md:mx-8 lg:mx-20'
-				action='submit'
-				method='POST'
-				onSubmit={event => event.preventDefault()}>
+				action=''
+				onSubmit={handleSubmit}>
 				<YearbookSearchBar />
 				<div className='z-10 flex justify-center mb-8 space-x-2.5 bg-transparent md:flex-row md:space-x-5 md:space-y-0 lg:mt-14 md:mt-10 mt-6'>
 					<YearbookSortDropdown />
@@ -36,23 +78,35 @@ const CharactersPage = () => {
 			</form>
 			<div className='flex flex-wrap justify-center w-full px-4 bg-transparent md:px-0 lg:mt-20 md:mt-16'>
 				{students.map((student: Student) => (
-					<div key={student.id} className='bg-transparent w-4/12 md:my-0 my-2'>
+					<div
+						key={student.username}
+						className='bg-transparent w-4/12 md:my-0 my-2'>
 						{isMobile ? (
-							<YearbookMobileProfileCard
-								key={student.id}
-								name={student.name}
-								image={student.image}
-								major={student.major}
-								house={student.house}
-							/>
+							<Link href={`/characters/${student.username}`}>
+								<a>
+									<YearbookMobileProfileCard
+										username={student.username}
+										key={student.username}
+										nama={student.nama}
+										foto_diri={`${imageUrl}/${student.foto_diri}`}
+										jurusan={student.jurusan}
+										house_name={student.house_name}
+									/>
+								</a>
+							</Link>
 						) : (
-							<YearbookProfileCard
-								key={student.id}
-								name={student.name}
-								image={student.image}
-								major={student.major}
-								house={student.house}
-							/>
+							<Link href={`/characters/${student.username}`}>
+								<a>
+									<YearbookProfileCard
+										username={student.username}
+										key={student.username}
+										nama={student.nama}
+										foto_diri={`${imageUrl}/${student.foto_diri}`}
+										jurusan={student.jurusan}
+										house_name={student.house_name}
+									/>
+								</a>
+							</Link>
 						)}
 					</div>
 				))}
