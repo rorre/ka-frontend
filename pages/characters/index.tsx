@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import axios from 'axios'
 import {
 	YearbookSearchBar,
@@ -81,23 +82,31 @@ const CharactersPage = () => {
 						key={student.username}
 						className='bg-transparent w-4/12 md:my-0 my-2'>
 						{isMobile ? (
-							<YearbookMobileProfileCard
-								username={student.username}
-								key={student.username}
-								nama={student.nama}
-								foto_diri={`${imageUrl}/${student.foto_diri}`}
-								jurusan={student.jurusan}
-								house_name={student.house_name}
-							/>
+							<Link href={`/characters/${student.username}`}>
+								<a>
+									<YearbookMobileProfileCard
+										username={student.username}
+										key={student.username}
+										nama={student.nama}
+										foto_diri={`${imageUrl}/${student.foto_diri}`}
+										jurusan={student.jurusan}
+										house_name={student.house_name}
+									/>
+								</a>
+							</Link>
 						) : (
-							<YearbookProfileCard
-								username={student.username}
-								key={student.username}
-								nama={student.nama}
-								foto_diri={`${imageUrl}/${student.foto_diri}`}
-								jurusan={student.jurusan}
-								house_name={student.house_name}
-							/>
+							<Link href={`/characters/${student.username}`}>
+								<a>
+									<YearbookProfileCard
+										username={student.username}
+										key={student.username}
+										nama={student.nama}
+										foto_diri={`${imageUrl}/${student.foto_diri}`}
+										jurusan={student.jurusan}
+										house_name={student.house_name}
+									/>
+								</a>
+							</Link>
 						)}
 					</div>
 				))}
