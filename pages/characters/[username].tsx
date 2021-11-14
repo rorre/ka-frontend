@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import axios from 'axios'
+import { CharacterDetailsLayout } from '../../app/components/characters/character-details'
 import { useRouter } from 'next/router'
 import { DetailedStudent } from '../../app/components/characters/character-details/interfaces'
 
@@ -27,3 +28,7 @@ const CharactersDetailsPage = () => {
 }
 
 export default CharactersDetailsPage
+
+CharactersDetailsPage.getLayout = function getLayout(page: ReactElement) {
+	return <CharacterDetailsLayout>{page}</CharacterDetailsLayout>
+}
