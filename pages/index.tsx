@@ -12,7 +12,7 @@ const Home = () => {
 			<div className='flex flex-col items-center justify-center h-screen text-center text-white cursor-default'>
 				<h2>INTRODUCING</h2>
 				<h1 className='text-9xl'>
-					CSUI<br></br>2021
+					CSUIO<br></br>2021
 				</h1>
 			</div>
 			<Messages />
