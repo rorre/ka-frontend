@@ -9,7 +9,7 @@ const Fantasy = ({
 }) => (
 	<object
 		className={`${width} ${height}`}
-		data='assets/House of Fantasy.svg'></object>
+		data='/assets/House of Fantasy.svg'></object>
 )
 
 export default Fantasy
