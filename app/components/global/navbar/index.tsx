@@ -36,9 +36,7 @@ const Navbar = () => {
 					</button>
 				</div>
 				<div
-					className={`hidden text-white lg:col-span-4 lg:grid lg:grid-cols-${
-						Object.keys(menus).length
-					}`}>
+					className={`hidden text-white lg:col-span-4 lg:grid lg:grid-cols-4`}>
 					{Object.keys(menus).map(menu => (
 						<div key={uuid()} className='flex justify-center col-span-1'>
 							<NavLink label={menu} url={menus[menu]} />
