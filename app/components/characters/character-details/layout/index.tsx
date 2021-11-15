@@ -5,8 +5,8 @@ type LayoutProps = {
 }
 
 const CharacterDetailsLayout = ({ children }: LayoutProps) => (
-	<main className='bg-no-repeat bg-contain bg-shade-pattern'>
-		<div className='mx-auto max-w-9/10'>{children}</div>
+	<main>
+		<div className='mx-auto'>{children}</div>
 	</main>
 )
 
