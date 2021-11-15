@@ -1,7 +1,10 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import Header from '../../app/components/global/header'
 import axios from 'axios'
-import { CharacterDetailsLayout } from '../../app/components/characters/character-details'
+import {
+	CharacterDetailsLayout,
+	ClapperBackground,
+} from '../../app/components/characters/character-details'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
 import { useRouter } from 'next/router'
@@ -31,11 +34,12 @@ const CharactersDetailsPage = () => {
 		<>
 			<Header />
 			<div className='relative'>
+				<ClapperBackground />
 				<Buttons.Back className='absolute top-2 left-2 rounded-md' />
-				<div className='absolute top-2 right-2'>
+				<div className='absolute top-1 right-0'>
 					{utils.getHouseIcon(
 						student.house?.nama.split(' ').at(2)!,
-						'w-12 h-12'
+						'md:w-12 md:h-12 w-10 h-10'
 					)}
 				</div>
 			</div>
