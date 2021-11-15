@@ -43,7 +43,7 @@ export const SearchBarDropdown = () => {
 							onClick={() => {
 								setMajor('ilmu_komputer')
 							}}
-							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
+							className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
 							Computer Science
 							<label htmlFor='ilmu_komputer'></label>
 							<input
@@ -62,7 +62,7 @@ export const SearchBarDropdown = () => {
 							onClick={() => {
 								setMajor('sistem_informasi')
 							}}
-							className='text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
+							className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
 							Information Systems
 							<label htmlFor='sistem_informasi'></label>
 							<input
