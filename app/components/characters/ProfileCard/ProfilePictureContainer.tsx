@@ -5,7 +5,7 @@ import { ProfilePictureContainerInterface } from './interfaces/ProfilePictureCon
 export const ProfilePictureContainer = ({
 	image,
 }: ProfilePictureContainerInterface) => (
-	<ProfileImageBorder className='rounded-md md:w-6/12 md:mr-2.5'>
+	<ProfileImageBorder className='rounded-md md:w-6/12 md:mr-2.5 h-44 md:h-auto'>
 		<ProfilePicture className='h-full' src={image} alt='Profile-Image' />
 	</ProfileImageBorder>
 )

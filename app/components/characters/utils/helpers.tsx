@@ -1,46 +1,99 @@
 import React from 'react'
 import * as House from '../house-icons'
 
-export const getHouseIcon = (house: string) => {
+export const getHouseIcon = (house: string, classname = '') => {
+	const defaultIconHeight = classname === '' ? 'h-6 lg:h-9' : classname
+	const defaultIconWidth = classname === '' ? 'w-6 lg:w-9' : ''
+
 	switch (house) {
 		case 'Action':
-			return <House.ActionIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.ActionIcon width={defaultIconWidth} height={defaultIconHeight} />
+			)
 
 		case 'Animation':
-			return <House.AnimationIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.AnimationIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Apocalypse':
-			return <House.ApocalypseIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.ApocalypseIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Comedy':
-			return <House.ComedyIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.ComedyIcon width={defaultIconWidth} height={defaultIconHeight} />
+			)
 
 		case 'Fantasy':
-			return <House.FantasyIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.FantasyIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Historical':
-			return <House.HistoricalIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.HistoricalIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Horror':
-			return <House.HorrorIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.HorrorIcon width={defaultIconWidth} height={defaultIconHeight} />
+			)
 
 		case 'Musical':
-			return <House.MusicalIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.MusicalIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Mystery':
-			return <House.MysteryIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.MysteryIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Romance':
-			return <House.RomanceIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.RomanceIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		case 'Space':
-			return <House.SpaceIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.SpaceIcon width={defaultIconWidth} height={defaultIconHeight} />
+			)
 
 		case 'Superhero':
-			return <House.SuperheroIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.SuperheroIcon
+					width={defaultIconWidth}
+					height={defaultIconHeight}
+				/>
+			)
 
 		default:
-			return <House.ActionIcon width='w-6 lg:w-9' height='h-6 lg:h-9' />
+			return (
+				<House.ActionIcon width={defaultIconWidth} height={defaultIconHeight} />
+			)
 	}
 }
 

@@ -9,7 +9,7 @@ const ActionIcon = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/House of Action.svg'></object>
+		data='/assets/House of Action.svg'></object>
 )
 
 export default ActionIcon

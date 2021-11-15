@@ -43,7 +43,7 @@ const SortDropdown = () => {
 								setIsAscending(true)
 								setIsDescending(false)
 							}}
-							className='relative text-left bg-dark-3 hover:bg-dark-2 md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs w-full rounded-t-lg border-dark-2'>
+							className='relative text-left bg-purple hover:bg-dark-2 md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs w-full rounded-t-lg border-dark-2'>
 							Ascending
 							<label htmlFor='asc'></label>
 							<StyledRadio
@@ -67,7 +67,7 @@ const SortDropdown = () => {
 								setIsDescending(true)
 								setIsAscending(false)
 							}}
-							className='relative text-left bg-dark-3 hover:bg-dark-2 text-gray-400 w-full md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs rounded-b-lg border-dark-2'>
+							className='relative text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs rounded-b-lg border-dark-2'>
 							Descending
 							<label htmlFor='desc'></label>
 							<StyledRadio

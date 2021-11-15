@@ -9,7 +9,7 @@ const Superhero = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/House of Superhero.svg'></object>
+		data='/assets/House of Superhero.svg'></object>
 )
 
 export default Superhero

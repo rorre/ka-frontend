@@ -15,8 +15,8 @@ const ProfileCard = ({ nama, jurusan, foto_diri, house_name }: Student) => {
 
 			<div className='flex divide-x-2 divide-dashed divide-red-800'>
 				<ProfilePictureContainer image={foto_diri} />
-				<div className='relative flex-col lg:w-7/12 sm:9/12 md:w-10/12 pl-3 ml-4'>
-					<div className='order-1 mt-6 mb-1 ml-2 mr-1 text-1.5xs lg:text-sm text-white md:ml-0 md:mt-3 lg:mt-12'>
+				<div className='relative flex-col lg:w-7/12 sm:9/12 md:w-8/12 lg:pl-3 pl-4 lg:ml-4 md:ml-4'>
+					<div className='order-1 mt-6 mb-1 ml-2 mr-1 text-1.5xs lg:text-sm text-white md:ml-0 md:mt-8 lg:mt-12'>
 						{utils.shortenName(nama)}
 					</div>
 					<div className='order-2 ml-2 mr-1 text-2xs lg:text-xs text-white md:ml-0 font-extralight'>
@@ -28,7 +28,7 @@ const ProfileCard = ({ nama, jurusan, foto_diri, house_name }: Student) => {
 						{utils.getHouseIcon(house_name.split(' ').at(2)!)}
 						{house_name.split(' ').at(2)}
 					</div>
-					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-2 lg:mt-8'>
+					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-8 lg:mt-8'>
 						<Social.LineIcon
 							width='w-6 lg:w-8 md:mr-1 lg:mr-1'
 							height='h-6 lg:h-8'

@@ -6,7 +6,7 @@ import socialMedia from './utils/socialMedia'
 const Footer = () => {
 	const { instagram, line } = socialMedia
 	return (
-		<footer className='flex flex-col w-full px-12 py-5 m-0 divide-y bg-dark-2 divide-dark-3'>
+		<footer className='flex flex-col w-full px-12 py-5 m-0 divide-y bg-dark-2 divide-purple'>
 			<div className='flex flex-col gap-4 my-4 lg:grid lg:grid-cols-5'>
 				<div className='flex flex-col col-span-1 gap-4'>
 					<span className='text-2xl text-white'>Social</span>
