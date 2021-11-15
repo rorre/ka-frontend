@@ -1,9 +1,8 @@
 import React from 'react'
 import Link from 'next/dist/client/link'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import DesktopTicket from './DekstopTicket'
 import { Sig } from './interfaces'
-import { sigs } from './interfaces/Sigs'
+import { sigs } from './utils/sigs'
 
 const DesktopSIG = () => {
 	return (
@@ -22,7 +21,7 @@ const DesktopSIG = () => {
 				<div className='container h-full w-full flex justify-center items-center'>
 					<div className='grid grid-cols-2 gap-4'>
 						{sigs.map((sig: Sig) => (
-							<DesktopTicket 
+							<DesktopTicket
 								key={sig.id}
 								title={sig.title}
 								desc={sig.desc}

@@ -7,7 +7,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { Sig } from './interfaces'
 
-const MobileTicket = ({title, link, desc}: Sig) => {
+const MobileTicket = ({ title, link, desc }: Sig) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const closeModal = () => {

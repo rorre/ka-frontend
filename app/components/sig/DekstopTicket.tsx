@@ -4,7 +4,7 @@ import DesktopTicketBackground from '../../../public/assets/Dekstop Ticket.svg'
 import Image from 'next/image'
 import { Sig } from './interfaces'
 
-const DesktopTicket = ({title, link, desc}: Sig) => {
+const DesktopTicket = ({ title, link, desc }: Sig) => {
 	return (
 		<div className='container h-full w-full  relative'>
 			<Image src={DesktopTicketBackground} className='' />
