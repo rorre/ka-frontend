@@ -10,7 +10,7 @@ export const MobileProfileCard = ({
 	foto_diri,
 	house_name,
 }: Student) => (
-	<div className='relative'>
+	<div className='relative m-0.5'>
 		<ProfilePictureContainer image={foto_diri} />
 		<div className='absolute top-1.5 right-1.5'>
 			{utils.getHouseIcon(house_name.split(' ').at(2)!)}

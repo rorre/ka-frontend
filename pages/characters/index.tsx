@@ -83,7 +83,7 @@ const CharactersPage = () => {
 					{students.map((student: Student) => (
 						<div
 							key={student.username}
-							className='bg-transparent w-4/12 md:my-0 my-2'>
+							className='bg-transparent w-6/12 lg:w-4/12 md:w-6/12 md:my-0 my-2'>
 							{isMobile ? (
 								<Link href={`/characters/${student.username}`}>
 									<a>
