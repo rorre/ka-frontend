@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import MobileSIG from '../components/SIG/MobileSIG'
-import DesktopSIG from '../components/SIG/DesktopSIG'
+import MobileSIG from '../../app/components/sig/MobileSIG'
+import DesktopSIG from '../../app/components/sig/DesktopSIG'
 
 const GradientBackgroundRed = styled.div`
 	position: fixed;

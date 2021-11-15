@@ -5,8 +5,9 @@ import Image from 'next/image'
 import ModalTicket from '../../../public/assets/Mobile Modal.svg'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import { Sig } from './interfaces'
 
-const MobileTicket = () => {
+const MobileTicket = ({title, link, desc}: Sig) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const closeModal = () => {
@@ -52,7 +53,7 @@ const MobileTicket = () => {
 							leave='ease-in duration-200'
 							leaveFrom='opacity-100 scale-100'
 							leaveTo='opacity-0 scale-95'>
-							<div className='inline-block h-screen w-auto max-w-full overflow-hidden text-left align-middle transition-all transform bg-gray-800 bg-opacity-50'>
+							<div className='inline-block h-screen w-60 max-w-full overflow-hidden text-left align-middle transition-all transform'>
 								<div className='flex flex-col h-full w-full justify-center items-center'>
 									<div className='modal ticket container h-5/6 w-full flex justify-center mt-5 relative'>
 										<Image src={ModalTicket} />
@@ -64,24 +65,13 @@ const MobileTicket = () => {
 											<div className='container h-4/6 w-full flex items-center justify-center'>
 												<div className='container h-full w-40 overflow-hidden'>
 													<p className='text-xxxs text-justify text-white'>
-														Programming adalah sebuah proses untuk membuat suatu
-														program di komputer yang dapat berupa software,
-														website, aplikasi, dan lain sebagainya. Proses ini
-														melibatkan beberapa tahap pemrograman, mulai dari
-														tulis menulis, menguji, merevisi, dan mengevaluasi,
-														serta mengujinya lagi sampai program tersebut
-														benar-benar sesuai dengan apa yang diinginkan oleh
-														seorang programmer. Pada perlombaan Programming,
-														biasanya kita akan dihadapi dengan permasalahan IT
-														yang akan menguji kemampuan dan nalar kita untuk
-														dapat menyelesaikannya dengan suatu program
-														komputer.{' '}
+														{desc}
 													</p>
 												</div>
 											</div>
 											<div className='container h-1/6 w-full text-center justify-center flex'>
 												<div className='container h-7 w-32 mt-3'>
-													<Link href='/'>
+													<Link href={link}>
 														<button className='bg-red-700 text-white font-bold py-2 px-4 rounded-full active:bg-red-900'>
 															<p>Join SIG</p>
 														</button>

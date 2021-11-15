@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/dist/client/link'
 import MobileTicket from './MobileTicket'
+import { Sig } from './interfaces'
+import { sigs } from './interfaces/Sigs'
 
 const MobileSIG = () => {
 	return (
@@ -16,14 +18,14 @@ const MobileSIG = () => {
 			</div>
 			<div className='h-auto w-full flex items-center justify-center'>
 				<div className='grid grid-cols-2 gap-4'>
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
-					<MobileTicket />
+					{sigs.map((sig: Sig) => (
+							<MobileTicket 
+								key={sig.id}
+								title={sig.title}
+								desc={sig.desc}
+								link={sig.link}
+							/>
+						))}
 				</div>
 			</div>
 			<div className='w-full h-28 flex-col flex items-center justify-center text-center '>
