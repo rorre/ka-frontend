@@ -12,19 +12,28 @@ import {
 	YearbookContainer,
 } from '../../app/components/characters'
 import { useResponsive } from '../../app/hooks'
-import { Student } from '../../app/components/characters/interfaces'
+import { Paged, Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
 	const [students, setStudents] = useState([] as Student[])
 	const [query, setQuery] = useState(new URLSearchParams())
+	const [currentPage, setCurrentPage] = useState(1)
+
+	// 22 as default because in total there are 22 pages with no filter
+	const [maxPage, setMaxPage] = useState(22)
 	const { isMobile } = useResponsive()
 	const url = process.env.NEXT_PUBLIC_BASE_URL + '/student/list?'
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
 
 	const getStudents = async () => {
+		query.set('page', currentPage.toString())
+
 		try {
-			const { data } = await axios.get(`${url}${query.toString()}`)
-			setStudents(data as Student[])
+			const { data } = await axios.get<Paged<Student>>(
+				`${url}${query.toString()}`
+			)
+			setStudents(data.data)
+			setMaxPage(data.max_page)
 		} catch (error) {
 			console.log(error)
 			return []
@@ -48,22 +57,15 @@ const CharactersPage = () => {
 		const queryParams = new URLSearchParams(params)
 
 		// Reset page back to 1 on filter change
-		queryParams.set('page', '1')
-
+		setCurrentPage(1)
 		setQuery(queryParams)
 
 		event.preventDefault()
 	}
 
-	const handlePagination = (page: number) => {
-		const currentQuery = new URLSearchParams(query)
-		currentQuery.set('page', page.toString())
-		setQuery(currentQuery)
-	}
-
 	useEffect(() => {
 		getStudents()
-	}, [query])
+	}, [query, currentPage])
 
 	return (
 		<>
@@ -123,7 +125,11 @@ const CharactersPage = () => {
 						</div>
 					))}
 				</div>
-				<YearbookPagination onChange={handlePagination} />
+				<YearbookPagination
+					currentPage={currentPage}
+					setCurrentPage={setCurrentPage}
+					maxPage={maxPage}
+				/>
 			</YearbookContainer>
 		</>
 	)
