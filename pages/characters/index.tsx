@@ -104,6 +104,8 @@ const CharactersPage = () => {
 											foto_diri={`${imageUrl}/${student.foto_diri}`}
 											jurusan={student.jurusan}
 											house_name={student.house_name}
+											line={student.line}
+											instagram={student.instagram}
 										/>
 									</a>
 								</Link>
@@ -117,6 +119,8 @@ const CharactersPage = () => {
 											foto_diri={`${imageUrl}/${student.foto_diri}`}
 											jurusan={student.jurusan}
 											house_name={student.house_name}
+											line={student.line}
+											instagram={student.instagram}
 										/>
 									</a>
 								</Link>
