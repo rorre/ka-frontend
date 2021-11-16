@@ -40,7 +40,7 @@ const Footer = () => {
 							alt=''
 							className='w-11 h-11'
 						/>
-						<Link href='/devteam'>
+						<Link href='/meetkateam'>
 							<p className='text-base cursor-pointer text-purple-300'>
 								Karya Angkatan Team
 							</p>
