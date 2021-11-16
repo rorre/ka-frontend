@@ -29,7 +29,6 @@ const Pagination = ({
 				pageNumber={startNumber + i}
 				currentPage={startNumber + i === currentPage}
 				onClick={() => {
-					console.log(i)
 					setCurrentPage(startNumber + i)
 				}}
 			/>

@@ -43,7 +43,6 @@ const CharactersPage = () => {
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		const formData = new FormData(event.currentTarget)
 		const data = Array.from(formData.entries())
-		console.log(data)
 
 		const params = data
 			.map(
