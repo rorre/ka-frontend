@@ -18,6 +18,9 @@ const CharactersPage = () => {
 	const [students, setStudents] = useState([] as Student[])
 	const [query, setQuery] = useState(new URLSearchParams())
 	const [currentPage, setCurrentPage] = useState(1)
+
+	// 22 as default because in total there are 22 pages with no filter
+	const [maxPage, setMaxPage] = useState(22)
 	const { isMobile } = useResponsive()
 	const url = process.env.NEXT_PUBLIC_BASE_URL + '/student/list?'
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
@@ -30,6 +33,7 @@ const CharactersPage = () => {
 				`${url}${query.toString()}`
 			)
 			setStudents(data.data)
+			setMaxPage(data.max_page)
 		} catch (error) {
 			console.log(error)
 			return []
@@ -124,6 +128,7 @@ const CharactersPage = () => {
 				<YearbookPagination
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
+					maxPage={maxPage}
 				/>
 			</YearbookContainer>
 		</>
