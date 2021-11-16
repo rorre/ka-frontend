@@ -61,7 +61,7 @@ const CharactersPage = () => {
 
 	useEffect(() => {
 		getStudents()
-	}, [query])
+	}, [query, currentPage])
 
 	return (
 		<>
