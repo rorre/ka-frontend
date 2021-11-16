@@ -1,8 +1,8 @@
 export interface MessagesItemInterface {
-	nama: string
-	jabatan: string
-	jurusan: string
-	foto: string
-	pesan: string
+	name: string
+	position: string
+	major: string
+	image: string
+	message: string
 	index: number
 }

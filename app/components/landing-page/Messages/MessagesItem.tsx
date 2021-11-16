@@ -3,11 +3,11 @@ import { MessagesCard } from '../styles'
 import { MessagesItemInterface } from './interfaces/MessagesItem.interface'
 
 const MessagesItem = ({
-	nama,
-	jabatan,
-	jurusan,
-	foto,
-	pesan,
+	name,
+	position,
+	major,
+	image,
+	message,
 	index,
 }: MessagesItemInterface) => {
 	return (
@@ -15,19 +15,19 @@ const MessagesItem = ({
 			<div className='flex items-center space-x-7'>
 				<img
 					className='w-28 h-28 object-cover rounded-full mx-auto'
-					src={foto}
-					alt={nama}
+					src={image}
+					alt={name}
 				/>
 				<div className='text-left'>
-					<h4>{nama}</h4>
+					<h4>{name}</h4>
 					<p className='text-md'>
-						{jabatan}
+						{position}
 						<br />
-						{jurusan}
+						{major}
 					</p>
 				</div>
 			</div>
-			<p className='mt-7 text-left'>{pesan}</p>
+			<p className='mt-7 text-left'>{message}</p>
 		</MessagesCard>
 	)
 }
