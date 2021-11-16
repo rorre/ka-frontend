@@ -82,7 +82,7 @@ const Pagination = ({
 			)}
 			<ChangePageButton
 				onClick={() => {
-					setCurrentPage(currentPage + 1)
+					if (currentPage < maxPage) setCurrentPage(currentPage + 1)
 				}}
 				className='-rotate-90 md:ml-4'
 			/>
