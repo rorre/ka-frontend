@@ -12,7 +12,7 @@ import {
 	YearbookContainer,
 } from '../../app/components/characters'
 import { useResponsive } from '../../app/hooks'
-import { Student } from '../../app/components/characters/interfaces'
+import { Paged, Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
 	const [students, setStudents] = useState([] as Student[])
@@ -26,8 +26,10 @@ const CharactersPage = () => {
 		query.set('page', currentPage.toString())
 
 		try {
-			const { data } = await axios.get(`${url}${query.toString()}`)
-			setStudents(data as Student[])
+			const { data } = await axios.get<Paged<Student>>(
+				`${url}${query.toString()}`
+			)
+			setStudents(data.data)
 		} catch (error) {
 			console.log(error)
 			return []
