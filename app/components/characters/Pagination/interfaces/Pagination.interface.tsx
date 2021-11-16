@@ -1,3 +1,4 @@
 export interface PaginationInterface {
-	onChange: (arg0: number) => void
+	currentPage: number
+	setCurrentPage: (arg0: number) => void
 }

@@ -17,11 +17,14 @@ import { Student } from '../../app/components/characters/interfaces'
 const CharactersPage = () => {
 	const [students, setStudents] = useState([] as Student[])
 	const [query, setQuery] = useState(new URLSearchParams())
+	const [currentPage, setCurrentPage] = useState(1)
 	const { isMobile } = useResponsive()
 	const url = process.env.NEXT_PUBLIC_BASE_URL + '/student/list?'
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
 
 	const getStudents = async () => {
+		query.set('page', currentPage.toString())
+
 		try {
 			const { data } = await axios.get(`${url}${query.toString()}`)
 			setStudents(data as Student[])
@@ -48,17 +51,10 @@ const CharactersPage = () => {
 		const queryParams = new URLSearchParams(params)
 
 		// Reset page back to 1 on filter change
-		queryParams.set('page', '1')
-
+		setCurrentPage(1)
 		setQuery(queryParams)
 
 		event.preventDefault()
-	}
-
-	const handlePagination = (page: number) => {
-		const currentQuery = new URLSearchParams(query)
-		currentQuery.set('page', page.toString())
-		setQuery(currentQuery)
 	}
 
 	useEffect(() => {
@@ -123,7 +119,10 @@ const CharactersPage = () => {
 						</div>
 					))}
 				</div>
-				<YearbookPagination onChange={handlePagination} />
+				<YearbookPagination
+					currentPage={currentPage}
+					setCurrentPage={setCurrentPage}
+				/>
 			</YearbookContainer>
 		</>
 	)

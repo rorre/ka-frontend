@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { ChangePageButton } from './ChangePageButton'
 import { PaginationInterface } from './interfaces/Pagination.interface'
 import { PaginationItem } from './PaginationItem'
 import { pages } from './utils/pageNumbers'
 
-const Pagination = ({ onChange }: PaginationInterface) => {
-	const [currentPage, setCurrentPage] = useState(1)
-	useEffect(() => {
-		onChange(currentPage)
-	}, [currentPage])
-
+const Pagination = ({ currentPage, setCurrentPage }: PaginationInterface) => {
 	return (
 		<div className='bg-dark-2 md:rounded-xl rounded md:h-16 h-10 md:space-x-2.5 space-x-1.5 md:px-4 lg:mt-16 md:mt-12 lg:mb-0 md:mb-4 mt-8 mb-4 flex flex-row justify-center max-w-min mx-auto'>
 			<ChangePageButton
