@@ -122,7 +122,7 @@ export const shortenName = (name: string) => {
 		'mouhamad',
 	]
 
-	const studentSplittedName = name.split(' ')
+	const studentSplittedName = name.trim().split(' ')
 
 	for (const index in studentSplittedName) {
 		if (
@@ -142,16 +142,22 @@ export const shortenName = (name: string) => {
 
 	if (studentSplittedName.length >= 3) {
 		const secondName = studentSplittedName[1]
-		const firstLetterOfThirdName = `${studentSplittedName[2][0]}`
+		const thirdName = studentSplittedName[2]
 
-		if (firstLetterOfThirdName.endsWith('.'))
-			return `${formatName(firstName)} ${formatName(
-				secondName
-			)} ${firstLetterOfThirdName}`
-		else
-			return `${formatName(firstName)} ${formatName(
-				secondName
-			)} ${firstLetterOfThirdName}.`
+		if (firstName === 'M.') {
+			return `${formatName(firstName)} ${formatName(secondName)} ${thirdName}`
+		} else {
+			const firstLetterOfThirdName = studentSplittedName[2][0]
+
+			if (firstLetterOfThirdName.endsWith('.'))
+				return `${formatName(firstName)} ${formatName(
+					secondName
+				)} ${firstLetterOfThirdName}`
+			else
+				return `${formatName(firstName)} ${formatName(
+					secondName
+				)} ${firstLetterOfThirdName}.`
+		}
 	} else {
 		return formatName(firstName)
 	}

@@ -35,49 +35,47 @@ export const SearchBarDropdown = () => {
 					</svg>
 				</button>
 			</div>
-			<div>
-				{isDropdown && (
-					<div className='z-10 absolute left-0 mr-4 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
-						<button
-							type='button'
-							onClick={() => {
+			<div className={isDropdown ? '' : 'hidden'}>
+				<div className='z-10 absolute left-0 mr-4 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
+					<button
+						type='button'
+						onClick={() => {
+							setMajor('ilmu_komputer')
+						}}
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
+						Computer Science
+						<label htmlFor='ilmu_komputer'></label>
+						<input
+							className='opacity-0'
+							type='radio'
+							name='major'
+							id='ilmu_komputer'
+							value={major}
+							checked={major === 'ilmu_komputer' ? true : false}
+							onChange={() => {
 								setMajor('ilmu_komputer')
-							}}
-							className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
-							Computer Science
-							<label htmlFor='ilmu_komputer'></label>
-							<input
-								className='opacity-0'
-								type='radio'
-								name='major'
-								id='ilmu_komputer'
-								value={major}
-								checked={major === 'ilmu_komputer' ? true : false}
-								onChange={() => {
-									setMajor('ilmu_komputer')
-								}}></input>
-						</button>
-						<button
-							type='button'
-							onClick={() => {
+							}}></input>
+					</button>
+					<button
+						type='button'
+						onClick={() => {
+							setMajor('sistem_informasi')
+						}}
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
+						Information Systems
+						<label htmlFor='sistem_informasi'></label>
+						<input
+							className='opacity-0'
+							type='radio'
+							id='sistem_informasi'
+							name='major'
+							value={major}
+							checked={major === 'sistem_informasi' ? true : false}
+							onChange={() => {
 								setMajor('sistem_informasi')
-							}}
-							className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
-							Information Systems
-							<label htmlFor='sistem_informasi'></label>
-							<input
-								className='opacity-0'
-								type='radio'
-								id='sistem_informasi'
-								name='major'
-								value={major}
-								checked={major === 'sistem_informasi' ? true : false}
-								onChange={() => {
-									setMajor('sistem_informasi')
-								}}></input>
-						</button>
-					</div>
-				)}
+							}}></input>
+					</button>
+				</div>
 			</div>
 		</SearchDropdown>
 	)
