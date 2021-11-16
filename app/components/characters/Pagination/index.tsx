@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { ChangePageButton } from './ChangePageButton'
+import { PaginationInterface } from './interfaces/Pagination.interface'
 import { PaginationItem } from './PaginationItem'
 import { pages } from './utils/pageNumbers'
 
-const Pagination = () => {
+const Pagination = ({ onChange }: PaginationInterface) => {
+	const [currentPage, setCurrentPage] = useState(1)
+	useEffect(() => {
+		onChange(currentPage)
+	}, [currentPage])
+
 	return (
 		<div className='bg-dark-2 md:rounded-xl rounded md:h-16 h-10 md:space-x-2.5 space-x-1.5 md:px-4 lg:mt-16 md:mt-12 lg:mb-0 md:mb-4 mt-8 mb-4 flex flex-row justify-center max-w-min mx-auto'>
-			<ChangePageButton className='rotate-90 md:mr-4' />
+			<ChangePageButton
+				onClick={() => {
+					setCurrentPage(currentPage <= 1 ? currentPage : currentPage - 1)
+				}}
+				className='rotate-90 md:mr-4'
+			/>
 			{pages.map((page, index) => (
 				<PaginationItem
 					key={index}
@@ -16,10 +27,18 @@ const Pagination = () => {
 							? '...'
 							: pages[index]
 					}
-					currentPage={pages[index] === 2 && true}
+					currentPage={pages[index] === currentPage}
+					onClick={() => {
+						setCurrentPage(index + 1)
+					}}
 				/>
 			))}
-			<ChangePageButton className='-rotate-90 md:ml-4' />
+			<ChangePageButton
+				onClick={() => {
+					setCurrentPage(currentPage + 1)
+				}}
+				className='-rotate-90 md:ml-4'
+			/>
 		</div>
 	)
 }

@@ -33,59 +33,57 @@ const SortDropdown = () => {
 				</svg>
 			</button>
 
-			<div>
-				{isDropdown && (
-					<div className='z-10 absolute right-0 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
-						<button
-							type='button'
-							onClick={() => {
+			<div className={isDropdown ? '' : 'hidden'}>
+				<div className='z-10 absolute right-0 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
+					<button
+						type='button'
+						onClick={() => {
+							setSortBy('asc')
+							setIsAscending(true)
+							setIsDescending(false)
+						}}
+						className='relative text-left bg-purple hover:bg-dark-2 md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs w-full rounded-t-lg border-dark-2'>
+						Ascending
+						<label htmlFor='asc'></label>
+						<StyledRadio
+							type='radio'
+							id='asc'
+							name='sort'
+							className='absolute md:right-4 right-2 md:top-3.5 top-2.5'
+							value={sortBy}
+							onChange={() => {
 								setSortBy('asc')
 								setIsAscending(true)
 								setIsDescending(false)
 							}}
-							className='relative text-left bg-purple hover:bg-dark-2 md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs w-full rounded-t-lg border-dark-2'>
-							Ascending
-							<label htmlFor='asc'></label>
-							<StyledRadio
-								type='radio'
-								id='asc'
-								name='sort'
-								className='absolute md:right-4 right-2 md:top-3.5 top-2.5'
-								value={sortBy}
-								onChange={() => {
-									setSortBy('asc')
-									setIsAscending(true)
-									setIsDescending(false)
-								}}
-								checked={isAscending}
-							/>
-						</button>
-						<button
-							type='button'
-							onClick={() => {
+							checked={isAscending}
+						/>
+					</button>
+					<button
+						type='button'
+						onClick={() => {
+							setSortBy('desc')
+							setIsDescending(true)
+							setIsAscending(false)
+						}}
+						className='relative text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs rounded-b-lg border-dark-2'>
+						Descending
+						<label htmlFor='desc'></label>
+						<StyledRadio
+							type='radio'
+							id='desc'
+							name='sort'
+							value={sortBy}
+							className='absolute md:right-4 right-2 md:top-3.5 top-2.5'
+							onChange={() => {
 								setSortBy('desc')
 								setIsDescending(true)
 								setIsAscending(false)
 							}}
-							className='relative text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:px-5 py-2 px-3 md:text-sm lg:text-base text-2xs rounded-b-lg border-dark-2'>
-							Descending
-							<label htmlFor='desc'></label>
-							<StyledRadio
-								type='radio'
-								id='desc'
-								name='sort'
-								value={sortBy}
-								className='absolute md:right-4 right-2 md:top-3.5 top-2.5'
-								onChange={() => {
-									setSortBy('desc')
-									setIsDescending(true)
-									setIsAscending(false)
-								}}
-								checked={isDescending}
-							/>
-						</button>
-					</div>
-				)}
+							checked={isDescending}
+						/>
+					</button>
+				</div>
 			</div>
 		</div>
 	)
