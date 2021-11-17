@@ -12,7 +12,10 @@ const DevCard = styled.div`
 	background: #1d1a27;
 	border-radius: 20px;
 	@media (max-width: 1000px) {
-		width: 70%;
+		width: 80vw;
+	}
+	@media (max-width: 430px) {
+		height: 80vw;
 	}
 `
 

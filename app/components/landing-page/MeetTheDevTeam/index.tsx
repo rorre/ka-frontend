@@ -11,7 +11,7 @@ const MeetTheDevTeam = () => {
 					<img
 						src='/assets/mtdt-icon.svg'
 						alt='Meet the Dev Team'
-						className='mb-10'
+						className='mb-10 3sm:w-1/3'
 					/>
 					<h2 className='3md:text-3xl 3sm:text-xl 3sm:max-w-3/4 text-center'>
 						Meet the Dev Team
