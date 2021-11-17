@@ -1,25 +1,91 @@
 import React from 'react'
 
 import { ChangePageButton } from './ChangePageButton'
+import { PaginationInterface } from './interfaces/Pagination.interface'
 import { PaginationItem } from './PaginationItem'
-import { pages } from './utils/pageNumbers'
 
-const Pagination = () => {
-	return (
-		<div className='bg-dark-2 rounded-xl h-16 space-x-2.5 px-4 my-16 flex flex-row justify-center max-w-min mx-auto'>
-			<ChangePageButton className='rotate-90 mr-4' />
-			{pages.map((page, index) => (
+const Pagination = ({
+	currentPage,
+	setCurrentPage,
+	maxPage,
+}: PaginationInterface) => {
+	let startNumber: number
+	if (maxPage < 7) {
+		// Enforce 1 as start if total pages are below 7
+		startNumber = 1
+	} else {
+		if (currentPage < maxPage - 3) {
+			startNumber = currentPage < 7 ? 1 : currentPage - 5
+		} else {
+			startNumber = maxPage - 8
+		}
+	}
+
+	const paginationItems: JSX.Element[] = []
+	for (let i = 0; i < Math.min(7, maxPage); i++) {
+		paginationItems.push(
+			<PaginationItem
+				key={i}
+				pageNumber={startNumber + i}
+				currentPage={startNumber + i === currentPage}
+				onClick={() => {
+					setCurrentPage(startNumber + i)
+				}}
+			/>
+		)
+	}
+
+	if (maxPage > 8) {
+		// If there are 1 to 7 pages, we want it to render
+		// all of the numbers, no dots and everything.
+		if (currentPage >= maxPage - 3) {
+			paginationItems.push(
 				<PaginationItem
-					key={index}
-					pageNumber={
-						pages[index] > pages[0] + 6 && pages[index] !== pages.length
-							? '...'
-							: pages[index]
-					}
-					currentPage={pages[index] === 2 && true}
+					key={'secondLast'}
+					pageNumber={maxPage - 1}
+					currentPage={maxPage - 1 === currentPage}
+					onClick={() => {
+						setCurrentPage(maxPage - 1)
+					}}
 				/>
-			))}
-			<ChangePageButton className='-rotate-90 ml-4' />
+			)
+		} else {
+			paginationItems.push(
+				<PaginationItem
+					key={'secondLast'}
+					pageNumber={'...'}
+					currentPage={false}
+					onClick={() => {}}
+				/>
+			)
+		}
+	}
+
+	return (
+		<div className='bg-dark-2 md:rounded-xl rounded md:h-16 h-10 md:space-x-2.5 space-x-1.5 md:px-4 lg:mt-16 md:mt-12 lg:mb-0 md:mb-4 mt-8 mb-4 flex flex-row justify-center max-w-min mx-auto'>
+			<ChangePageButton
+				onClick={() => {
+					setCurrentPage(currentPage <= 1 ? currentPage : currentPage - 1)
+				}}
+				className='rotate-90 md:mr-4'
+			/>
+			{paginationItems}
+			{maxPage > 9 && (
+				<PaginationItem
+					key='lastPage'
+					pageNumber={maxPage}
+					currentPage={currentPage == maxPage}
+					onClick={() => {
+						setCurrentPage(maxPage)
+					}}
+				/>
+			)}
+			<ChangePageButton
+				onClick={() => {
+					if (currentPage < maxPage) setCurrentPage(currentPage + 1)
+				}}
+				className='-rotate-90 md:ml-4'
+			/>
 		</div>
 	)
 }

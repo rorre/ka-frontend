@@ -1,5 +1,5 @@
 module.exports = {
-	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		screens: {
@@ -24,8 +24,9 @@ module.exports = {
 			colors: {
 				'dark-1': '#13111A',
 				'dark-2': '#302C3F',
-				'dark-3': '#5E5B71',
-				'dark-4': '#1D1A27',
+				'dark-3': '#1D1A27',
+				purple: '#5E5B71',
+				indigo: '#B7B4C7',
 				'blue-dark': '#164F85',
 				'red-dark': '#AB1818',
 			},

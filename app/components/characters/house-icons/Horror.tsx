@@ -9,7 +9,7 @@ const Horror = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Horror.svg'></object>
+		data='/assets/House of Horror.svg'></object>
 )
 
 export default Horror

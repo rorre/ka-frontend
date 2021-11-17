@@ -6,14 +6,18 @@ export const SearchBarDropdown = () => {
 	const [major, setMajor] = useState('')
 
 	return (
-		<SearchDropdown className='relative inline-block bg-transparent px-5 border-black lg:w-4/12 md:w-5/12 sm:w-6/12 text-gray-400'>
+		<SearchDropdown className='relative inline-block bg-transparent lg:text-base md:text-sm text-2xs md:px-4 lg:px-6 px-2 border-black lg:w-4/12 md:w-5/12 w-4/12 text-gray-400'>
 			<div className='bg-transparent'>
 				<button
 					onClick={() => setIsDropdown(!isDropdown)}
 					type='button'
 					className='inline-flex w-full text-gray-400'>
-					<span className='w-11/12 text-left bg-transparent'>
-						{major === '' ? 'Major' : major}
+					<span className='w-11/12 text-left'>
+						{major === ''
+							? 'Major'
+							: major === 'ilmu_komputer'
+							? 'Computer Science'
+							: 'Information Systems'}
 					</span>
 					<svg
 						className={`w-1/12 bg-transparent ${
@@ -31,31 +35,47 @@ export const SearchBarDropdown = () => {
 					</svg>
 				</button>
 			</div>
-			<div>
-				{isDropdown && (
-					<div className='z-10 absolute mr-4 w-10/12 mt-4 text-gray-400 bg-dark-2 rounded-xl'>
-						<button
-							type='button'
-							onClick={() => {
-								setMajor('Computer Science')
-							}}
-							value={major}
+			<div className={isDropdown ? '' : 'hidden'}>
+				<div className='z-10 absolute left-0 mr-4 w-full mt-4 text-gray-400 bg-dark-2 rounded-xl'>
+					<button
+						type='button'
+						onClick={() => {
+							setMajor('ilmu_komputer')
+						}}
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
+						Computer Science
+						<label htmlFor='ilmu_komputer'></label>
+						<input
+							className='opacity-0'
+							type='radio'
 							name='major'
-							className='text-left bg-dark-3 text-gray-400 w-full border-b-2 px-6 py-2 rounded-t-lg border-dark-2'>
-							Computer Science
-						</button>
-						<button
-							type='button'
-							onClick={() => {
-								setMajor('Information System')
-							}}
+							id='ilmu_komputer'
+							value={major}
+							checked={major === 'ilmu_komputer' ? true : false}
+							onChange={() => {
+								setMajor('ilmu_komputer')
+							}}></input>
+					</button>
+					<button
+						type='button'
+						onClick={() => {
+							setMajor('sistem_informasi')
+						}}
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
+						Information Systems
+						<label htmlFor='sistem_informasi'></label>
+						<input
+							className='opacity-0'
+							type='radio'
+							id='sistem_informasi'
 							name='major'
 							value={major}
-							className='text-left bg-dark-3 text-gray-400 w-full border-t-2 px-6 py-2 rounded-b-lg border-dark-2'>
-							Information System
-						</button>
-					</div>
-				)}
+							checked={major === 'sistem_informasi' ? true : false}
+							onChange={() => {
+								setMajor('sistem_informasi')
+							}}></input>
+					</button>
+				</div>
 			</div>
 		</SearchDropdown>
 	)

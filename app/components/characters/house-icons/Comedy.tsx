@@ -9,7 +9,7 @@ const Comedy = ({
 }) => (
 	<object
 		className={`${width} ${height}`}
-		data='assets/images/House of Comedy.svg'></object>
+		data='/assets/House of Comedy.svg'></object>
 )
 
 export default Comedy

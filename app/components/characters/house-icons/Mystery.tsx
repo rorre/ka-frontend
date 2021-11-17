@@ -9,7 +9,7 @@ const Mystery = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Mystery.svg'></object>
+		data='/assets/House of Mystery.svg'></object>
 )
 
 export default Mystery

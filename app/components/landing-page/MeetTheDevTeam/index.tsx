@@ -6,7 +6,7 @@ import { DevCard } from '../styles'
 const MeetTheDevTeam = () => {
 	return (
 		<section className='h-screen flex items-center justify-center text-white'>
-			<Link href='/devteam'>
+			<Link href='/meetkateam'>
 				<DevCard className={style.glow}>
 					<img
 						src='/assets/mtdt-icon.svg'

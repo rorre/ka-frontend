@@ -9,7 +9,7 @@ const Musical = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Musical.svg'></object>
+		data='/assets/House of Musical.svg'></object>
 )
 
 export default Musical

@@ -9,7 +9,7 @@ const Animation = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Animation.svg'></object>
+		data='/assets/House of Animation.svg'></object>
 )
 
 export default Animation

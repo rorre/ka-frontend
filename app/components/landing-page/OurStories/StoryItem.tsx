@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Story } from '../styles'
 import { StoryItemInterface } from './interfaces/StoryItem.interface'
 
@@ -7,10 +7,10 @@ const StoryItem = ({
 	id,
 	detail,
 	title,
+	isClickedGlobal,
 	setDetails,
 	setTitles,
 	setIsClickedGlobal,
-	isClickedGlobal,
 }: StoryItemInterface) => {
 	const [isClicked, setIsClicked] = useState(false)
 	const [imageIndex, setImageIndex] = useState(0)
@@ -27,8 +27,17 @@ const StoryItem = ({
 		let tmp = imageIndex
 		tmp++
 		setImageIndex(tmp % foto.length)
-		console.log(isClicked, isClickedGlobal, imageIndex)
 	}
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (isClickedGlobal === id && isClicked === true) {
+				let tmp = imageIndex
+				tmp++
+				setImageIndex(tmp % foto.length)
+			}
+		}, 5000)
+		return () => clearInterval(interval)
+	})
 	return (
 		<Story
 			src={foto[imageIndex]}

@@ -9,7 +9,7 @@ const Space = ({
 }) => (
 	<object
 		className={`${width} ${height} `}
-		data='assets/images/House of Space.svg'></object>
+		data='/assets/House of Space.svg'></object>
 )
 
 export default Space
