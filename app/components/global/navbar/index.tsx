@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import NavLink from './NavLink'
 import menus from './utils/menus'
-import LoginButton from './LoginButton'
+// import LoginButton from './LoginButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CollapsibleMenu from './CollapsibleMenu'
 import Logo from '../logo'
@@ -21,10 +21,10 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={` w-full top-0 fixed min-w-max z-10 ${
+			className={` w-full top-0 fixed min-w-max z-20 ${
 				!isCollapse && !isScroll ? 'bg-transparent' : 'bg-dark-2'
 			}`}>
-			<div className='grid items-center w-full grid-cols-2 px-6 py-4 lg:px-12 lg:py-4 lg:grid-cols-6'>
+			<div className='grid items-center w-full grid-cols-2 px-6 py-4 lg:px-12 lg:py-6 lg:grid-cols-6'>
 				<div className='col-span-1 bg-transparent'>
 					<Logo />
 				</div>
@@ -43,9 +43,10 @@ const Navbar = () => {
 						</div>
 					))}
 				</div>
-				<div className='hidden lg:flex lg:justify-end'>
+				{/* Temporarily disabled */}
+				{/* <div className='hidden lg:flex lg:justify-end'>
 					<LoginButton />
-				</div>
+				</div> */}
 			</div>
 			<CollapsibleMenu collapse={isCollapse} />
 		</nav>

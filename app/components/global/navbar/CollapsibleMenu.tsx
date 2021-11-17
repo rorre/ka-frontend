@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuid } from 'uuid'
 import { CollapsibleMenuInterface } from './interfaces/CollapsibleMenu.interface'
-import LoginButton from './LoginButton'
+// import LoginButton from './LoginButton'
 import NavLink from './NavLink'
 import menus from './utils/menus'
 
@@ -19,9 +19,9 @@ const CollapsibleMenu = ({ collapse }: CollapsibleMenuInterface) => {
 					className='font-semibold'
 				/>
 			))}
-			<div>
+			{/* <div>
 				<LoginButton />
-			</div>
+			</div> */}
 		</div>
 	)
 }
