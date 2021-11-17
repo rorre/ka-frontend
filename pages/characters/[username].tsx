@@ -28,7 +28,7 @@ const CharactersDetailsPage = () => {
 
 	useEffect(() => {
 		getStudent()
-	}, [student, username])
+	}, [username])
 
 	return (
 		<>
