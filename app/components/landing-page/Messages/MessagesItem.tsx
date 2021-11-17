@@ -1,6 +1,7 @@
 import React from 'react'
 import { MessagesCard } from '../styles'
 import { MessagesItemInterface } from './interfaces/MessagesItem.interface'
+import Image from 'next/image'
 
 const MessagesItem = ({
 	name,
@@ -13,7 +14,7 @@ const MessagesItem = ({
 	return (
 		<MessagesCard className={index === 0 ? 'row-span-2' : ''}>
 			<div className='flex items-center space-x-7'>
-				<img
+				<Image
 					className='w-28 h-28 object-cover rounded-full mx-auto'
 					src={image}
 					alt={name}
