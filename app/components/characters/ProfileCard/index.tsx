@@ -23,9 +23,9 @@ const ProfileCard = ({
 		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500 pointer-events-none'>
 			<UpperNotch className='border-2 border-blue-500' />
 
-			<div className='flex divide-x-2 divide-dashed divide-red-800'>
+			<div className='flex items-center divide-x-2 divide-red-800 divide-dashed'>
 				<ProfilePictureContainer image={foto_diri} />
-				<div className='relative flex-col lg:w-7/12 sm:9/12 md:w-8/12 lg:pl-4 pl-4 lg:ml-5 md:ml-5'>
+				<div className='relative flex-col pl-4 lg:w-7/12 sm:9/12 md:w-8/12 lg:pl-4 lg:ml-5 md:ml-5'>
 					<div className='order-1 mt-6 mb-1 ml-2 mr-1 text-1.5xs lg:text-xs text-white md:ml-0 md:mt-8 lg:mt-12'>
 						{utils.shortenName(nama)}
 					</div>
