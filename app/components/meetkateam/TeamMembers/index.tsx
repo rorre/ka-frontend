@@ -9,7 +9,7 @@ const TeamMembers = () => {
 			{team.map((member: TeamInterface) => (
 				<div
 					key={member.id}
-					className='bg-transparent w-4/12 md:w-56 my-2 md:mx-2'>
+					className='bg-transparent w-32 2sm:w-40 2md:w-56 my-5 md:mx-8 mx-3'>
 					<TeamCard key={member.id} {...member} />
 				</div>
 			))}

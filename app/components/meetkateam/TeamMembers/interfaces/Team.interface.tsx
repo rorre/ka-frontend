@@ -2,7 +2,7 @@ export default interface TeamInterface {
 	id?: number
 	name: string
 	npm?: string
-	major: string
+	role: string
 	image: string
 	house: string
 }
