@@ -1,7 +1,7 @@
 import React from 'react'
 import { MessagesCard } from '../styles'
 import { MessagesMobileItemInterface } from './interfaces/MessagesMobileItem.interface'
-import Image from 'next/image'
+import { MessagesImage } from '../styles'
 
 const MessagesMobileItem = ({
 	name,
@@ -23,11 +23,7 @@ const MessagesMobileItem = ({
 	return (
 		<MessagesCard>
 			<div className='flex items-center space-x-7'>
-				<Image
-					className='w-28 h-28 object-cover rounded-full mx-auto'
-					src={image}
-					alt={name}
-				/>
+				<MessagesImage src={image} alt={name} />
 				<div className='text-left'>
 					<h4>{name}</h4>
 					<p className='text-md'>
