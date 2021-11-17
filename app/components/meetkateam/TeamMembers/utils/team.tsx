@@ -4,7 +4,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'John Doe',
 		house: 'Horror',
-		major: 'Information System',
+		role: 'Front-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -13,7 +13,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'John Doe',
 		house: 'Action',
-		major: 'Information System',
+		role: 'Front-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -22,7 +22,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'John Doe',
 		house: 'Romance',
-		major: 'Information System',
+		role: 'Front-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -31,7 +31,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'John Doe',
 		house: 'Musical',
-		major: 'Computer Science',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -40,7 +40,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Raymond Daniel Muhammad',
 		house: 'Comedy',
-		major: 'Information System',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -49,7 +49,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Muhammad Ali',
 		house: 'Space',
-		major: 'Information System',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -58,7 +58,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Jackson Briggs',
 		house: 'Superhero',
-		major: 'Information System',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -67,7 +67,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Doe Muhammad',
 		house: 'Mystery',
-		major: 'Information System',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -76,7 +76,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Alberto Marcus',
 		house: 'Animation',
-		major: 'Information System',
+		role: 'Back-end Developer',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -85,7 +85,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Jean-Claude Van Damme',
 		house: 'Apocalypse',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -94,7 +94,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Fedor Emelianenko',
 		house: 'Historical',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -103,7 +103,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -112,7 +112,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -121,7 +121,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -130,7 +130,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -139,7 +139,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -148,7 +148,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -157,7 +157,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -166,7 +166,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
@@ -175,7 +175,7 @@ export const team = [
 		npm: '2106651234',
 		name: 'Mohammed Jonathan Gus',
 		house: 'Fantasy',
-		major: 'Information System',
+		role: 'UI/UX',
 		image:
 			'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg',
 	},
