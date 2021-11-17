@@ -14,13 +14,15 @@ export const LowerNotch = styled.div`
 	display: inline-block;
 
 	@media screen and (max-width: 768px) {
-		height: 1.5rem;
+		bottom: -2px;
+		height: 2rem;
 		width: 2.2rem;
 		right: 44.5%;
 	}
 
 	@media screen and (min-width: 1024px) {
-		height: 2.8rem;
+		bottom: -2px;
+		height: 2.4rem;
 		width: 3rem;
 		right: 41.5%;
 	}

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const UpperNotch = styled.div`
 	position: absolute;
-	top: -2px;
+	top: -6px;
 	right: 42.8%;
 	height: 2rem;
 	width: 2.65rem;
@@ -14,13 +14,15 @@ export const UpperNotch = styled.div`
 	display: inline-block;
 
 	@media screen and (max-width: 768px) {
-		height: 1.5rem;
+		top: -2px;
+		height: 2rem;
 		width: 2.2rem;
 		right: 44.5%;
 	}
 
 	@media screen and (min-width: 1024px) {
-		height: 2.8rem;
+		top: -2px;
+		height: 2.4rem;
 		width: 3rem;
 		right: 41.5%;
 	}

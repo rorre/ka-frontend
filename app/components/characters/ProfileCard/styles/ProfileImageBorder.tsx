@@ -18,4 +18,10 @@ export const ProfileImageBorder = styled.div`
 		-webkit-mask-composite: destination-out;
 		mask-composite: exclude;
 	}
+
+	@media screen and (max-width: 640px) {
+		&:before {
+			padding: 5px;
+		}
+	}
 `
