@@ -14,17 +14,17 @@ const OurStories = () => {
 	const scrollRef = useHorizontalScroll()
 
 	return (
-		<section className='h-full text-white '>
-			<h2 className='my-24 text-center sm:text-left'>Our Stories</h2>
-			<div className='grid-cols-8 md:grid'>
-				<div className='col-span-3 m-auto md:mb-10 px-14'>
-					<div className='flex flex-col items-center h-full max-w-xs text-justify 3md:mb-10'>
+		<section className='h-full text-white mx-auto max-w-9/10'>
+			<h2 className='my-24 3md:mb-5 text-center 2md:text-left'>Our Stories</h2>
+			<div className='2md:grid grid-cols-8'>
+				<div className='col-span-3 m-auto 3md:mb-10'>
+					<div className='2md:max-w-xs 3sm:max-w-xs h-full flex flex-col items-center 3md:mb-10 mx-auto'>
 						<h4>{titles}</h4>
-						<p className='mt-4'>{details}</p>
+						<p className='mt-4 text-justify'>{details}</p>
 					</div>
 				</div>
 				<StoryContainer
-					className='flex w-full col-start-4 col-end-9 gap-5 overflow-x-auto p-7'
+					className='col-start-4 col-end-9 gap-5 flex overflow-x-auto p-7'
 					ref={scrollRef}>
 					{contents.map((content: Content) => (
 						<StoryItem

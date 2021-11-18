@@ -9,7 +9,7 @@ const Home = () => {
 	return (
 		<>
 			<Header />
-			<div className='flex flex-col items-center justify-center h-screen text-center text-white cursor-default'>
+			<div className='flex flex-col items-center justify-center h-screen text-center text-white cursor-default mx-auto max-w-9/10'>
 				<h2>INTRODUCING</h2>
 				<h1 className='text-9xl'>
 					CSUI<br></br>2021

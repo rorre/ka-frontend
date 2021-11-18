@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const MeetTheDevTeam = () => {
 	return (
-		<section className='h-screen flex items-center justify-center text-white'>
+		<section className='h-screen flex items-center justify-center text-white mx-auto max-w-9/10'>
 			<Link href='/meetkateam'>
 				<DevCard className={style.glow}>
 					<div className='mb-10 3sm:w-1/3'>
