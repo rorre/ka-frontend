@@ -5,11 +5,13 @@ import {
 	CharacterDetailsLayout,
 	ClapperBackground,
 	BioSection,
+	MobileBioSection,
 } from '../../app/components/characters'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
 import { useRouter } from 'next/router'
 import { DetailedStudent } from '../../app/components/characters/character-details/interfaces'
+import { useResponsive } from '../../app/hooks'
 
 const CharactersDetailsPage = () => {
 	const [student, setStudent] = useState({
@@ -31,6 +33,7 @@ const CharactersDetailsPage = () => {
 	} as DetailedStudent)
 	const router = useRouter()
 	const { username } = router.query
+	const { isMobile } = useResponsive()
 
 	const url = process.env.NEXT_PUBLIC_BASE_URL + `/student/${username}`
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
@@ -64,21 +67,36 @@ const CharactersDetailsPage = () => {
 								'md:w-12 md:h-12 w-10 h-10'
 						  )}
 				</div>
-				<BioSection
-					foto_diri={`${imageUrl}/${student.foto_diri}`}
-					nama={student.nama}
-					jurusan={student.jurusan}
-					ttl={student.ttl}
-					hobi={student.hobi}
-					line={student.line}
-					instagram={student.instagram}
-				/>
-				<div className='lg:mx-48 lg:my-20 md:mx-20 md:my-20'>
-					<h2 className='lg:text-3xl md:text-2xl text-white font-bold'>
+
+				{isMobile ? (
+					<MobileBioSection
+						foto_diri={`${imageUrl}/${student.foto_diri}`}
+						nama={student.nama}
+						jurusan={student.jurusan}
+						ttl={student.ttl}
+						hobi={student.hobi}
+						line={student.line}
+						instagram={student.instagram}
+					/>
+				) : (
+					<BioSection
+						foto_diri={`${imageUrl}/${student.foto_diri}`}
+						nama={student.nama}
+						jurusan={student.jurusan}
+						ttl={student.ttl}
+						hobi={student.hobi}
+						line={student.line}
+						instagram={student.instagram}
+					/>
+				)}
+				<div className='lg:mx-48 lg:my-20 md:mx-20 md:my-20 my-10 mx-8'>
+					<h2 className='lg:text-3xl md:text-2xl text-lg text-white font-bold'>
 						About Me
 					</h2>
 					<br />
-					<p className='lg:text-base md:text-md text-white'>{student.about}</p>
+					<p className='lg:text-base md:text-md text-sm text-white'>
+						{student.about}
+					</p>
 				</div>
 			</div>
 		</>

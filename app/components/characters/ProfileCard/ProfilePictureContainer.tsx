@@ -4,8 +4,10 @@ import { ProfilePictureContainerInterface } from './interfaces/ProfilePictureCon
 
 export const ProfilePictureContainer = ({
 	image,
+	className = 'md:w-6/12 h-44',
 }: ProfilePictureContainerInterface) => (
-	<ProfileImageBorder className='rounded-md md:w-6/12 md:mr-2.5 lg:mr-4 h-44 md:max-h-40 lg:max-h-52 lg:h-52'>
+	<ProfileImageBorder
+		className={`rounded-md ${className} md:mr-2.5 lg:mr-4 md:max-h-40 lg:max-h-52 lg:h-52`}>
 		<ProfilePicture
 			className='w-full h-full lg:max-h-52 object-cover'
 			src={image}
