@@ -6,12 +6,15 @@ import {
 	ClapperBackground,
 	BioSection,
 	MobileBioSection,
+	Interest,
 } from '../../app/components/characters'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
 import { useRouter } from 'next/router'
 import { DetailedStudent } from '../../app/components/characters/character-details/interfaces'
 import { useResponsive } from '../../app/hooks'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 const CharactersDetailsPage = () => {
 	const [student, setStudent] = useState({
@@ -89,14 +92,35 @@ const CharactersDetailsPage = () => {
 						instagram={student.instagram}
 					/>
 				)}
-				<div className='lg:mx-48 lg:my-20 md:mx-20 md:my-20 my-10 mx-8'>
-					<h2 className='lg:text-3xl md:text-2xl text-lg text-white font-bold'>
+				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
 						About Me
 					</h2>
-					<br />
-					<p className='lg:text-base md:text-md text-sm text-white'>
-						{student.about}
-					</p>
+					<ReactMarkdown
+						className='md:text-lg text-sm text-white'
+						remarkPlugins={[remarkGfm]}>
+						{student.about as string}
+					</ReactMarkdown>
+				</div>
+				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+						Future Message
+					</h2>
+					<ReactMarkdown
+						className='md:text-lg text-sm text-white'
+						remarkPlugins={[remarkGfm]}>
+						{student.message as string}
+					</ReactMarkdown>
+				</div>
+				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+						IT Interests
+					</h2>
+					<div className=' -mx-1 flex flex-row flex-wrap'>
+						{student.interests?.map((interest, index) => (
+							<Interest key={interest} interest={interest} />
+						))}
+					</div>
 				</div>
 			</div>
 		</>
