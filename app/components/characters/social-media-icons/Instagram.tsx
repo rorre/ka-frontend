@@ -11,7 +11,7 @@ const Instagram = ({
 }) => (
 	<object
 		className={`${width} ${height} ${backgroundColor}`}
-		data='assets/Instagram.svg'></object>
+		data='/assets/Instagram.svg'></object>
 )
 
 export default Instagram

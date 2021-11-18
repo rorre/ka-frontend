@@ -5,3 +5,4 @@ export { default as YearbookMobileProfileCard } from './ProfileCard/MobileProfil
 export { default as YearbookFilterDropdown } from './FilterDropdown'
 export { default as YearbookSortDropdown } from './SortDropdown'
 export { default as YearbookPagination } from './Pagination'
+export * from './character-details'

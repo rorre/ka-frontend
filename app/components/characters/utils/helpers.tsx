@@ -104,6 +104,19 @@ const formatName = (name: string) => {
 	return `${firstLetter}${restOfName}`
 }
 
+export const formatNameForDetails = (name: string) => {
+	const trimmedName = name.trim()
+	const formattedNames: string[] = []
+
+	for (let index = 0; index < trimmedName.split(' ').length; index++) {
+		formattedNames.push(trimmedName.split(' ')[index])
+	}
+
+	const formattedName = formattedNames.join(' ')
+
+	return formattedName
+}
+
 export const shortenName = (name: string) => {
 	const variationsofMuhammad = [
 		'muhammad',
