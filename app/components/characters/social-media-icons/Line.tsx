@@ -1,4 +1,5 @@
 import React from 'react'
+import LineIcon from '../../../../public/assets/Line.svg'
 
 const Line = ({
 	width,
@@ -9,9 +10,9 @@ const Line = ({
 	height: string
 	backgroundColor: string | null
 }) => (
-	<object
-		className={`${width} ${height} ${backgroundColor}`}
-		data='/assets/Line.svg'></object>
+	<div className={`${width} ${height} ${backgroundColor}`}>
+		<LineIcon />
+	</div>
 )
 
 export default Line

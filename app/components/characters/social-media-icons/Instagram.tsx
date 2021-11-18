@@ -1,4 +1,5 @@
 import React from 'react'
+import InstagramIcon from '../../../../public/assets/Instagram.svg'
 
 const Instagram = ({
 	width = '',
@@ -9,9 +10,9 @@ const Instagram = ({
 	height: string
 	backgroundColor: string
 }) => (
-	<object
-		className={`${width} ${height} ${backgroundColor}`}
-		data='/assets/Instagram.svg'></object>
+	<div className={`${width} ${height} ${backgroundColor}`}>
+		<InstagramIcon />
+	</div>
 )
 
 export default Instagram
