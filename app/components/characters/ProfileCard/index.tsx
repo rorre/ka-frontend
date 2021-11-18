@@ -38,7 +38,7 @@ const ProfileCard = ({
 						{utils.getHouseIcon(house_name.split(' ').at(2)!)}
 						{house_name.split(' ').at(2)}
 					</div>
-					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-7 lg:mt-8'>
+					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-10 lg:mt-8'>
 						<a href={lineUrl} className='pointer-events-auto'>
 							<Social.LineIcon
 								width='w-6 lg:w-8 md:mr-1 lg:mr-1'
