@@ -1,4 +1,5 @@
 import React from 'react'
+import MysteryIcon from '../../../../public/assets/House of Mystery.svg'
 
 const Mystery = ({
 	width = '',
@@ -7,9 +8,9 @@ const Mystery = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Mystery.svg'></object>
+	<div className={`${width} ${height}`}>
+		<MysteryIcon />
+	</div>
 )
 
 export default Mystery

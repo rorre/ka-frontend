@@ -1,4 +1,5 @@
 import React from 'react'
+import SuperheroIcon from '../../../../public/assets/House of Superhero.svg'
 
 const Superhero = ({
 	width = '',
@@ -7,9 +8,9 @@ const Superhero = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Superhero.svg'></object>
+	<div className={`${width} ${height}`}>
+		<SuperheroIcon />
+	</div>
 )
 
 export default Superhero

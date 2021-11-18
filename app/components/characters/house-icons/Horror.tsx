@@ -1,4 +1,5 @@
 import React from 'react'
+import HorrorIcon from '../../../../public/assets/House of Horror.svg'
 
 const Horror = ({
 	width = '',
@@ -7,9 +8,9 @@ const Horror = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Horror.svg'></object>
+	<div className={`${width} ${height}`}>
+		<HorrorIcon />
+	</div>
 )
 
 export default Horror

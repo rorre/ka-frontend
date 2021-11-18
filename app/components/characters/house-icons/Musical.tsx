@@ -1,4 +1,5 @@
 import React from 'react'
+import MusicalIcon from '../../../../public/assets/House of Musical.svg'
 
 const Musical = ({
 	width = '',
@@ -7,9 +8,9 @@ const Musical = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Musical.svg'></object>
+	<div className={`${width} ${height}`}>
+		<MusicalIcon />
+	</div>
 )
 
 export default Musical

@@ -1,15 +1,16 @@
 import React from 'react'
+import ActionIcon from '../../../../public/assets/House of Action.svg'
 
-const ActionIcon = ({
+const Action = ({
 	width = '',
 	height = '',
 }: {
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Action.svg'></object>
+	<div className={`${width} ${height}`}>
+		<ActionIcon />
+	</div>
 )
 
-export default ActionIcon
+export default Action

@@ -1,4 +1,5 @@
 import React from 'react'
+import HistoricalIcon from '../../../../public/assets/House of Historical.svg'
 
 const Historical = ({
 	width = '',
@@ -7,9 +8,9 @@ const Historical = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Historical.svg'></object>
+	<div className={`${width} ${height}`}>
+		<HistoricalIcon />
+	</div>
 )
 
 export default Historical

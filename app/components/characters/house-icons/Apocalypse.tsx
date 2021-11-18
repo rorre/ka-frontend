@@ -1,4 +1,5 @@
 import React from 'react'
+import ApocalypseIcon from '../../../../public/assets/House of Apocalypse.svg'
 
 const Apocalypse = ({
 	width = '',
@@ -7,9 +8,9 @@ const Apocalypse = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height}`}
-		data='/assets/House of Apocalypse.svg'></object>
+	<div className={`${width} ${height}`}>
+		<ApocalypseIcon />
+	</div>
 )
 
 export default Apocalypse

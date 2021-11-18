@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimationIcon from '../../../../public/assets/House of Animation.svg'
 
 const Animation = ({
 	width = '',
@@ -7,9 +8,9 @@ const Animation = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Animation.svg'></object>
+	<div className={`${width} ${height}`}>
+		<AnimationIcon />
+	</div>
 )
 
 export default Animation
