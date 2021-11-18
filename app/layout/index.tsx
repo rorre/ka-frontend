@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
 	return (
 		<main className='w-full bg-no-repeat bg-contain bg-shade-pattern'>
 			<Navbar />
-			<div>{children}</div>
+			{children}
 			<Footer />
 		</main>
 	)
