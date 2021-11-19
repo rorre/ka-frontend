@@ -48,7 +48,7 @@ const MobileBioSection = ({
 				</div>
 			</div>
 			<div className='col-start-6 row-span-1 my-auto ml-1.5'>
-				<Video className='rounded-md' />
+				<Video onClick={event => {}} className='rounded-md' />
 			</div>
 			<div className='col-start-1 col-end-4 row-start-2 mt-8 ml-4'>
 				<p className='text-1.5xs text-white font-semibold'>Birth Information</p>

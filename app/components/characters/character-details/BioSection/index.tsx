@@ -72,7 +72,10 @@ const BioSection = ({
 				</div>
 			</div>
 			<div className='col-span-1 row-span-2 my-auto'>
-				<Video className='rounded-md lg:w-16 lg:h-16 lg:p-3' />
+				<Video
+					onClick={event => {}}
+					className='rounded-md lg:w-16 lg:h-16 lg:p-4'
+				/>
 			</div>
 		</div>
 	)
