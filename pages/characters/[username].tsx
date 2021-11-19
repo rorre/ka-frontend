@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useState } from 'react'
-import Header from '../../app/components/global/header'
 import axios from 'axios'
 import {
 	CharacterDetailsLayout,
@@ -54,75 +53,72 @@ const CharactersDetailsPage = () => {
 		getStudent()
 	}, [username])
 
-	console.log(student)
-
 	return (
 		<>
-			<Header />
-			<div className='relative'>
-				<ClapperBackground />
-				<Buttons.Back className='absolute top-2 left-2 rounded-md' />
-				<div className='absolute top-1 right-0'>
-					{student.house?.nama === ''
-						? ''
-						: utils.getHouseIcon(
-								student.house?.nama.split(' ').at(2)!,
-								'md:w-12 md:h-12 w-10 h-10'
-						  )}
-				</div>
+			<ClapperBackground />
+			<Buttons.Back className='absolute rounded-md top-10 left-10' />
+			<div className='absolute right-10 top-10'>
+				{student.house?.nama === ''
+					? ''
+					: utils.getHouseIcon(
+							student.house?.nama.split(' ').at(2)!,
+							'md:w-20 md:h-20 w-16 h-16'
+					  )}
+			</div>
 
-				{isMobile ? (
-					<MobileBioSection
-						foto_diri={`${imageUrl}/${student.foto_diri}`}
-						nama={student.nama}
-						jurusan={student.jurusan}
-						ttl={student.ttl}
-						hobi={student.hobi}
-						line={student.line}
-						instagram={student.instagram}
-					/>
-				) : (
-					<BioSection
-						foto_diri={`${imageUrl}/${student.foto_diri}`}
-						nama={student.nama}
-						jurusan={student.jurusan}
-						ttl={student.ttl}
-						hobi={student.hobi}
-						line={student.line}
-						instagram={student.instagram}
-					/>
-				)}
-				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>
-					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+			{isMobile ? (
+				<MobileBioSection
+					foto_diri={`${imageUrl}/${student.foto_diri}`}
+					nama={student.nama}
+					jurusan={student.jurusan}
+					ttl={student.ttl}
+					hobi={student.hobi}
+					line={student.line}
+					instagram={student.instagram}
+				/>
+			) : (
+				<BioSection
+					foto_diri={`${imageUrl}/${student.foto_diri}`}
+					nama={student.nama}
+					jurusan={student.jurusan}
+					ttl={student.ttl}
+					hobi={student.hobi}
+					line={student.line}
+					instagram={student.instagram}
+				/>
+			)}
+			<section className='flex flex-col justify-center gap-16 py-16 '>
+				<div className='mx-8 lg:mx-48 md:mx-20'>
+					<h2 className='mb-3 text-lg font-bold text-white md:text-2xl'>
 						About Me
 					</h2>
 					<ReactMarkdown
-						className='md:text-lg text-sm text-white'
+						className='text-sm text-white md:text-lg'
 						remarkPlugins={[remarkGfm]}>
 						{student.about as string}
 					</ReactMarkdown>
 				</div>
-				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
-					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+				<div className='mx-8 lg:mx-48 md:mx-20'>
+					<h2 className='mb-3 text-lg font-bold text-white md:text-2xl'>
 						Future Message
 					</h2>
 					<ReactMarkdown
-						className='md:text-lg text-sm text-white'
+						className='text-sm text-white md:text-lg'
 						remarkPlugins={[remarkGfm]}>
 						{student.message as string}
 					</ReactMarkdown>
 				</div>
-				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
-					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+				<div className='mx-8 lg:mx-48 md:mx-20'>
+					<h2 className='mb-3 text-lg font-bold text-white md:text-2xl'>
 						IT Interests
 					</h2>
-					<div className=' -mx-1 flex flex-row flex-wrap'>
+					<div className='flex flex-row flex-wrap -mx-1 '>
 						{student.interests?.map((interest, index) => (
 							<Interest key={interest} interest={interest} />
 						))}
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	)
 }
