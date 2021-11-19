@@ -51,6 +51,9 @@ module.exports = {
 				'-1': '-1',
 				'-10': '-10',
 			},
+			spacing: {
+				gigantic: 1200,
+			},
 		},
 	},
 	variants: {
