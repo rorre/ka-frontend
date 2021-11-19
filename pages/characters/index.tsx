@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../../app/components/global/header'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
-import axios from 'axios'
 import {
 	YearbookSearchBar,
 	YearbookProfileCard,
@@ -9,63 +7,28 @@ import {
 	YearbookFilterDropdown,
 	YearbookSortDropdown,
 	YearbookPagination,
-	YearbookContainer,
+	// YearbookContainer,
 	YearbookLoader,
 } from '../../app/components/characters'
+import { useFilter } from '../../app/components/characters/hooks/useFilter'
 import { useResponsive } from '../../app/hooks'
-import { Paged, Student } from '../../app/components/characters/interfaces'
+import { Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
-	const [isLoading, setIsLoading] = useState(false)
-	const [students, setStudents] = useState([] as Student[])
-	const [query, setQuery] = useState(new URLSearchParams())
-	const [currentPage, setCurrentPage] = useState(1)
+	const {
+		setCurrentPage,
+		handleSubmit,
+		getStudents,
+		currentPage,
+		isLoading,
+		students,
+		maxPage,
+		query,
+	} = useFilter()
 
 	// 22 as default because in total there are 22 pages with no filter
-	const [maxPage, setMaxPage] = useState(22)
 	const { isMobile } = useResponsive()
-	const url = process.env.NEXT_PUBLIC_BASE_URL + '/student/list?'
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
-
-	const getStudents = async () => {
-		query.set('page', currentPage.toString())
-
-		try {
-			setIsLoading(true)
-			const { data } = await axios.get<Paged<Student>>(
-				`${url}${query.toString()}`
-			)
-			setStudents(data.data)
-			setMaxPage(data.max_page)
-			setIsLoading(false)
-		} catch (error) {
-			setIsLoading(false)
-			console.log(error)
-			return []
-		}
-	}
-
-	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		const formData = new FormData(event.currentTarget)
-		const data = Array.from(formData.entries())
-
-		const params = data
-			.map(
-				param =>
-					`${encodeURIComponent(param[0])}=${encodeURIComponent(
-						param[1] as string
-					)}`
-			)
-			.join('&')
-
-		const queryParams = new URLSearchParams(params)
-
-		// Reset page back to 1 on filter change
-		setCurrentPage(1)
-		setQuery(queryParams)
-
-		event.preventDefault()
-	}
 
 	useEffect(() => {
 		getStudents()
@@ -73,19 +36,18 @@ const CharactersPage = () => {
 
 	return (
 		<>
-			<Header />
-			<YearbookContainer>
-				<h1 className='flex justify-center mt-24 md:mt-20 text-3xl font-bold text-center text-white md:text-6xl'>
+			<section className='flex flex-col items-center justify-center w-full h-screen px-5'>
+				<h1 className='flex justify-center mt-24 text-3xl font-bold text-center text-white md:mt-20 md:text-6xl'>
 					Our Characters
 				</h1>
-				<p className='flex justify-center md:mt-8 mt-4 mb-20 text-center text-white bg-transparent md:text-base text-xs'>
+				<p className='flex justify-center mt-4 mb-20 text-xs text-center text-white bg-transparent md:mt-8 md:text-base'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc,
 					leo eros, tellus sit eget auctor.
 				</p>
 				<form
 					id='characters'
 					name='yearbookForm'
-					className='z-10 md:mx-8 lg:mx-20'
+					className='z-10 w-full lg:w-3/4 md:mx-8 lg:mx-20'
 					action=''
 					onSubmit={handleSubmit}>
 					<YearbookSearchBar />
@@ -94,6 +56,8 @@ const CharactersPage = () => {
 						<YearbookFilterDropdown />
 					</div>
 				</form>
+			</section>
+			<section className='lg:px-32'>
 				{isLoading ? (
 					<YearbookLoader />
 				) : (
@@ -101,7 +65,7 @@ const CharactersPage = () => {
 						{students.map((student: Student) => (
 							<div
 								key={student.username}
-								className='bg-transparent w-6/12 lg:w-4/12 md:w-6/12 md:my-0 my-2'>
+								className='w-6/12 my-2 bg-transparent lg:w-4/12 md:w-6/12 md:my-0'>
 								{isMobile ? (
 									<Link href={`/characters/${student.username}`}>
 										<a>
@@ -137,12 +101,16 @@ const CharactersPage = () => {
 						))}
 					</div>
 				)}
-				<YearbookPagination
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-					maxPage={maxPage}
-				/>
-			</YearbookContainer>
+				<div className='px-5 pb-32'>
+					<YearbookPagination
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+						maxPage={maxPage}
+					/>
+				</div>
+			</section>
+
+			<div className='absolute top-0 w-full bg-no-repeat bg-contain lg:bg-cover h-gigantic bg-shade-pattern-sm lg:bg-shade-pattern -z-10'></div>
 		</>
 	)
 }
