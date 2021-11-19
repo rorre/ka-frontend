@@ -1,4 +1,5 @@
 import React from 'react'
+import RomanceIcon from '../../../../public/assets/House of Romance.svg'
 
 const Romance = ({
 	width = '',
@@ -7,9 +8,9 @@ const Romance = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Romance.svg'></object>
+	<div className={`${width} ${height}`}>
+		<RomanceIcon />
+	</div>
 )
 
 export default Romance

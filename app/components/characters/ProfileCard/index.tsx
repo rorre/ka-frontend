@@ -20,7 +20,7 @@ const ProfileCard = ({
 	const instagramUrl = 'https://instagram.com/' + instagram
 
 	return (
-		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500 pointer-events-none'>
+		<div className='transition transform duration-500 hover:scale-105 bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500'>
 			<UpperNotch className='border-2 border-blue-500' />
 
 			<div className='flex items-center divide-x-2 divide-red-800 divide-dashed'>
@@ -38,7 +38,7 @@ const ProfileCard = ({
 						{utils.getHouseIcon(house_name.split(' ').at(2)!)}
 						{house_name.split(' ').at(2)}
 					</div>
-					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-7 lg:mt-8'>
+					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-10 lg:mt-8'>
 						<a href={lineUrl} className='pointer-events-auto'>
 							<Social.LineIcon
 								width='w-6 lg:w-8 md:mr-1 lg:mr-1'

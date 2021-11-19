@@ -1,4 +1,5 @@
 import React from 'react'
+import ComedyIcon from '../../../../public/assets/House of Comedy.svg'
 
 const Comedy = ({
 	width = '',
@@ -7,9 +8,9 @@ const Comedy = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height}`}
-		data='/assets/House of Comedy.svg'></object>
+	<div className={`${width} ${height}`}>
+		<ComedyIcon />
+	</div>
 )
 
 export default Comedy

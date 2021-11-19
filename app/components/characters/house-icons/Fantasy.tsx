@@ -1,4 +1,5 @@
 import React from 'react'
+import FantasyIcon from '../../../../public/assets/House of Fantasy.svg'
 
 const Fantasy = ({
 	width = '',
@@ -7,9 +8,9 @@ const Fantasy = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height}`}
-		data='/assets/House of Fantasy.svg'></object>
+	<div className={`${width} ${height}`}>
+		<FantasyIcon />
+	</div>
 )
 
 export default Fantasy

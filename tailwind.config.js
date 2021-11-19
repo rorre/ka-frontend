@@ -52,8 +52,9 @@ module.exports = {
 	},
 	variants: {
 		extend: {
-			dropShadow: ['hover'],
-			backgroundImage: ['group-hover', 'hover'],
+			opacity: ['hover', 'active'],
+			dropShadow: ['hover', 'active'],
+			backgroundImage: ['group-hover', 'hover', 'active'],
 		},
 	},
 	plugins: [],

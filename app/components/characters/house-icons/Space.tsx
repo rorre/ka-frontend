@@ -1,4 +1,5 @@
 import React from 'react'
+import SpaceIcon from '../../../../public/assets/House of Space.svg'
 
 const Space = ({
 	width = '',
@@ -7,9 +8,9 @@ const Space = ({
 	width: string
 	height: string
 }) => (
-	<object
-		className={`${width} ${height} `}
-		data='/assets/House of Space.svg'></object>
+	<div className={`${width} ${height}`}>
+		<SpaceIcon />
+	</div>
 )
 
 export default Space

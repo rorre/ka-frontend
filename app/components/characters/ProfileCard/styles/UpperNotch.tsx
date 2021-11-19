@@ -17,13 +17,13 @@ export const UpperNotch = styled.div`
 		top: -2px;
 		height: 2rem;
 		width: 2.2rem;
-		right: 44.5%;
+		right: 46%;
 	}
 
 	@media screen and (min-width: 1024px) {
 		top: -2px;
 		height: 2.4rem;
 		width: 3rem;
-		right: 41.5%;
+		right: 42%;
 	}
 `

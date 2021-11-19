@@ -4,18 +4,42 @@ import axios from 'axios'
 import {
 	CharacterDetailsLayout,
 	ClapperBackground,
-} from '../../app/components/characters/character-details'
+	BioSection,
+	MobileBioSection,
+	Interest,
+} from '../../app/components/characters'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
 import { useRouter } from 'next/router'
 import { DetailedStudent } from '../../app/components/characters/character-details/interfaces'
+import { useResponsive } from '../../app/hooks'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 const CharactersDetailsPage = () => {
-	const [student, setStudent] = useState({} as DetailedStudent)
+	const [student, setStudent] = useState({
+		username: '',
+		nama: '',
+		jurusan: '',
+		ttl: '',
+		hobi: '',
+		twitter: '',
+		line: '',
+		instagram: '',
+		foto_diri: '',
+		video_diri: null,
+		house: { id: 0, codename: '', nama: '' },
+		house_led: null,
+		message: '',
+		about: '',
+		interests: [] as string[],
+	} as DetailedStudent)
 	const router = useRouter()
 	const { username } = router.query
+	const { isMobile } = useResponsive()
 
 	const url = process.env.NEXT_PUBLIC_BASE_URL + `/student/${username}`
+	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
 
 	const getStudent = async () => {
 		try {
@@ -30,6 +54,8 @@ const CharactersDetailsPage = () => {
 		getStudent()
 	}, [username])
 
+	console.log(student)
+
 	return (
 		<>
 			<Header />
@@ -37,10 +63,64 @@ const CharactersDetailsPage = () => {
 				<ClapperBackground />
 				<Buttons.Back className='absolute top-2 left-2 rounded-md' />
 				<div className='absolute top-1 right-0'>
-					{utils.getHouseIcon(
-						student.house?.nama.split(' ').at(2)!,
-						'md:w-12 md:h-12 w-10 h-10'
-					)}
+					{student.house?.nama === ''
+						? ''
+						: utils.getHouseIcon(
+								student.house?.nama.split(' ').at(2)!,
+								'md:w-12 md:h-12 w-10 h-10'
+						  )}
+				</div>
+
+				{isMobile ? (
+					<MobileBioSection
+						foto_diri={`${imageUrl}/${student.foto_diri}`}
+						nama={student.nama}
+						jurusan={student.jurusan}
+						ttl={student.ttl}
+						hobi={student.hobi}
+						line={student.line}
+						instagram={student.instagram}
+					/>
+				) : (
+					<BioSection
+						foto_diri={`${imageUrl}/${student.foto_diri}`}
+						nama={student.nama}
+						jurusan={student.jurusan}
+						ttl={student.ttl}
+						hobi={student.hobi}
+						line={student.line}
+						instagram={student.instagram}
+					/>
+				)}
+				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+						About Me
+					</h2>
+					<ReactMarkdown
+						className='md:text-lg text-sm text-white'
+						remarkPlugins={[remarkGfm]}>
+						{student.about as string}
+					</ReactMarkdown>
+				</div>
+				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+						Future Message
+					</h2>
+					<ReactMarkdown
+						className='md:text-lg text-sm text-white'
+						remarkPlugins={[remarkGfm]}>
+						{student.message as string}
+					</ReactMarkdown>
+				</div>
+				<div className='lg:mx-48 md:mx-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
+						IT Interests
+					</h2>
+					<div className=' -mx-1 flex flex-row flex-wrap'>
+						{student.interests?.map((interest, index) => (
+							<Interest key={interest} interest={interest} />
+						))}
+					</div>
 				</div>
 			</div>
 		</>
