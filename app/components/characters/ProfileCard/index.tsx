@@ -20,7 +20,7 @@ const ProfileCard = ({
 	const instagramUrl = 'https://instagram.com/' + instagram
 
 	return (
-		<div className='bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500 pointer-events-none'>
+		<div className='transition transform duration-500 hover:scale-105 bg-ocean py-2 pl-2 m-1.5 border-2 relative rounded-xl border-blue-500'>
 			<UpperNotch className='border-2 border-blue-500' />
 
 			<div className='flex items-center divide-x-2 divide-red-800 divide-dashed'>

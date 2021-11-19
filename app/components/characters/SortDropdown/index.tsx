@@ -18,7 +18,7 @@ const SortDropdown = () => {
 					{isAscending ? 'Ascending' : isDescending ? 'Descending' : 'Sort by'}
 				</span>
 				<svg
-					className={`w-1/12 absolute right-3.5 lg:top-2.5 top-1.5 md:mt-1 bg-dark-2 ${
+					className={`transition duration-150 w-1/12 absolute right-3.5 lg:top-2.5 top-1.5 md:mt-1 bg-dark-2 ${
 						isDropdown && 'transform rotate-180'
 					}`}
 					xmlns='http://www.w3.org/2000/svg'

@@ -20,7 +20,7 @@ export const SearchBarDropdown = () => {
 							: 'Information Systems'}
 					</span>
 					<svg
-						className={`w-1/12 bg-transparent ${
+						className={`transition duration-150 w-1/12 bg-transparent ${
 							isDropdown && 'transform rotate-180'
 						}`}
 						xmlns='http://www.w3.org/2000/svg'
