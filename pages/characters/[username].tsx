@@ -7,6 +7,7 @@ import {
 	BioSection,
 	MobileBioSection,
 	Interest,
+	VideoModal,
 } from '../../app/components/characters'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
@@ -17,6 +18,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const CharactersDetailsPage = () => {
+	const [showVideo, setShowVideo] = useState(false)
 	const [student, setStudent] = useState({
 		username: '',
 		nama: '',
@@ -27,7 +29,7 @@ const CharactersDetailsPage = () => {
 		line: '',
 		instagram: '',
 		foto_diri: '',
-		video_diri: null,
+		video_diri: '',
 		house: { id: 0, codename: '', nama: '' },
 		house_led: null,
 		message: '',
@@ -60,6 +62,16 @@ const CharactersDetailsPage = () => {
 		<>
 			<Header />
 			<div className='relative'>
+				<VideoModal
+					showVideo={showVideo}
+					setShowVideo={setShowVideo}
+					jurusan={student.jurusan}
+					nama={student.nama}
+					video_diri={student.video_diri as string}
+					className={showVideo ? '' : 'hidden'}
+					foto_diri={`${imageUrl}/${student.foto_diri}`}
+				/>
+
 				<ClapperBackground />
 				<Buttons.Back className='absolute top-2 left-2 rounded-md' />
 				<div className='absolute top-1 right-0'>
@@ -73,23 +85,15 @@ const CharactersDetailsPage = () => {
 
 				{isMobile ? (
 					<MobileBioSection
-						foto_diri={`${imageUrl}/${student.foto_diri}`}
-						nama={student.nama}
-						jurusan={student.jurusan}
-						ttl={student.ttl}
-						hobi={student.hobi}
-						line={student.line}
-						instagram={student.instagram}
+						student={student}
+						showVideo={showVideo}
+						setShowVideo={setShowVideo}
 					/>
 				) : (
 					<BioSection
-						foto_diri={`${imageUrl}/${student.foto_diri}`}
-						nama={student.nama}
-						jurusan={student.jurusan}
-						ttl={student.ttl}
-						hobi={student.hobi}
-						line={student.line}
-						instagram={student.instagram}
+						student={student}
+						showVideo={showVideo}
+						setShowVideo={setShowVideo}
 					/>
 				)}
 				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>

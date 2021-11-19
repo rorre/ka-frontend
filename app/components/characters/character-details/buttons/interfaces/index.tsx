@@ -1,1 +1,1 @@
-export * from './Video.interface'
+export * from './Button.interface'

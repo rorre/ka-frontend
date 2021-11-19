@@ -8,7 +8,7 @@ export default interface DetailedStudent {
 	line: string
 	instagram: string
 	foto_diri: string
-	video_diri?: null
+	video_diri?: string
 	house?: { id: number; codename: string; nama: string }
 	house_led?: null
 	message?: string

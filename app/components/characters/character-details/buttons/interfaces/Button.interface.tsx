@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-export interface VideoInterface {
+export interface ButtonInterface {
 	className?: string
 	onClick: MouseEventHandler<HTMLButtonElement>
 }
