@@ -13,13 +13,13 @@ const getToKnowUsItems = [
 	// },
 	{
 		iconUrl: '/assets/ourthoughts-icon.svg',
-		url: '/thoughts',
+		url: '/working',
 		title: 'Our Thoughts',
 		description: 'Lorem ipsum dolor sit amet, consectetur ',
 	},
 	{
 		iconUrl: '/assets/ourpassions-icon.svg',
-		url: '/passions',
+		url: '/working',
 		title: 'Our Passions',
 		description: 'Lorem ipsum dolor sit amet, consectetur ',
 	},
