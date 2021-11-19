@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const StyledVideo = styled.div`
-	height: 80vh;
+export const StyledModal = styled.div`
+	height: 90vh;
 
 	@media screen and (max-width: 640px) {
-		height: 90vh;
+		height: 100vh;
 	}
 `

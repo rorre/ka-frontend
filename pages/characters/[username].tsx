@@ -56,6 +56,14 @@ const CharactersDetailsPage = () => {
 		getStudent()
 	}, [username])
 
+	useEffect(() => {
+		if (showVideo) {
+			document.body.style.overflow = 'hidden'
+		} else {
+			document.body.style.overflow = ''
+		}
+	}, [showVideo])
+
 	console.log(student)
 
 	return (
