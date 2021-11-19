@@ -10,7 +10,7 @@ const Messages = () => {
 	const { isMobile } = useResponsive()
 	const [isClicked, setIsClicked] = useState(-1)
 	return (
-		<section className='h-full px-8 text-white py-44 lg:py-24 lg:px-14'>
+		<section className='h-full px-8 text-white mx-auto md:max-w-9/10'>
 			<div className='relative -top-48 lg:-top-28'>
 				<div className='w-20 mt-5 -mb-40'>
 					<Image
@@ -24,7 +24,7 @@ const Messages = () => {
 					<h2 className='max-w-md pt-3 my-24 text-left pl-14'>Messages</h2>
 				</div>
 			</div>
-			<div className='items-center grid-cols-2 grid-rows-2 mx-auto text-gray-900 2md:grid gap-7 xl:max-w-3/4 2md:-mt-36'>
+			<div className='items-center grid-cols-2 grid-rows-2 mx-auto text-gray-900 2md:grid gap-7 xl:max-w-5/6 2md:-mt-36'>
 				{messages.map((message: MessageInterface, index) =>
 					isMobile ? (
 						<MessagesMobileItem

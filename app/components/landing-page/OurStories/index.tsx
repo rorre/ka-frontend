@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StoryContainer } from '../styles'
-import { contents } from './utils/contents'
+// import { contents } from './utils/contents'
 import { Content } from './interfaces/Content.interface'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll.hook'
 import StoryItem from './StoryItem'
+import axios from 'axios'
 
 const OurStories = () => {
+	const [stories, setStories] = useState([])
 	const [details, setDetails] = useState(
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a arcu.'
 	)
@@ -13,20 +15,33 @@ const OurStories = () => {
 	const [isClickedGlobal, setIsClickedGlobal] = useState(-1)
 	const scrollRef = useHorizontalScroll()
 
+	const getStories = async () => {
+		try {
+			const { data }: { data: [] } = await axios.get(
+				`${process.env.NEXT_PUBLIC_BASE_URL}/story/list`
+			)
+			setStories(data)
+		} catch (err) {}
+	}
+
+	useEffect(() => {
+		getStories()
+	}, [])
+
 	return (
-		<section className='h-full text-white '>
-			<h2 className='my-24 text-center sm:text-left'>Our Stories</h2>
-			<div className='grid-cols-8 md:grid'>
-				<div className='col-span-3 m-auto md:mb-10 px-14'>
-					<div className='flex flex-col items-center h-full max-w-xs text-justify 3md:mb-10'>
-						<h4>{titles}</h4>
-						<p className='mt-4'>{details}</p>
+		<section className='h-full text-white mx-auto max-w-9/10'>
+			<h2 className='my-24 3md:mb-5 text-center 2md:text-left'>Our Stories</h2>
+			<div className='2md:grid grid-cols-8'>
+				<div className='col-span-3 m-auto 3md:mb-10'>
+					<div className='2md:max-w-xs 3sm:max-w-xs h-full flex flex-col items-center 3md:mb-10 mx-auto'>
+						<h4 className='text-center'>{titles}</h4>
+						<p className='mt-4 text-justify'>{details}</p>
 					</div>
 				</div>
 				<StoryContainer
-					className='flex w-full col-start-4 col-end-9 gap-5 overflow-x-auto p-7'
+					className='col-start-4 col-end-9 gap-5 flex overflow-x-auto p-7'
 					ref={scrollRef}>
-					{contents.map((content: Content) => (
+					{stories.map((content: Content) => (
 						<StoryItem
 							{...content}
 							key={content.id}

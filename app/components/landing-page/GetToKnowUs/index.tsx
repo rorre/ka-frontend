@@ -5,8 +5,8 @@ import GetToKnowUsCard from './GetToKnowUsCard'
 
 const GetToKnowUs = () => {
 	return (
-		<section className='h-full text-white lg:px-14'>
-			<h2 className='my-24 text-center 2sm:text-left'>
+		<section className='h-full text-white mx-auto max-w-9/10'>
+			<h2 className='my-24 text-center 2md:text-left'>
 				Get to
 				<br />
 				Know Us
