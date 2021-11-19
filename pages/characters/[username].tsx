@@ -70,8 +70,6 @@ const CharactersDetailsPage = () => {
 		}
 	}, [showVideo])
 
-	console.log(student)
-
 	return (
 		<>
 			<Header />
@@ -134,7 +132,7 @@ const CharactersDetailsPage = () => {
 					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
 						IT Interests
 					</h2>
-					<div className=' -mx-1 flex flex-row flex-wrap'>
+					<div className=' -mx-1 flex flex-row flex-wrap md:mb-0 mb-10'>
 						{student.interests?.map((interest, index) => (
 							<Interest key={interest} interest={interest} />
 						))}
