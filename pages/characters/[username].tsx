@@ -58,9 +58,15 @@ const CharactersDetailsPage = () => {
 
 	useEffect(() => {
 		if (showVideo) {
+			document.body.style.position = 'fixed'
+			document.body.style.top = `-${document.documentElement.scrollTop}px`
 			document.body.style.overflow = 'hidden'
 		} else {
+			const scrollEnd = document.body.style.position
+			document.body.style.position = ''
+			document.body.style.top = ''
 			document.body.style.overflow = ''
+			window.scrollTo(0, parseInt(scrollEnd || '0') * -1)
 		}
 	}, [showVideo])
 
