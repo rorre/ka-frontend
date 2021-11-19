@@ -10,11 +10,13 @@ import {
 	YearbookSortDropdown,
 	YearbookPagination,
 	YearbookContainer,
+	YearbookLoader,
 } from '../../app/components/characters'
 import { useResponsive } from '../../app/hooks'
 import { Paged, Student } from '../../app/components/characters/interfaces'
 
 const CharactersPage = () => {
+	const [isLoading, setIsLoading] = useState(false)
 	const [students, setStudents] = useState([] as Student[])
 	const [query, setQuery] = useState(new URLSearchParams())
 	const [currentPage, setCurrentPage] = useState(1)
@@ -29,12 +31,15 @@ const CharactersPage = () => {
 		query.set('page', currentPage.toString())
 
 		try {
+			setIsLoading(true)
 			const { data } = await axios.get<Paged<Student>>(
 				`${url}${query.toString()}`
 			)
 			setStudents(data.data)
 			setMaxPage(data.max_page)
+			setIsLoading(false)
 		} catch (error) {
+			setIsLoading(false)
 			console.log(error)
 			return []
 		}
@@ -89,45 +94,49 @@ const CharactersPage = () => {
 						<YearbookFilterDropdown />
 					</div>
 				</form>
-				<div className='flex flex-wrap justify-center w-full px-4 bg-transparent md:px-0 lg:mt-20 md:mt-16'>
-					{students.map((student: Student) => (
-						<div
-							key={student.username}
-							className='bg-transparent w-6/12 lg:w-4/12 md:w-6/12 md:my-0 my-2'>
-							{isMobile ? (
-								<Link href={`/characters/${student.username}`}>
-									<a>
-										<YearbookMobileProfileCard
-											username={student.username}
-											key={student.username}
-											nama={student.nama}
-											foto_diri={`${imageUrl}/${student.foto_diri}`}
-											jurusan={student.jurusan}
-											house_name={student.house_name}
-											line={student.line}
-											instagram={student.instagram}
-										/>
-									</a>
-								</Link>
-							) : (
-								<Link href={`/characters/${student.username}`}>
-									<a>
-										<YearbookProfileCard
-											username={student.username}
-											key={student.username}
-											nama={student.nama}
-											foto_diri={`${imageUrl}/${student.foto_diri}`}
-											jurusan={student.jurusan}
-											house_name={student.house_name}
-											line={student.line}
-											instagram={student.instagram}
-										/>
-									</a>
-								</Link>
-							)}
-						</div>
-					))}
-				</div>
+				{isLoading ? (
+					<YearbookLoader />
+				) : (
+					<div className='flex flex-wrap justify-center w-full px-4 bg-transparent md:px-0 lg:mt-20 md:mt-16'>
+						{students.map((student: Student) => (
+							<div
+								key={student.username}
+								className='bg-transparent w-6/12 lg:w-4/12 md:w-6/12 md:my-0 my-2'>
+								{isMobile ? (
+									<Link href={`/characters/${student.username}`}>
+										<a>
+											<YearbookMobileProfileCard
+												username={student.username}
+												key={student.username}
+												nama={student.nama}
+												foto_diri={`${imageUrl}/${student.foto_diri}`}
+												jurusan={student.jurusan}
+												house_name={student.house_name}
+												line={student.line}
+												instagram={student.instagram}
+											/>
+										</a>
+									</Link>
+								) : (
+									<Link href={`/characters/${student.username}`}>
+										<a>
+											<YearbookProfileCard
+												username={student.username}
+												key={student.username}
+												nama={student.nama}
+												foto_diri={`${imageUrl}/${student.foto_diri}`}
+												jurusan={student.jurusan}
+												house_name={student.house_name}
+												line={student.line}
+												instagram={student.instagram}
+											/>
+										</a>
+									</Link>
+								)}
+							</div>
+						))}
+					</div>
+				)}
 				<YearbookPagination
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
