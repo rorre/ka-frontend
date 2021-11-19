@@ -35,6 +35,7 @@ module.exports = {
 			},
 			backgroundImage: {
 				'shade-pattern': "url('/assets/bg_shade.svg')",
+				'shade-pattern-sm': "url('/assets/bg_shade_sm.svg')",
 				ocean:
 					'linear-gradient(319.03deg, #04091C -21.71%, #164F85 64.3%, #1C64A7 110.55%);',
 			},
