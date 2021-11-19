@@ -14,6 +14,8 @@ const StoryItem = ({
 }: StoryItemInterface) => {
 	const [isClicked, setIsClicked] = useState(false)
 	const [imageIndex, setImageIndex] = useState(0)
+	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/story`
+
 	const clickHandler = () => {
 		if (isClicked && imageIndex < foto.length - 1) {
 			setIsClicked(isClicked)
@@ -40,7 +42,7 @@ const StoryItem = ({
 	})
 	return (
 		<Story
-			src={foto[imageIndex]}
+			src={`${imageUrl}/${foto[imageIndex]}`}
 			key={id}
 			className={`transform ${
 				isClicked && isClickedGlobal === id
