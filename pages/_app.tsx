@@ -7,6 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import Head from 'next/head'
 
 library.add(fab, fas, far)
 
@@ -24,9 +25,23 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 	if (getLayout !== Component.getLayout)
 		return (
 			<Layout>
+				<Head>
+					<link
+						href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@600&family=Sora:wght@400;600;700&display=swap'
+						rel='stylesheet'></link>
+				</Head>
 				<Component {...pageProps} />
 			</Layout>
 		)
-	return getLayout(<Component {...pageProps} />)
+	return getLayout(
+		<>
+			<Head>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@600&family=Sora:wght@400;600;700&display=swap'
+					rel='stylesheet'></link>
+			</Head>
+			<Component {...pageProps} />
+		</>
+	)
 }
 export default MyApp
