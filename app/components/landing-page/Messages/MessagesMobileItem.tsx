@@ -33,7 +33,13 @@ const MessagesMobileItem = ({
 					</p>
 				</div>
 			</div>
-			<div onClick={accordionHandler}>
+			<div
+				className={
+					isClicked !== index ? 'hidden' : 'block overflow-y-auto mt-10'
+				}>
+				<p className='text-left'>{message}</p>
+			</div>
+			<div onClick={accordionHandler} className='max-h-10'>
 				<svg
 					className={`w-full max-h-10 my-5 ${
 						isClicked === index ? 'transform rotate-180' : 'animate-bounce'
@@ -48,9 +54,6 @@ const MessagesMobileItem = ({
 						clipRule='evenodd'
 					/>
 				</svg>
-			</div>
-			<div className={isClicked !== index ? 'hidden' : 'block overflow-y-auto'}>
-				<p className='text-left'>{message}</p>
 			</div>
 		</MobileMessagesCard>
 	)
