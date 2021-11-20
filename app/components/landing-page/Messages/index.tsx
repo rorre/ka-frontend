@@ -10,7 +10,7 @@ const Messages = () => {
 	const { isMobile } = useResponsive()
 	const [isClicked, setIsClicked] = useState(-1)
 	return (
-		<section className='h-full px-8 text-white mx-auto md:max-w-9/10'>
+		<section className='h-full px-8 mx-auto text-white md:max-w-9/10'>
 			<div className='relative -top-48 lg:-top-28'>
 				<div className='w-20 mt-5 -mb-40'>
 					<Image

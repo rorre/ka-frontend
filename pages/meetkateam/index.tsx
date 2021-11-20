@@ -9,8 +9,7 @@ const MeetKaTeam = () => {
 					<div className='mb-24 text-center text-white'>
 						<h1 className='3md:text-5xl'>Meet Karya Angkatan Team</h1>
 						<h5 className='max-w-2xl mx-auto mt-5 3md:text-lg'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Meet the team behind Karya Angkatan
 						</h5>
 					</div>
 					<TeamMembers />
