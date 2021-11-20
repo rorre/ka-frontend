@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { StoryContainer } from '../styles'
-// import { contents } from './utils/contents'
 import { Content } from './interfaces/Content.interface'
 import { useHorizontalScroll } from './hooks/useHorizontalScroll.hook'
 import StoryItem from './StoryItem'
