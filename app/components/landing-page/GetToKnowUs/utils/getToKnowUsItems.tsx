@@ -29,7 +29,7 @@ const getToKnowUsItems = [
 		iconUrl: '/assets/tutorangkatan-icon.svg',
 		url: 'https://ta.rorre.xyz/',
 		title: 'Tutor Angkatan',
-		description: 'Lorem ipsum dolor sit amet, consectetur ',
+		description: 'Our study platform ',
 	},
 ]
 
