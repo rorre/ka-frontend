@@ -56,7 +56,7 @@ const CharactersPage = () => {
 					</div>
 				</form>
 			</section>
-			<section className='lg:px-32'>
+			<section className='lg:px-32 md:px-8'>
 				{isLoading ? (
 					<YearbookLoader />
 				) : (

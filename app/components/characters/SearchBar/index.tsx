@@ -11,7 +11,7 @@ const SearchBar = () => {
 	}
 
 	return (
-		<div className='pr-2 mx-4 rounded bg-dark-2 lg:mx-10 md:-mx-4 lg:pr-4 md:rounded-xl'>
+		<div className='pr-2 mx-4 rounded bg-dark-2 lg:mx-10 lg:pr-4 md:rounded-xl'>
 			<SearchInput
 				name='name'
 				className='inline-block w-5/12 p-3 text-gray-400 border-r-2 border-black focus:bg-dark-3 lg:text-base md:text-sm text-2xs focus:outline-none bg-dark-2 md:p-6 rounded-l-xl lg:w-6/12 md:w-5/12'
