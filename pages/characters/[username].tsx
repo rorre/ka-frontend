@@ -6,6 +6,7 @@ import {
 	BioSection,
 	MobileBioSection,
 	Interest,
+	VideoModal,
 } from '../../app/components/characters'
 import * as Buttons from '../../app/components/characters/character-details/buttons'
 import * as utils from '../../app/components/characters/utils/helpers'
@@ -16,6 +17,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const CharactersDetailsPage = () => {
+	const [showVideo, setShowVideo] = useState(false)
 	const [student, setStudent] = useState({
 		username: '',
 		nama: '',
@@ -26,7 +28,7 @@ const CharactersDetailsPage = () => {
 		line: '',
 		instagram: '',
 		foto_diri: '',
-		video_diri: null,
+		video_diri: '',
 		house: { id: 0, codename: '', nama: '' },
 		house_led: null,
 		message: '',
@@ -53,8 +55,31 @@ const CharactersDetailsPage = () => {
 		getStudent()
 	}, [username])
 
+  useEffect(() => {
+		if (showVideo) {
+			document.body.style.position = 'fixed'
+			document.body.style.top = `-${document.documentElement.scrollTop}px`
+			document.body.style.overflow = 'hidden'
+		} else {
+			const scrollEnd = document.body.style.position
+			document.body.style.position = ''
+			document.body.style.top = ''
+			document.body.style.overflow = ''
+			window.scrollTo(0, parseInt(scrollEnd || '0') * -1)
+		}
+	}, [showVideo])
+            
 	return (
 		<>
+      <VideoModal
+        showVideo={showVideo}
+        setShowVideo={setShowVideo}
+        jurusan={student.jurusan}
+        nama={student.nama}
+        video_diri={student.video_diri as string}
+        className={showVideo ? '' : 'hidden'}
+        foto_diri={`${imageUrl}/${student.foto_diri}`}
+      />
 			<ClapperBackground />
 			<Buttons.Back className='absolute rounded-md top-10 left-10' />
 			<div className='absolute right-10 top-10'>
@@ -67,29 +92,22 @@ const CharactersDetailsPage = () => {
 			</div>
 
 			{isMobile ? (
-				<MobileBioSection
-					foto_diri={`${imageUrl}/${student.foto_diri}`}
-					nama={student.nama}
-					jurusan={student.jurusan}
-					ttl={student.ttl}
-					hobi={student.hobi}
-					line={student.line}
-					instagram={student.instagram}
-				/>
-			) : (
-				<BioSection
-					foto_diri={`${imageUrl}/${student.foto_diri}`}
-					nama={student.nama}
-					jurusan={student.jurusan}
-					ttl={student.ttl}
-					hobi={student.hobi}
-					line={student.line}
-					instagram={student.instagram}
-				/>
-			)}
+					<MobileBioSection
+						student={student}
+						showVideo={showVideo}
+						setShowVideo={setShowVideo}
+					/>
+				) : (
+					<BioSection
+						student={student}
+						showVideo={showVideo}
+						setShowVideo={setShowVideo}
+					/>
+				)}
+      
 			<section className='flex flex-col justify-center gap-16 py-16 '>
-				<div className='mx-8 lg:mx-48 md:mx-20'>
-					<h2 className='mb-3 text-lg font-bold text-white md:text-2xl'>
+				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>
+					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
 						About Me
 					</h2>
 					<ReactMarkdown
@@ -112,7 +130,7 @@ const CharactersDetailsPage = () => {
 					<h2 className='mb-3 text-lg font-bold text-white md:text-2xl'>
 						IT Interests
 					</h2>
-					<div className='flex flex-row flex-wrap -mx-1 '>
+						<div className=' -mx-1 flex flex-row flex-wrap md:mb-0 mb-10'>
 						{student.interests?.map((interest, index) => (
 							<Interest key={interest} interest={interest} />
 						))}
