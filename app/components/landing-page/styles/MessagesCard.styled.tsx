@@ -7,7 +7,6 @@ const MessagesCard = styled.div`
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	transition: all 0.5s ease-in-out;
 	margin-bottom: 20px;
 	&:hover {
