@@ -10,7 +10,7 @@ const TeamMembers = () => {
 			{team.map((member: TeamInterface) => (
 				<div
 					key={uuid()}
-					className='w-32 mx-5 my-5 bg-transparent 2sm:w-40 2md:w-56 lg:mx-8'>
+					className='w-36 mx-1 2sm:mx-5 my-5 bg-transparent 2sm:w-40 2md:w-56 lg:mx-8'>
 					<TeamCard {...member} />
 				</div>
 			))}
