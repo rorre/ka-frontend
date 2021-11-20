@@ -6,11 +6,11 @@ import { team } from './utils/team'
 
 const TeamMembers = () => {
 	return (
-		<div className='flex flex-wrap justify-center'>
+		<div className='flex flex-wrap justify-center max-w-6xl'>
 			{team.map((member: TeamInterface) => (
 				<div
 					key={uuid()}
-					className='w-32 mx-3 my-5 bg-transparent 2sm:w-40 2md:w-56 md:mx-8'>
+					className='w-36 mx-1 2sm:mx-4 my-5 bg-transparent 2sm:w-40 2md:w-56 lg:mx-8'>
 					<TeamCard {...member} />
 				</div>
 			))}

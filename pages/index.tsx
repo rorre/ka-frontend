@@ -1,7 +1,7 @@
 import React from 'react'
 import GetToKnowUs from '../app/components/landing-page/GetToKnowUs'
 import OurStories from '../app/components/landing-page/OurStories'
-import MeetTheDevTeam from '../app/components/landing-page/MeetTheDevTeam'
+import MeetTheDevTeam from '../app/components/landing-page/MeetKaryaAngkatanTeam'
 import Messages from '../app/components/landing-page/Messages'
 import Hero from '../app/components/landing-page/Hero'
 

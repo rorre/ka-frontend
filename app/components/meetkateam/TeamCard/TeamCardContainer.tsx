@@ -10,7 +10,7 @@ export const TeamCardContainer = ({
 }: ProfilePictureContainerInterface) => (
 	<ProfileImageBorder className='rounded-md'>
 		<ProfilePicture
-			className='object-cover h-44 lg:h-56 '
+			className='w-36 h-36 2sm:w-44 2sm:h-44 lg:w-52 lg:h-52 object-cover'
 			src={image}
 			alt='Profile-Image'
 		/>
