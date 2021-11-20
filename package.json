@@ -41,7 +41,7 @@
 		"@typescript-eslint/parser": "^4.32.0",
 		"autoprefixer": "^10.3.6",
 		"babel-plugin-styled-components": "^1.13.3",
-		"cypress": "^8.5.0",
+		"cypress": "^9.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-google": "^0.14.0",
 		"eslint-config-next": "11.1.2",
