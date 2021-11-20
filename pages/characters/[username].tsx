@@ -15,6 +15,7 @@ import { DetailedStudent } from '../../app/components/characters/character-detai
 import { useResponsive } from '../../app/hooks'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Head from 'next/head'
 
 const CharactersDetailsPage = () => {
 	const [showVideo, setShowVideo] = useState(false)
@@ -71,6 +72,9 @@ const CharactersDetailsPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>CSUI 2021 | {student.nama}</title>
+			</Head>
 			<VideoModal
 				showVideo={showVideo}
 				setShowVideo={setShowVideo}
