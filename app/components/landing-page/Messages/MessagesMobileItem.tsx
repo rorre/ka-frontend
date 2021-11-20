@@ -1,5 +1,5 @@
 import React from 'react'
-import { MessagesCard } from '../styles'
+import { MobileMessagesCard } from '../styles'
 import { MessagesMobileItemInterface } from './interfaces/MessagesMobileItem.interface'
 import { MessagesImage } from '../styles'
 
@@ -21,10 +21,10 @@ const MessagesMobileItem = ({
 		}
 	}
 	return (
-		<MessagesCard>
-			<div className='flex items-center space-x-7'>
+		<MobileMessagesCard>
+			<div className='flex flex-col items-center space-y-2'>
 				<MessagesImage src={image} alt={name} />
-				<div className='text-left'>
+				<div className='text-center'>
 					<h4>{name}</h4>
 					<p className='text-md'>
 						{position}
@@ -33,10 +33,9 @@ const MessagesMobileItem = ({
 					</p>
 				</div>
 			</div>
-			{isClicked === index ? <p className='mt-7 text-left'>{message}</p> : null}
 			<div onClick={accordionHandler}>
 				<svg
-					className={`w-full max-h-10 -mb-10 mt-5 ${
+					className={`w-full max-h-10 my-5 ${
 						isClicked === index ? 'transform rotate-180' : 'animate-bounce'
 					}`}
 					xmlns='http://www.w3.org/2000/svg'
@@ -50,7 +49,10 @@ const MessagesMobileItem = ({
 					/>
 				</svg>
 			</div>
-		</MessagesCard>
+			<div className={isClicked !== index ? 'hidden' : 'block overflow-y-auto'}>
+				<p className='text-left'>{message}</p>
+			</div>
+		</MobileMessagesCard>
 	)
 }
 
