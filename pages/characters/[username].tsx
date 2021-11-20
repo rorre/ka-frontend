@@ -81,8 +81,8 @@ const CharactersDetailsPage = () => {
 				foto_diri={`${imageUrl}/${student.foto_diri}`}
 			/>
 			<ClapperBackground />
-			<Buttons.Back className='absolute rounded-md lg:top-5 lg:left-5 top-2 left-2' />
-			<div className='absolute lg:right-5 lg:top-5 top-2 right-0'>
+			<Buttons.Back className='absolute rounded-md top-4 md:top-10 left-4 md:left-10' />
+			<div className='absolute right-2 md:right-10 top-2 md:top-5'>
 				{student.house?.nama === ''
 					? ''
 					: utils.getHouseIcon(
