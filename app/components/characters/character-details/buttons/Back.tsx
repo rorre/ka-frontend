@@ -9,7 +9,7 @@ const BackButton = ({ className = '' }: { className?: string }) => {
 	return (
 		<button onClick={() => window.history.go(-1)}>
 			<StyledBlue
-				className={`md:p-2.5 p-2 md:w-10 md:h-10 w-8 h-8 ${className}`}>
+				className={`flex items-center justify-center md:p-2.5 p-2 md:w-10 md:h-10 w-8 h-8 ${className}`}>
 				<FontAwesomeIcon
 					icon={faArrowLeft}
 					color='white'
