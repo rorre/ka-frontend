@@ -31,7 +31,7 @@ const MessagesItem = ({
 					</p>
 				</div>
 			</div>
-			<p className='text-left mt-7 overflow-y-auto'>{message}</p>
+			<p className='text-left mt-7 overflow-y-auto text-justify'>{message}</p>
 		</MessagesCard>
 	)
 }
