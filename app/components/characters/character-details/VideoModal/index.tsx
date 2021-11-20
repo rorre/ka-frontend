@@ -32,7 +32,7 @@ const VideoModal = ({
 							alt='image'
 						/>
 					</div>
-					<div className='flex flex-col justify-center relative ml-2 col-start-2 col-end-10 row-span-2'>
+					<div className='relative ml-2 col-start-2 col-end-10 row-span-2'>
 						<p className='text-white font-semibold text-xs mt-1'>
 							{formatNameForDetails(nama)}
 						</p>
@@ -47,11 +47,8 @@ const VideoModal = ({
 					<Close className='rounded-md' onClick={() => setShowVideo(false)} />
 				</div>
 				<StyledVideo className='w-full flex items-center justify-center'>
-					<div className={isLoading ? 'text-center' : 'hidden'}>
-						<VideoIcon className='lg:w-32 md:w-28 w-24 mx-auto' />
-						<p className='pt-2 text-white'>
-							{video_diri ? 'Loading video...' : 'No video available :('}
-						</p>
+					<div className={isLoading ? '' : 'hidden'}>
+						<VideoIcon className='lg:w-32 md:w-28 w-24' />
 					</div>
 					<div className={isLoading ? 'hidden' : 'h-full w-full p-4'}>
 						<ReactPlayer

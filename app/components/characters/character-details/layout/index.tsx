@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import Header from '../../../global/header'
 import { BlueCorner, RedCorner } from './styles'
 
 type LayoutProps = {
@@ -8,7 +7,6 @@ type LayoutProps = {
 
 const CharacterDetailsLayout = ({ children }: LayoutProps) => (
 	<main>
-		<Header />
 		<div className='mx-auto'>
 			{children}
 			<BlueCorner />

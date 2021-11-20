@@ -1,24 +1,18 @@
 import React, { useState } from 'react'
 import { SearchDropdown } from './styles'
-import { SearchBarDropdownInterface } from './interfaces/SearchBarDropdown.interface'
 
-export const SearchBarDropdown = ({
-	className = '',
-}: SearchBarDropdownInterface) => {
+export const SearchBarDropdown = () => {
 	const [isDropdown, setIsDropdown] = useState(false)
 	const [major, setMajor] = useState('')
 
 	return (
-		<SearchDropdown
-			className={`relative inline-block  ${
-				className === '' ? 'bg-transparent' : className
-			} lg:text-base md:text-sm text-1.5xs md:px-4 lg:px-6 border-black lg:w-4/12 md:w-5/12 text-gray-400`}>
+		<SearchDropdown className='relative inline-block bg-transparent lg:text-base md:text-sm text-2xs md:px-4 lg:px-6 px-2 border-black lg:w-4/12 md:w-5/12 w-4/12 text-gray-400'>
 			<div className='bg-transparent'>
 				<button
 					onClick={() => setIsDropdown(!isDropdown)}
 					type='button'
 					className='inline-flex w-full text-gray-400'>
-					<span className='w-11/12 text-left md:mt-0 mt-0.5'>
+					<span className='w-11/12 text-left'>
 						{major === ''
 							? 'Major'
 							: major === 'ilmu_komputer'
@@ -26,9 +20,9 @@ export const SearchBarDropdown = ({
 							: 'Information Systems'}
 					</span>
 					<svg
-						className={`transition duration-150 ${
-							className === '' ? 'w-1/12' : 'w-4 absolute right-2'
-						} bg-transparent ${isDropdown && 'transform rotate-180'}`}
+						className={`transition duration-150 w-1/12 bg-transparent ${
+							isDropdown && 'transform rotate-180'
+						}`}
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 20 20'
 						fill='gray'
@@ -48,7 +42,7 @@ export const SearchBarDropdown = ({
 						onClick={() => {
 							setMajor('ilmu_komputer')
 						}}
-						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 py-2 rounded-t-lg border-dark-2'>
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full md:border-b-2 border-b-1 md:px-4 lg:px-6 px-2 md:py-2 py-0.5 rounded-t-lg border-dark-2'>
 						Computer Science
 						<label htmlFor='ilmu_komputer'></label>
 						<input
@@ -67,7 +61,7 @@ export const SearchBarDropdown = ({
 						onClick={() => {
 							setMajor('sistem_informasi')
 						}}
-						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 py-2 rounded-b-lg border-dark-2'>
+						className='text-left bg-purple hover:bg-dark-2 text-gray-400 w-full border-t-2 lg:px-6 md:px-4 px-2 md:py-2 py-0.5 rounded-b-lg border-dark-2'>
 						Information Systems
 						<label htmlFor='sistem_informasi'></label>
 						<input
