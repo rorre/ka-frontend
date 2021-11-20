@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/global/navbar'
 import Footer from '../components/global/footer'
+import Header from '../components/global/header'
 
 type Props = {
 	children?: React.ReactChild | React.ReactChild[]
@@ -8,11 +9,12 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<main className='w-full bg-no-repeat bg-contain bg-shade-pattern'>
+		<>
+			<Header />
 			<Navbar />
-			<div>{children}</div>
+			<main className='relative w-full h-full'>{children}</main>
 			<Footer />
-		</main>
+		</>
 	)
 }
 

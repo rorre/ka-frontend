@@ -10,11 +10,13 @@ export const TeamCard = ({ name, role, image, house }: TeamInterface) => (
 		<div className='absolute top-1.5 right-1.5'>
 			{utils.getHouseIcon(house)}
 		</div>
-		<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-3 px-2'>
-			<p className='text-1.5xs text-white font-bold'>
+		<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-5 px-5'>
+			<p className='text-1.5xs 2md:text-sm text-white font-bold'>
 				{utils.shortenName(name)}
 			</p>
-			<p className='text-2xs text-white font-extralight'>{role}</p>
+			<p className='text-1.5xs 2md:text-sm text-white font-extralight'>
+				{role}
+			</p>
 		</GradientImageDiv>
 	</div>
 )

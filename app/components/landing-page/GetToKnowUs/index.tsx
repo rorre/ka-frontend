@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import { v4 as uuid } from 'uuid'
 import getToKnowUsItems from './utils/getToKnowUsItems'
 import GetToKnowUsCard from './GetToKnowUsCard'
 
 const GetToKnowUs = () => {
 	return (
-		<section className='h-full text-white lg:px-14'>
-			<h2 className='my-24 text-center 2sm:text-left'>
+		<section className='h-full mx-auto text-white max-w-9/10'>
+			<h2 className='my-24 text-center 2md:text-left'>
 				Get to
 				<br />
 				Know Us
@@ -14,9 +15,11 @@ const GetToKnowUs = () => {
 			<div className='flex flex-wrap justify-center gap-5 xl:flex-nowrap'>
 				{getToKnowUsItems.map(({ url, ...props }) => {
 					return url.includes('http') ? (
-						<a href={url}>{<GetToKnowUsCard {...props} />}</a>
+						<a href={url} key={uuid()}>
+							{<GetToKnowUsCard {...props} />}
+						</a>
 					) : (
-						<Link href={url} passHref>
+						<Link href={url} passHref key={uuid()}>
 							<a>{<GetToKnowUsCard {...props} />}</a>
 						</Link>
 					)

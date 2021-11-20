@@ -13,8 +13,10 @@ const MessagesItem = ({
 }: MessagesItemInterface) => {
 	return (
 		<MessagesCard className={index === 0 ? 'row-span-2' : ''}>
-			<div className='flex items-center space-x-7'>
-				<MessagesImage src={image} alt={name} />
+			<div className='flex items-center w-full gap-6'>
+				<div>
+					<MessagesImage src={image} alt={name} />
+				</div>
 				<div className='text-left'>
 					<h4>{name}</h4>
 					<p className='text-md'>
@@ -24,7 +26,7 @@ const MessagesItem = ({
 					</p>
 				</div>
 			</div>
-			<p className='mt-7 text-left'>{message}</p>
+			<p className='text-left mt-7'>{message}</p>
 		</MessagesCard>
 	)
 }

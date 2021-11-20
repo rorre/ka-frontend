@@ -3,7 +3,7 @@ const getToKnowUsItems = [
 		iconUrl: '/assets/yearbook-icon.svg',
 		url: '/characters',
 		title: 'The Characters',
-		description: 'Lorem ipsum dolor sit amet, consectetur ',
+		description: 'Come and find out more about the members of CSUI201',
 	},
 	// {
 	// 	iconUrl: '/assets/quiz-icon.svg',
@@ -13,21 +13,23 @@ const getToKnowUsItems = [
 	// },
 	{
 		iconUrl: '/assets/ourthoughts-icon.svg',
-		url: '/thoughts',
+		url: '/working',
 		title: 'Our Thoughts',
-		description: 'Lorem ipsum dolor sit amet, consectetur ',
+		description:
+			'Take a closer look on things we want to say through txtdaripacil',
 	},
 	{
 		iconUrl: '/assets/ourpassions-icon.svg',
-		url: '/passions',
+		url: '/working',
 		title: 'Our Passions',
-		description: 'Lorem ipsum dolor sit amet, consectetur ',
+		description:
+			' Explore and find your passion in IT through our Special Interest Groups',
 	},
 	{
 		iconUrl: '/assets/tutorangkatan-icon.svg',
 		url: 'https://ta.rorre.xyz/',
 		title: 'Tutor Angkatan',
-		description: 'Lorem ipsum dolor sit amet, consectetur ',
+		description: 'Our study platform ',
 	},
 ]
 

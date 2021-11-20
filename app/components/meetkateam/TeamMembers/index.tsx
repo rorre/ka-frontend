@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuid } from 'uuid'
 import TeamCard from '../TeamCard'
 import TeamInterface from './interfaces/Team.interface'
 import { team } from './utils/team'
@@ -8,9 +9,9 @@ const TeamMembers = () => {
 		<div className='flex flex-wrap justify-center'>
 			{team.map((member: TeamInterface) => (
 				<div
-					key={member.id}
-					className='bg-transparent w-32 2sm:w-40 2md:w-56 my-5 md:mx-8 mx-3'>
-					<TeamCard key={member.id} {...member} />
+					key={uuid()}
+					className='w-32 mx-3 my-5 bg-transparent 2sm:w-40 2md:w-56 md:mx-8'>
+					<TeamCard {...member} />
 				</div>
 			))}
 		</div>

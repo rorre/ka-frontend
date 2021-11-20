@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const MessagesCard = styled.div`
+	height: 600px;
 	background: white;
 	border-radius: 20px;
 	padding: 54px 35px;

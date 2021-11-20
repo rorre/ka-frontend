@@ -5,7 +5,7 @@ const Container = ({
 }: {
 	children: ReactElement[] | ReactElement
 }) => {
-	return <div className='lg:p-32 md:p-7 p-5 z-10'>{children}</div>
+	return <div className='z-10 p-5 lg:p-32 md:p-7'>{children}</div>
 }
 
 export default Container
