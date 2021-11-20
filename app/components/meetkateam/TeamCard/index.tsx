@@ -1,22 +1,24 @@
 import React from 'react'
-import { GradientImageDiv } from '../../characters/ProfileCard/styles'
-import { TeamCardContainer } from './TeamCardContainer'
+import Link from 'next/link'
 import TeamInterface from '../TeamMembers/interfaces/Team.interface'
-import * as utils from '../../characters/utils/helpers'
+import TeamCardContent from './TeamCardContent'
 
-export const TeamCard = ({ name, role, image, house }: TeamInterface) => (
-	<div className='transition transform duration-500 hover:scale-110 relative m-0.5 w-44 h-44 lg:w-52 lg:h-52'>
-		<TeamCardContainer image={image} />
-		<div className='absolute top-1.5 right-1.5'>
-			{utils.getHouseIcon(house)}
-		</div>
-		<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-5 px-5'>
-			<p className='text-1.5xs lg:text-sm text-white font-bold'>
-				{utils.shortenName(name)}
-			</p>
-			<p className='text-1.5xs lg:text-sm text-white font-extralight'>{role}</p>
-		</GradientImageDiv>
-	</div>
-)
+const TeamCard = (props: TeamInterface) => {
+	return (
+		<>
+			{props.url.includes('http') ? (
+				<a href={props.url}>
+					<TeamCardContent {...props} />
+				</a>
+			) : (
+				<Link href={props.url} passHref>
+					<a>
+						<TeamCardContent {...props} />
+					</a>
+				</Link>
+			)}
+		</>
+	)
+}
 
 export default TeamCard
