@@ -13,6 +13,7 @@ import {
 import { useFilter } from '../../app/components/characters/hooks/useFilter'
 import { useResponsive } from '../../app/hooks'
 import { Student } from '../../app/components/characters/interfaces'
+import Head from 'next/head'
 
 const CharactersPage = () => {
 	const {
@@ -36,11 +37,14 @@ const CharactersPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>CSUI 2021 | Characters</title>
+			</Head>
 			<section className='flex flex-col items-center justify-center w-full h-screen px-5'>
 				<h1 className='flex justify-center mt-24 text-3xl font-bold text-center text-white md:mt-20 md:text-6xl'>
 					Our Characters
 				</h1>
-				<p className='flex justify-center mt-4 mb-20 text-xs text-center text-white bg-transparent md:mt-8 md:text-base'>
+				<p className='flex justify-center mt-4 md:mb-20 mb-10 text-xs text-center text-white bg-transparent md:mt-8 md:text-base'>
 					Come and find out more about the members of CSUI201
 				</p>
 				<form
@@ -56,7 +60,7 @@ const CharactersPage = () => {
 					</div>
 				</form>
 			</section>
-			<section className='lg:px-32'>
+			<section className='lg:px-32 md:px-8'>
 				{isLoading ? (
 					<YearbookLoader />
 				) : (

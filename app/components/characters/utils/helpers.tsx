@@ -1,7 +1,7 @@
 import React from 'react'
 import * as House from '../house-icons'
 
-export const getHouseIcon = (house: string, classname = '') => {
+export const getHouseIcon = (house?: string, classname = '') => {
 	const defaultIconHeight = classname === '' ? 'h-6 lg:h-9' : classname
 	const defaultIconWidth = classname === '' ? 'w-6 lg:w-9' : ''
 
