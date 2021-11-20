@@ -1,19 +1,17 @@
 import React from 'react'
 import * as Social from '../../social-media-icons'
-import { DetailedStudent } from '../interfaces'
+import { BioSectionInterface } from './interfaces/BioSection.interface'
 import { ProfilePictureContainer } from '../../ProfileCard/ProfilePictureContainer'
 import { formatNameForDetails } from '../../utils/helpers'
 import { Video } from '../buttons'
 
 const BioSection = ({
-	foto_diri,
-	nama,
-	jurusan,
-	ttl,
-	hobi,
-	line,
-	instagram,
-}: DetailedStudent) => {
+	student,
+	showVideo,
+	setShowVideo,
+}: BioSectionInterface) => {
+	const { foto_diri, nama, jurusan, ttl, hobi, line, instagram } = student
+	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/student`
 	const lineUrl = 'https://line.me/R/ti/p/~' + line
 	const instagramUrl = 'https://instagram.com/' + instagram
 
@@ -21,7 +19,7 @@ const BioSection = ({
 		<div className='grid grid-cols-9 gap-y-2 lg:gap-x-0 md:gap-x-2 grid-rows-2 relative bg-ocean pl-8 pr-3 lg:w-9/12 w-10/12 lg:h-52 md:h-40 h-32 rounded-xl mx-auto lg:-mt-28 -mt-14 z-10'>
 			<div className=' col-span-2 row-span-2 relative -mt-8'>
 				<ProfilePictureContainer
-					image={foto_diri}
+					image={`${imageUrl}/${foto_diri}`}
 					className='md:w-11/12 lg:w-8/12'
 				/>
 			</div>
@@ -72,7 +70,12 @@ const BioSection = ({
 				</div>
 			</div>
 			<div className='col-span-1 row-span-2 my-auto'>
-				<Video className='rounded-md lg:w-16 lg:h-16 lg:p-3' />
+				<Video
+					onClick={event => {
+						setShowVideo(!showVideo)
+					}}
+					className='rounded-md lg:w-16 lg:h-16 lg:p-4'
+				/>
 			</div>
 		</div>
 	)
