@@ -15,6 +15,7 @@ import { DetailedStudent } from '../../app/components/characters/character-detai
 import { useResponsive } from '../../app/hooks'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Head from 'next/head'
 
 const CharactersDetailsPage = () => {
 	const [showVideo, setShowVideo] = useState(false)
@@ -71,6 +72,9 @@ const CharactersDetailsPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>CSUI 2021 | {student.nama}</title>
+			</Head>
 			<VideoModal
 				showVideo={showVideo}
 				setShowVideo={setShowVideo}
@@ -81,13 +85,13 @@ const CharactersDetailsPage = () => {
 				foto_diri={`${imageUrl}/${student.foto_diri}`}
 			/>
 			<ClapperBackground />
-			<Buttons.Back className='absolute rounded-md top-10 left-10' />
-			<div className='absolute right-10 top-10'>
+			<Buttons.Back className='absolute rounded-md top-4 md:top-10 left-4 md:left-10' />
+			<div className='absolute right-2 md:right-10 top-2 md:top-5'>
 				{student.house?.nama === ''
 					? ''
 					: utils.getHouseIcon(
 							student.house?.nama.split(' ').at(2)!,
-							'md:w-20 md:h-20 w-16 h-16'
+							'md:w-20 md:h-20 w-12 h-12'
 					  )}
 			</div>
 
@@ -106,7 +110,7 @@ const CharactersDetailsPage = () => {
 			)}
 
 			<section className='flex flex-col justify-center gap-16 py-16 '>
-				<div className='lg:mx-48 lg:mt-20 md:mx-20 md:mt-20 mt-10 mx-8'>
+				<div className='lg:mx-48 md:mx-20 mx-8'>
 					<h2 className='md:text-2xl text-lg text-white font-bold mb-3'>
 						About Me
 					</h2>
