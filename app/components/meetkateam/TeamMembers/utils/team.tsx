@@ -36,7 +36,7 @@ export const team = [
 	},
 	{
 		name: 'Eduardus Tjitrahardja',
-		url: '/eduardus.tjitrahardja',
+		url: '/characters/eduardus.tjitrahardja',
 		house: 'Space',
 		role: 'Front-end Developer',
 		image: '/assets/edu.svg',
