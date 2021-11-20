@@ -12,7 +12,7 @@ const StoryItem = ({
 	setTitles,
 	setIsClickedGlobal,
 }: StoryItemInterface) => {
-	const [isClicked, setIsClicked] = useState(false)
+	const [isClicked, setIsClicked] = useState(true)
 	const [imageIndex, setImageIndex] = useState(0)
 	const imageUrl = process.env.NEXT_PUBLIC_BASE_URL + `/assets/story`
 
@@ -24,13 +24,16 @@ const StoryItem = ({
 			setIsClicked(!isClicked)
 			setIsClickedGlobal(id)
 		}
-		setDetails(detail)
-		setTitles(title)
 		let tmp = imageIndex
 		tmp++
 		setImageIndex(tmp % foto.length)
 	}
+
 	useEffect(() => {
+		if (isClickedGlobal === id && isClicked === true) {
+			setTitles(title)
+			setDetails(detail)
+		}
 		const interval = setInterval(() => {
 			if (isClickedGlobal === id && isClicked === true) {
 				let tmp = imageIndex

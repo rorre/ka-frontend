@@ -7,9 +7,9 @@ import axios from 'axios'
 
 const OurStories = () => {
 	const [stories, setStories] = useState([])
-	const [details, setDetails] = useState('Too see our stories, so far')
-	const [titles, setTitles] = useState('Click one of the picture!')
-	const [isClickedGlobal, setIsClickedGlobal] = useState(-1)
+	const [details, setDetails] = useState('')
+	const [titles, setTitles] = useState('')
+	const [isClickedGlobal, setIsClickedGlobal] = useState(1)
 	const scrollRef = useHorizontalScroll()
 
 	const getStories = async () => {
@@ -23,6 +23,7 @@ const OurStories = () => {
 
 	useEffect(() => {
 		getStories()
+		console.log(stories[0])
 	}, [])
 
 	return (
@@ -31,7 +32,7 @@ const OurStories = () => {
 			<div className='grid-cols-8 2md:grid'>
 				<div className='col-span-3 m-auto 3md:mb-10'>
 					<div className='flex flex-col items-center h-full mx-auto 2md:max-w-xs 3sm:max-w-xs 3md:mb-10'>
-						<h4 className='text-center'>{titles}</h4>
+						<h4 className='text-center'>{titles === '' ? titles : titles}</h4>
 						<p className='mt-4 text-justify'>{details}</p>
 					</div>
 				</div>
