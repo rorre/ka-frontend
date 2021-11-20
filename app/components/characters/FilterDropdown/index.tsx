@@ -39,16 +39,16 @@ const FilterDropdown = () => {
 	}
 
 	return (
-		<div className=' bg-dark-2 md:h-full h-6 relative inline-block md:px-5 px-3 lg:py-2.5 md:py-1.5 border-black lg:rounded-xl rounded-md lg:w-3/12 md:w-4/12 w-5/12 text-gray-400'>
+		<div className=' bg-dark-2 md:h-full h-6 relative inline-block md:px-5 px-2 lg:py-2.5 md:py-1.5 border-black lg:rounded-xl rounded-md lg:w-3/12 md:w-4/12 w-5/12 text-gray-400'>
 			<button
 				onClick={() => setIsDropdown(!isDropdown)}
 				type='button'
 				className='inline-flex w-full text-gray-400'>
-				<span className='w-11/12 text-left bg-dark-2 lg:text-base md:text-sm text-2xs'>
+				<span className='w-11/12 text-left bg-dark-2 lg:text-base md:text-sm text-1.5xs'>
 					Filter
 				</span>
 				<svg
-					className={`transition duration-150 w-1/12 absolute right-3.5 lg:top-2.5 top-1.5 md:mt-1 bg-dark-2 ${
+					className={`transition duration-150 md:w-1/12 w-4 absolute md:right-3.5 right-2 lg:top-2.5 md:top-1 md:mt-1 bg-dark-2 ${
 						isDropdown && 'transform rotate-180'
 					}`}
 					xmlns='http://www.w3.org/2000/svg'
