@@ -24,7 +24,9 @@ const Messages = () => {
 					<h2 className='max-w-md pt-3 my-24 text-left pl-14'>Messages</h2>
 				</div>
 			</div>
-			<div className='items-center grid-cols-2 grid-rows-2 mx-auto text-gray-900 2md:grid gap-7 xl:max-w-5/6 2md:-mt-36'>
+			<div
+				className={`grid-cols-10 grid-rows-8 mx-auto text-gray-900 2md:grid gap-7 xl:max-w-5/6 2md:-mt-36
+							${isMobile ? 'flex flex-wrap justify-center' : ''}`}>
 				{messages.map((message: MessageInterface, index) =>
 					isMobile ? (
 						<MessagesMobileItem
