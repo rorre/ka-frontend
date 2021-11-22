@@ -11,7 +11,7 @@ const LayoutController = ({
 	return getLayout !== Component.getLayout ? (
 		<Layout> {children} </Layout>
 	) : (
-		<>{children}</>
+		getLayout(<>{children}</>)
 	)
 }
 
