@@ -3,7 +3,7 @@ const getToKnowUsItems = [
 		iconUrl: '/assets/yearbook-icon.svg',
 		url: '/characters',
 		title: 'The Characters',
-		description: 'Come and find out more about the members of CSUI201',
+		description: 'Come and find out more about the members of CSUI2021',
 	},
 	// {
 	// 	iconUrl: '/assets/quiz-icon.svg',

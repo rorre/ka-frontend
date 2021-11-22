@@ -41,7 +41,7 @@ const CharactersPage = () => {
 					Our Characters
 				</h1>
 				<p className='flex justify-center mt-4 mb-20 text-xs text-center text-white bg-transparent md:mt-8 md:text-base'>
-					Come and find out more about the members of CSUI201
+					Come and find out more about the members of CSUI2021
 				</p>
 				<form
 					id='characters'
