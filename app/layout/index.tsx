@@ -2,12 +2,9 @@ import React from 'react'
 import Navbar from '../components/global/navbar'
 import Footer from '../components/global/footer'
 import Header from '../components/global/header'
+import { LayoutInterface } from './interfaces/Layout.interface'
 
-type Props = {
-	children?: React.ReactChild | React.ReactChild[]
-}
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutInterface) => {
 	return (
 		<>
 			<Header />
