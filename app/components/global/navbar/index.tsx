@@ -30,7 +30,7 @@ const Navbar = () => {
 				</div>
 				<div className='flex justify-end col-span-1 lg:hidden'>
 					<button
-						className='w-10 h-10 p-3 text-white rounded-full bg-dark-2 filter drop-shadow-2xl'
+						className='flex items-center justify-center w-10 h-10 p-3 text-white rounded-full bg-dark-2 filter drop-shadow-2xl'
 						onClick={() => setCollapse(!isCollapse)}>
 						<FontAwesomeIcon icon={['fas', icon]} size='lg' />
 					</button>
