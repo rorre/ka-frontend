@@ -13,7 +13,7 @@ const BackButton = ({ className = '' }: { className?: string }) => {
 				<FontAwesomeIcon
 					icon={faArrowLeft}
 					color='white'
-					width={isMobile ? 10 : 17}
+					width={isMobile ? 14 : 17}
 				/>
 			</StyledBlue>
 		</button>

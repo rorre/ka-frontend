@@ -10,7 +10,7 @@ const CloseButton = ({ className = '', onClick }: ButtonInterface) => {
 	return (
 		<button onClick={onClick}>
 			<StyledRed
-				className={`md:py-2 md:px-3 py-2 px-2.5 md:w-10 md:h-10 w-8 h-8 ${className}`}>
+				className={`md:py-2 md:px-3 py-1.5 px-2.5 md:w-10 md:h-10 w-8 h-8 ${className}`}>
 				<FontAwesomeIcon
 					icon={faTimes}
 					color='white'
