@@ -20,7 +20,7 @@ const getToKnowUsItems = [
 	},
 	{
 		iconUrl: '/assets/ourpassions-icon.svg',
-		url: '/passions',
+		url: '/working',
 		title: 'Our Passions',
 		description:
 			' Explore and find your passion in IT through our Special Interest Groups',
