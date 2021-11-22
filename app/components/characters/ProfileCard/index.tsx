@@ -35,8 +35,8 @@ const ProfileCard = ({
 							: 'Information Systems'}
 					</div>
 					<div className='flex justify-start items-center text-2xs lg:text-1.5xs text-white order-3 mt-1 lg:mt-4 mr-1 md:mr-3'>
-						{utils.getHouseIcon(house_name.split(' ').at(2)!)}
-						{house_name.split(' ').at(2)}
+						{utils.getHouseIcon(house_name.split(' ')[2])}
+						{house_name.split(' ')[2]}
 					</div>
 					<div className='flex justify-end order-4 mt-6 mr-1.5 lg:mr-2 md:mt-10 lg:mt-8'>
 						<a href={lineUrl} className='pointer-events-auto'>
