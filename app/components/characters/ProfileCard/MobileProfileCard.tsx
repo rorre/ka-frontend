@@ -13,7 +13,7 @@ export const MobileProfileCard = ({
 	<div className='transition transform duration-500 hover:scale-110 relative m-0.5'>
 		<ProfilePictureContainer image={foto_diri} />
 		<div className='absolute top-1.5 right-1.5'>
-			{utils.getHouseIcon(house_name.split(' ').at(2)!)}
+			{utils.getHouseIcon(house_name.split(' ')[2])}
 		</div>
 		<GradientImageDiv className='absolute bottom-0 left-0 w-full pt-12 pb-3 px-2'>
 			<p className='text-1.5xs text-white font-bold'>

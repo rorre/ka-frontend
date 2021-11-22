@@ -86,8 +86,8 @@ const CharactersDetailsPage = () => {
 				{student.house?.nama === ''
 					? ''
 					: utils.getHouseIcon(
-							student.house?.nama.split(' ').at(2)!,
-							'md:w-20 md:h-20 w-16 h-16'
+							student.house?.nama.split(' ')[2],
+							'md:w-20 md:h-20 w-12 h-12'
 					  )}
 			</div>
 
